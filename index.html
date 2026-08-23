@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhairNgaji.co | Kelas Mengaji Al-Quran Online Untuk Kanak-Kanak</title>
+    <meta name="description" content="Kelas mengaji Al-Quran online untuk kanak-kanak dengan fokus kepada makhraj, bacaan, tajwid dan asas ilmu Al-Quran. Tersedia juga kelas Fardhu Ain.">
+    <meta name="keywords" content="kelas mengaji online, kelas mengaji kanak-kanak, kelas alquran online, kelas al-quran kanak-kanak, kelas tajwid online, kelas makhraj online, kelas fardhu ain online, mengaji online Malaysia">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            850: '#064e3b',
+                            900: '#022c22',
+                            950: '#011c16',
+                        },
+                        cream: {
+                            50: '#fdfbf7',
+                            100: '#f7f4eb',
+                            200: '#efe8d5',
+                        },
+                        gold: {
+                            400: '#facc15',
+                            500: '#d97706',
+                            600: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        arabic: ['"Amiri"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Apple-like Glassmorphism & Custom CSS */
+        .glass-nav {
+            background: rgba(253, 251, 247, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.8);
+        }
+        .glass-card-dark {
+            background: rgba(2, 44, 34, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, rgba(253, 251, 247, 0) 70%);
+        }
+        
+        /* Subtle Golden Pulse for Popular Package */
+        @keyframes subtleGlow {
+            0%, 100% { box-shadow: 0 10px 25px -5px rgba(217, 119, 6, 0.15); }
+            50% { box-shadow: 0 15px 35px -5px rgba(217, 119, 6, 0.3); }
+        }
+        .popular-glow {
+            animation: subtleGlow 4s infinite ease-in-out;
+        }
+
+        /* Clean Arabic typography badge styling without doubling artifacts */
+        .arabic-clean-badge {
+            font-family: 'Amiri', serif;
+            letter-spacing: normal;
+            text-rendering: optimizeLegibility;
+        }
+        
+        /* Hide Scrollbar for clean tabs */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-cream-50 text-slate-800 font-sans antialiased selection:bg-emerald-600 selection:text-white flex flex-col min-h-screen">
+
+    <!-- STICKY NAVBAR -->
+    <header class="sticky top-0 z-40 w-full glass-nav border-b border-stone-200/60 transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-emerald-900 text-gold-400 flex items-center justify-center font-bold text-xl shadow-md group-hover:scale-105 transition-transform border border-emerald-700/50">
+                    K
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-emerald-950 block leading-tight">KhairNgaji<span class="text-gold-600">.co</span></span>
+                    <span class="text-[10px] font-medium tracking-wider text-stone-500 uppercase block" data-i18n="tagline_short">Membentuk Bacaan Sejak Awal</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-stone-600">
+                <a href="#about" class="hover:text-emerald-800 transition-colors" data-i18n="nav_about">Tentang</a>
+                <a href="#features" class="hover:text-emerald-800 transition-colors" data-i18n="nav_classes">Kelas</a>
+                <a href="#schedule" class="hover:text-emerald-800 transition-colors" data-i18n="nav_schedule">Jadual</a>
+                <a href="#packages" class="hover:text-emerald-800 transition-colors" data-i18n="nav_packages">Pakej</a>
+                <a href="#progress" class="hover:text-emerald-800 transition-colors" data-i18n="nav_progress">Perkembangan</a>
+                <a href="#faq" class="hover:text-emerald-800 transition-colors" data-i18n="nav_faq">FAQ</a>
+            </nav>
+
+            <!-- Action Buttons & Language Switcher -->
+            <div class="hidden md:flex items-center gap-4">
+                <!-- Language Switcher Toggle Button -->
+                <div class="bg-stone-200/70 p-1 rounded-full flex items-center border border-stone-300/60">
+                    <button onclick="setLanguage('ms')" id="lang-ms" class="px-3 py-1 text-xs font-bold rounded-full transition-all bg-emerald-900 text-white shadow-sm">
+                        MY
+                    </button>
+                    <button onclick="setLanguage('en')" id="lang-en" class="px-3 py-1 text-xs font-bold rounded-full transition-all text-stone-600 hover:text-stone-900">
+                        EN
+                    </button>
+                </div>
+
+                <button onclick="openRegistrationModal()" class="px-5 py-2.5 rounded-full bg-emerald-900 hover:bg-emerald-850 text-white text-sm font-semibold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2">
+                    <span data-i18n="btn_register_now">Daftar Sekarang</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Hamburger & Language Button -->
+            <div class="flex md:hidden items-center gap-3">
+                <!-- Language Switcher Toggle (Mobile) -->
+                <div class="bg-stone-200/70 p-0.5 rounded-full flex items-center border border-stone-300/60">
+                    <button onclick="setLanguage('ms')" id="lang-ms-mobile" class="px-2.5 py-1 text-[11px] font-bold rounded-full transition-all bg-emerald-900 text-white">
+                        MY
+                    </button>
+                    <button onclick="setLanguage('en')" id="lang-en-mobile" class="px-2.5 py-1 text-[11px] font-bold rounded-full transition-all text-stone-600">
+                        EN
+                    </button>
+                </div>
+
+                <button id="mobileMenuBtn" class="p-2 text-stone-700 hover:text-emerald-900 rounded-lg focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobileMenu" class="hidden md:hidden bg-cream-50 border-b border-stone-200 px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-stone-700 font-medium hover:text-emerald-900" onclick="toggleMobileMenu()" data-i18n="nav_about">Tentang</a>
+            <a href="#features" class="block py-2 text-stone-700 font-medium hover:text-emerald-900" onclick="toggleMobileMenu()" data-i18n="nav_classes">Kelas</a>
+            <a href="#schedule" class="block py-2 text-stone-700 font-medium hover:text-emerald-900" onclick="toggleMobileMenu()" data-i18n="nav_schedule">Jadual</a>
+            <a href="#packages" class="block py-2 text-stone-700 font-medium hover:text-emerald-900" onclick="toggleMobileMenu()" data-i18n="nav_packages">Pakej</a>
+            <a href="#progress" class="block py-2 text-stone-700 font-medium hover:text-emerald-900" onclick="toggleMobileMenu()" data-i18n="nav_progress">Perkembangan</a>
+            <a href="#faq" class="block py-2 text-stone-700 font-medium hover:text-emerald-900" onclick="toggleMobileMenu()" data-i18n="nav_faq">FAQ</a>
+            <div class="pt-2">
+                <button onclick="toggleMobileMenu(); openRegistrationModal();" class="w-full py-3 rounded-xl bg-emerald-900 text-white font-semibold text-center shadow-md flex items-center justify-center gap-2">
+                    <span data-i18n="btn_register_now">Daftar Sekarang</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section class="relative hero-gradient pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto space-y-6">
+                    
+                    <!-- Top Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-stone-200/70 border border-stone-300 text-emerald-950 text-xs font-semibold uppercase tracking-wider shadow-sm backdrop-blur-sm">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                        <span data-i18n="hero_badge">Pengajian Al-Quran Online Kanak-Kanak 2026</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-emerald-950 tracking-tight leading-[1.15]" data-i18n="hero_title">
+                        Membentuk Bacaan Al-Quran Sejak Usia Awal.
+                    </h1>
+
+                    <!-- Subheadline -->
+                    <p class="text-lg sm:text-xl text-stone-600 font-normal leading-relaxed max-w-2xl mx-auto" data-i18n="hero_subtitle">
+                        Kelas Al-Quran online untuk membantu anak membina makhraj, bacaan dan asas ilmu Al-Quran secara tersusun — terus dari rumah.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                        <button onclick="openRegistrationModal()" class="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-900 hover:bg-emerald-850 text-white font-semibold text-base shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3 group">
+                            <span data-i18n="btn_register_now">Daftar Sekarang</span>
+                            <i data-lucide="chevron-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <a href="#packages" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-stone-100 text-stone-800 font-semibold text-base border border-stone-300/80 shadow-sm transition-all text-center" data-i18n="btn_view_packages">
+                            Lihat Pakej
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div class="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs font-medium text-stone-500">
+                        <div class="flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                            <span data-i18n="trust_1">1-to-1 / Sesi Bimbingan</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                            <span data-i18n="trust_2">Tenaga Pengajar Hafiz Bertauliah</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                            <span data-i18n="trust_3">Laporan Perkembangan Bulanan</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Visual Element / Card Showcases -->
+                <div class="mt-12 md:mt-16 relative max-w-4xl mx-auto">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-stone-200/80 bg-white">
+                        <div class="p-4 bg-emerald-950 text-white flex items-center justify-between border-b border-emerald-900">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                            </div>
+                            <span class="text-xs font-mono text-emerald-300/80" data-i18n="hero_live_session">Sesi Interaktif Online • KhairNgaji.co</span>
+                            <div class="w-12"></div>
+                        </div>
+                        <div class="p-6 md:p-10 bg-gradient-to-br from-emerald-900 to-emerald-950 text-white relative">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                <div class="space-y-4">
+                                    <div class="inline-block px-3 py-1 rounded-md bg-gold-500/20 text-gold-400 text-xs font-bold border border-gold-500/30" data-i18n="hero_focus_badge">
+                                        Fokus Utama Pembelajaran
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-cream-50" data-i18n="hero_card_title">Membina Makhraj & Kelancaran Bacaan</h3>
+                                    <p class="text-stone-300 text-sm leading-relaxed" data-i18n="hero_card_desc">
+                                        “Lidah yang dibentuk sejak kecil akan menjadi asas kepada bacaan Al-Quran yang lebih mantap pada masa hadapan.”
+                                    </p>
+                                    <div class="pt-2 flex items-center gap-4 text-xs text-stone-300">
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="clock" class="w-4 h-4 text-gold-400"></i>
+                                            <span>15 Min / Sesi</span>
+                                        </div>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="calendar" class="w-4 h-4 text-gold-400"></i>
+                                            <span data-i18n="hero_card_sessions">7 Sesi Sebulan</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Decorative Makhraj & Quran Typography Box - CLEANED UP UI -->
+                                <div class="bg-emerald-900/80 p-6 rounded-2xl border border-emerald-700/50 shadow-inner space-y-4">
+                                    <div class="flex justify-between items-center text-xs text-emerald-200">
+                                        <span data-i18n="hero_box_label">Sebutan Makhraj Huruf</span>
+                                        <span class="px-2 py-0.5 rounded bg-emerald-800 text-gold-300 font-mono">Tepat & Jelas</span>
+                                    </div>
+                                    
+                                    <!-- Clean Arabic Calligraphy Representation (NO OVERLAPPING OR DOUBLE TEXT) -->
+                                    <div class="py-4 text-center border-y border-emerald-800/80 bg-emerald-950/40 rounded-xl my-2">
+                                        <div class="arabic-clean-badge text-3xl md:text-4xl text-gold-400 font-bold tracking-widest leading-normal">
+                                            بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+                                        </div>
+                                        <div class="text-[11px] text-stone-300 mt-2 font-mono" data-i18n="hero_box_sub">
+                                            Penekanan Sifat Huruf • Tajwid Asas
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center justify-between text-xs text-stone-300">
+                                        <span class="flex items-center gap-1 text-emerald-300">
+                                            <i data-lucide="check" class="w-3.5 h-3.5 text-gold-400"></i> <span data-i18n="hero_check_1">Bimbingan Mesra</span>
+                                        </span>
+                                        <span class="flex items-center gap-1 text-emerald-300">
+                                            <i data-lucide="check" class="w-3.5 h-3.5 text-gold-400"></i> <span data-i18n="hero_check_2">Pemantauan Berterusan</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WHY KHAIRNGAJI SECTION -->
+        <section id="features" class="py-20 bg-white border-y border-stone-200/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold text-gold-600 uppercase tracking-widest mb-2" data-i18n="why_tag">Keistimewaan Kami</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-emerald-950 tracking-tight" data-i18n="why_title">Kenapa KhairNgaji?</p>
+                    <p class="text-stone-600 mt-3 text-base" data-i18n="why_subtitle">
+                        Kami mereka pengalaman pembelajaran online yang tersusun supaya anak-anak tidak ketinggalan asas Al-Quran dan Fardhu Ain.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    
+                    <!-- Card 1 -->
+                    <div class="glass-card p-6 rounded-2xl border border-stone-200 hover:border-emerald-700/40 hover:shadow-xl transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-extrabold text-lg mb-4 group-hover:scale-110 transition-transform">
+                                01
+                            </div>
+                            <h3 class="text-lg font-bold text-emerald-950 mb-2" data-i18n="why_1_title">Makhraj Dari Awal</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed" data-i18n="why_1_desc">
+                                Membentuk sebutan huruf Al-Quran dengan lebih tepat dan tajwid yang sahih sejak usia muda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="glass-card p-6 rounded-2xl border border-stone-200 hover:border-emerald-700/40 hover:shadow-xl transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-extrabold text-lg mb-4 group-hover:scale-110 transition-transform">
+                                02
+                            </div>
+                            <h3 class="text-lg font-bold text-emerald-950 mb-2" data-i18n="why_2_title">Pembelajaran Tersusun</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed" data-i18n="why_2_desc">
+                                Kelas disusun secara konsisten dengan fokus langkah demi langkah kepada asas penting.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="glass-card p-6 rounded-2xl border border-stone-200 hover:border-emerald-700/40 hover:shadow-xl transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-extrabold text-lg mb-4 group-hover:scale-110 transition-transform">
+                                03
+                            </div>
+                            <h3 class="text-lg font-bold text-emerald-950 mb-2" data-i18n="why_3_title">Online & Fleksibel</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed" data-i18n="why_3_desc">
+                                Anak boleh belajar dari keselesaan rumah tanpa perlu perjalanan fizikal ke madrasah.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="glass-card p-6 rounded-2xl border border-stone-200 hover:border-emerald-700/40 hover:shadow-xl transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-extrabold text-lg mb-4 group-hover:scale-110 transition-transform">
+                                04
+                            </div>
+                            <h3 class="text-lg font-bold text-emerald-950 mb-2" data-i18n="why_4_title">Pemantauan Bulanan</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed" data-i18n="why_4_desc">
+                                Ibu bapa menerima Monthly Progress Update tentang tahap kelancaran dan makhraj anak.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="glass-card p-6 rounded-2xl border border-stone-200 hover:border-emerald-700/40 hover:shadow-xl transition-all group flex flex-col justify-between md:col-span-3 lg:col-span-1">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center font-extrabold text-lg mb-4 group-hover:scale-110 transition-transform">
+                                05
+                            </div>
+                            <h3 class="text-lg font-bold text-emerald-950 mb-2" data-i18n="why_5_title">Al-Quran & Fardhu Ain</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed" data-i18n="why_5_desc">
+                                Pakej tertentu turut merangkumi pembelajaran asas ibadah, wuduk, solat & akhlak harian.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOUNDER SECTION -->
+        <section id="about" class="py-20 bg-cream-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gradient-to-br from-emerald-900 via-emerald-950 to-emerald-900 rounded-3xl p-8 md:p-14 text-white shadow-2xl relative overflow-hidden">
+                    
+                    <!-- Subtle Background Pattern -->
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-emerald-800/30 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                        
+                        <!-- Founder Avatar / Placeholder Badge -->
+                        <div class="lg:col-span-5 flex flex-col items-center text-center">
+                            <div class="relative mb-6">
+                                <div class="w-48 h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-tr from-gold-500 to-amber-300 p-1 shadow-2xl">
+                                    <div class="w-full h-full rounded-full bg-emerald-950 flex flex-col items-center justify-center border-4 border-emerald-900 p-4">
+                                        <i data-lucide="award" class="w-16 h-16 text-gold-400 mb-2"></i>
+                                        <span class="text-xs uppercase tracking-widest text-emerald-200 font-semibold" data-i18n="founder_badge_label">Pengasas & Ustaz</span>
+                                        <span class="text-sm font-bold text-white text-center leading-tight mt-1" data-i18n="founder_name">Muhammad Khair Hakimi</span>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-2 right-2 bg-gold-500 text-emerald-950 p-2 rounded-full shadow-lg">
+                                    <i data-lucide="check-check" class="w-5 h-5 font-bold"></i>
+                                </div>
+                            </div>
+
+                            <!-- Verified Qualifications Badges -->
+                            <div class="flex flex-wrap justify-center gap-2 max-w-sm">
+                                <span class="px-3 py-1 rounded-full bg-emerald-800/80 border border-emerald-700/60 text-[11px] font-semibold text-emerald-100" data-i18n="badge_hafiz">
+                                    Hafiz 30 Juzuk
+                                </span>
+                                <span class="px-3 py-1 rounded-full bg-emerald-800/80 border border-emerald-700/60 text-[11px] font-semibold text-emerald-100" data-i18n="badge_syahadah">
+                                    Syahadah Al-Qamar
+                                </span>
+                                <span class="px-3 py-1 rounded-full bg-emerald-800/80 border border-emerald-700/60 text-[11px] font-semibold text-emerald-100" data-i18n="badge_qiraat">
+                                    Qiraat 7 Riwayat 14
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Founder Content -->
+                        <div class="lg:col-span-7 space-y-6">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-gold-500/20 text-gold-300 text-xs font-bold border border-gold-500/30">
+                                <span data-i18n="founder_section_tag">Pengasas KhairNgaji</span>
+                            </div>
+
+                            <h2 class="text-3xl sm:text-4xl font-extrabold text-cream-50 leading-tight" data-i18n="founder_heading">
+                                Muhammad Khair Hakimi bin Abd Malek
+                            </h2>
+
+                            <div class="space-y-4 text-stone-200 text-base leading-relaxed">
+                                <p data-i18n="founder_p1">
+                                    KhairNgaji diasaskan oleh Muhammad Khair Hakimi bin Abd Malek, seorang Hafiz Al-Quran yang menamatkan hafazan 30 juzuk Al-Quran dan menerima syahadah di Pusat Tahfizul Quran Al-Qamar, Melaka.
+                                </p>
+                                <p data-i18n="founder_p2">
+                                    Beliau turut menamatkan pengajian Qiraat 7 Riwayat 14 Perawi di Maahad An-Nur, Jerantut.
+                                </p>
+                                <p data-i18n="founder_p3">
+                                    Melalui KhairNgaji, beliau ingin membantu membentuk asas bacaan Al-Quran kanak-kanak sejak usia awal, khususnya dari sudut makhraj, bacaan dan asas ilmu Al-Quran.
+                                </p>
+                            </div>
+
+                            <div class="pt-4 border-t border-emerald-800/80 grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                <div>
+                                    <span class="block text-xl font-bold text-gold-400">2024</span>
+                                    <span class="text-xs text-stone-300" data-i18n="founder_stat1">Tahun Ditubuhkan</span>
+                                </div>
+                                <div>
+                                    <span class="block text-xl font-bold text-gold-400">30 Juzuk</span>
+                                    <span class="text-xs text-stone-300" data-i18n="founder_stat2">Hafazan Lengkap</span>
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                    <span class="block text-xl font-bold text-gold-400">14 Perawi</span>
+                                    <span class="text-xs text-stone-300" data-i18n="founder_stat3">Pengajian Qiraat 7</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEARNING JOURNEY TIMELINE -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold text-gold-600 uppercase tracking-widest mb-2" data-i18n="journey_tag">Perjalanan Pelajar</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-emerald-950 tracking-tight" data-i18n="journey_title">Langkah Pembelajaran Tersusun</p>
+                    <p class="text-stone-600 mt-3 text-base" data-i18n="journey_subtitle">
+                        Anak dibimbing secara bertahap untuk memastikan bacaan bukan sekadar habis, tetapi betul & tepat.
+                    </p>
+                </div>
+
+                <!-- Horizontal Step Flow -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 relative">
+                    
+                    <!-- Step 1 -->
+                    <div class="p-5 rounded-2xl bg-cream-50 border border-stone-200 text-center space-y-3 relative">
+                        <span class="w-8 h-8 rounded-full bg-emerald-900 text-gold-400 font-bold text-sm inline-flex items-center justify-center">01</span>
+                        <h4 class="font-bold text-emerald-950 text-base" data-i18n="step1_title">Kenal Huruf</h4>
+                        <p class="text-xs text-stone-600 leading-normal" data-i18n="step1_desc">Memahami bentuk dan sifat asas huruf Al-Quran.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="p-5 rounded-2xl bg-cream-50 border border-stone-200 text-center space-y-3 relative">
+                        <span class="w-8 h-8 rounded-full bg-emerald-900 text-gold-400 font-bold text-sm inline-flex items-center justify-center">02</span>
+                        <h4 class="font-bold text-emerald-950 text-base" data-i18n="step2_title">Bentuk Makhraj</h4>
+                        <p class="text-xs text-stone-600 leading-normal" data-i18n="step2_desc">Melatih posisi lidah dan sebutan yang tepat.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="p-5 rounded-2xl bg-cream-50 border border-stone-200 text-center space-y-3 relative">
+                        <span class="w-8 h-8 rounded-full bg-emerald-900 text-gold-400 font-bold text-sm inline-flex items-center justify-center">03</span>
+                        <h4 class="font-bold text-emerald-950 text-base" data-i18n="step3_title">Perbaiki Bacaan</h4>
+                        <p class="text-xs text-stone-600 leading-normal" data-i18n="step3_desc">Membetulkan kesalahan sebutan secara berhemah.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="p-5 rounded-2xl bg-cream-50 border border-stone-200 text-center space-y-3 relative">
+                        <span class="w-8 h-8 rounded-full bg-emerald-900 text-gold-400 font-bold text-sm inline-flex items-center justify-center">04</span>
+                        <h4 class="font-bold text-emerald-950 text-base" data-i18n="step4_title">Mantapkan Tajwid</h4>
+                        <p class="text-xs text-stone-600 leading-normal" data-i18n="step4_desc">Menerapkan hukum tajwid asas dalam bacaan.</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="p-5 rounded-2xl bg-cream-50 border border-stone-200 text-center space-y-3 relative">
+                        <span class="w-8 h-8 rounded-full bg-emerald-900 text-gold-400 font-bold text-sm inline-flex items-center justify-center">05</span>
+                        <h4 class="font-bold text-emerald-950 text-base" data-i18n="step5_title">Pantau Perkembangan</h4>
+                        <p class="text-xs text-stone-600 leading-normal" data-i18n="step5_desc">Penilaian prestasi bulanan diberikan kepada ibu bapa.</p>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="p-5 rounded-2xl bg-emerald-900 text-white text-center space-y-3 relative">
+                        <span class="w-8 h-8 rounded-full bg-gold-500 text-emerald-950 font-bold text-sm inline-flex items-center justify-center">06</span>
+                        <h4 class="font-bold text-cream-50 text-base" data-i18n="step6_title">Bina Keyakinan</h4>
+                        <p class="text-xs text-stone-300 leading-normal" data-i18n="step6_desc">Anak lebih lancar, yakin dan mencintai Al-Quran.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SCHEDULE SECTION -->
+        <section id="schedule" class="py-16 bg-cream-50 border-t border-stone-200/80">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="bg-white rounded-3xl p-8 md:p-10 border border-stone-200 shadow-xl">
+                    <div class="text-center max-w-xl mx-auto mb-8">
+                        <span class="text-xs font-bold text-gold-600 uppercase tracking-widest" data-i18n="sched_tag">Jadual Kelas</span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-emerald-950 mt-1" data-i18n="sched_title">Masa & Hari Pengajian</h3>
+                        <p class="text-sm text-stone-600 mt-2" data-i18n="sched_subtitle">7 Sesi Sebulan • 15 Minit Setiap Sesi • 2 Minggu Sekali + 1 Minggu Akhir</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        
+                        <!-- Monday -->
+                        <div class="p-5 rounded-2xl bg-cream-50 border border-stone-200/80 text-center space-y-2">
+                            <div class="text-emerald-900 font-extrabold text-lg" data-i18n="day_mon">ISNIN</div>
+                            <div class="text-xs text-emerald-700 font-semibold px-2 py-1 rounded bg-emerald-100 inline-block" data-i18n="time_slot">6:30 PM – 8:30 PM</div>
+                            <p class="text-xs text-stone-500 pt-2" data-i18n="slot_desc">Pilihan slot 15 minit</p>
+                        </div>
+
+                        <!-- Wednesday -->
+                        <div class="p-5 rounded-2xl bg-cream-50 border border-stone-200/80 text-center space-y-2">
+                            <div class="text-emerald-900 font-extrabold text-lg" data-i18n="day_wed">RABU</div>
+                            <div class="text-xs text-emerald-700 font-semibold px-2 py-1 rounded bg-emerald-100 inline-block" data-i18n="time_slot">6:30 PM – 8:30 PM</div>
+                            <p class="text-xs text-stone-500 pt-2" data-i18n="slot_desc">Pilihan slot 15 minit</p>
+                        </div>
+
+                        <!-- Thursday -->
+                        <div class="p-5 rounded-2xl bg-cream-50 border border-stone-200/80 text-center space-y-2">
+                            <div class="text-emerald-900 font-extrabold text-lg" data-i18n="day_thu">KHAMIS</div>
+                            <div class="text-xs text-emerald-700 font-semibold px-2 py-1 rounded bg-emerald-100 inline-block" data-i18n="time_slot">6:30 PM – 8:30 PM</div>
+                            <p class="text-xs text-stone-500 pt-2" data-i18n="slot_desc">Pilihan slot 15 minit</p>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-8 p-4 rounded-xl bg-emerald-50 border border-emerald-200/60 text-emerald-900 text-xs text-center flex items-center justify-center gap-2">
+                        <i data-lucide="info" class="w-4 h-4 text-emerald-700 shrink-0"></i>
+                        <span data-i18n="sched_note">Pemilihan waktu spesifik akan diselaraskan bersama pihak KhairNgaji selepas pendaftaran completed di WhatsApp.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- STUDENT PROGRESS MOCKUP SECTION -->
+        <section id="progress" class="py-20 bg-white border-t border-stone-200/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-100 text-emerald-900 text-xs font-bold">
+                            <i data-lucide="bar-chart-3" class="w-3.5 h-3.5"></i>
+                            <span data-i18n="prog_badge">Monthly Student Progress Report</span>
+                        </div>
+
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-emerald-950 tracking-tight leading-tight" data-i18n="prog_title">
+                            Pantau Perkembangan Bacaan Anak Anda Setiap Bulan.
+                        </h2>
+
+                        <p class="text-stone-600 text-base leading-relaxed" data-i18n="prog_desc">
+                            Ibu bapa tidak lagi tertanya-tanya sejauh mana anak menguasai bacaan. Pada setiap hujung bulan, anda akan menerima ringkasan penilaian terperinci merangkumi makhraj, tajwid, dan disiplin.
+                        </p>
+
+                        <div class="space-y-3 pt-2 text-sm text-stone-700">
+                            <div class="flex items-start gap-3">
+                                <div class="p-1 bg-emerald-100 text-emerald-800 rounded mt-0.5"><i data-lucide="check" class="w-4 h-4"></i></div>
+                                <div><strong data-i18n="prog_point1_t">Penilaian Makhraj & Tajwid:</strong> <span data-i18n="prog_point1_d">Ketepatan sebutan huruf Al-Quran.</span></div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="p-1 bg-emerald-100 text-emerald-800 rounded mt-0.5"><i data-lucide="check" class="w-4 h-4"></i></div>
+                                <div><strong data-i18n="prog_point2_t">Kelancaran & Disiplin:</strong> <span data-i18n="prog_point2_d">Pemantauan konsistensi hadir kelas.</span></div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="p-1 bg-emerald-100 text-emerald-800 rounded mt-0.5"><i data-lucide="check" class="w-4 h-4"></i></div>
+                                <div><strong data-i18n="prog_point3_t">Ulasan Peribadi Ustaz:</strong> <span data-i18n="prog_point3_d">Cadangan latihan spesifik untuk penambahbaikan.</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Dashboard UI Mockup -->
+                    <div class="lg:col-span-7">
+                        <div class="bg-cream-50 rounded-3xl p-6 sm:p-8 border border-stone-300 shadow-2xl relative">
+                            
+                            <div class="flex items-center justify-between border-b border-stone-200 pb-4 mb-6">
+                                <div>
+                                    <span class="text-xs font-semibold text-stone-500 uppercase" data-i18n="mock_title">Laporan Perkembangan Pelajar</span>
+                                    <h4 class="text-xl font-bold text-emerald-950">Ahmad Ammar bin Razak</h4>
+                                </div>
+                                <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full border border-emerald-200" data-i18n="mock_month">
+                                    Laporan Bulanan
+                                </span>
+                            </div>
+
+                            <!-- Rating Grid -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                                
+                                <div class="bg-white p-4 rounded-xl border border-stone-200 space-y-1">
+                                    <div class="flex justify-between items-center text-xs font-semibold text-stone-600">
+                                        <span data-i18n="mock_makhraj">Makhraj Huruf</span>
+                                        <span class="text-gold-600 font-bold">4.0 / 5.0</span>
+                                    </div>
+                                    <div class="flex gap-1 text-gold-500 text-sm">
+                                        ★ ★ ★ ★ ☆
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-4 rounded-xl border border-stone-200 space-y-1">
+                                    <div class="flex justify-between items-center text-xs font-semibold text-stone-600">
+                                        <span data-i18n="mock_bacaan">Kelancaran Bacaan</span>
+                                        <span class="text-gold-600 font-bold">4.0 / 5.0</span>
+                                    </div>
+                                    <div class="flex gap-1 text-gold-500 text-sm">
+                                        ★ ★ ★ ★ ☆
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-4 rounded-xl border border-stone-200 space-y-1">
+                                    <div class="flex justify-between items-center text-xs font-semibold text-stone-600">
+                                        <span data-i18n="mock_tajwid">Tajwid Asas</span>
+                                        <span class="text-gold-600 font-bold">3.5 / 5.0</span>
+                                    </div>
+                                    <div class="flex gap-1 text-gold-500 text-sm">
+                                        ★ ★ ★ ☆ ☆
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-4 rounded-xl border border-stone-200 space-y-1">
+                                    <div class="flex justify-between items-center text-xs font-semibold text-stone-600">
+                                        <span data-i18n="mock_disiplin">Kehadiran & Disiplin</span>
+                                        <span class="text-emerald-700 font-bold" data-i18n="mock_excellent">Cemerlang</span>
+                                    </div>
+                                    <div class="flex gap-1 text-gold-500 text-sm">
+                                        ★ ★ ★ ★ ★
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Progress Bar -->
+                            <div class="bg-white p-4 rounded-xl border border-stone-200 mb-6 space-y-2">
+                                <div class="flex justify-between items-center text-xs">
+                                    <span class="font-bold text-emerald-950" data-i18n="mock_overall">Perkembangan Keseluruhan</span>
+                                    <span class="font-bold text-emerald-700">82% (Good Progress)</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-stone-100 rounded-full overflow-hidden">
+                                    <div class="h-full bg-emerald-700 rounded-full w-[82%]"></div>
+                                </div>
+                            </div>
+
+                            <!-- Teacher's Note -->
+                            <div class="bg-emerald-900 text-white p-4 rounded-xl space-y-1">
+                                <div class="text-xs text-gold-400 font-bold flex items-center gap-1.5">
+                                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                                    <span data-i18n="mock_teacher_note_title">Nota Ustaz:</span>
+                                </div>
+                                <p class="text-xs text-stone-200 italic leading-relaxed" data-i18n="mock_teacher_note_text">
+                                    “Ammar menunjukkan peningkatan ketara dalam sebutan huruf Haa (ح) dan 'Ain (ع). Teruskan latihan 5 minit di rumah sebelum tidur.”
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PRICING PACKAGES SECTION -->
+        <section id="packages" class="py-20 bg-cream-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                    <span class="text-xs font-bold text-gold-600 uppercase tracking-widest" data-i18n="pkg_tag">Pilihan Yuran</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-emerald-950 tracking-tight" data-i18n="pkg_title">Pakej Pembelajaran KhairNgaji</h2>
+                    <p class="text-stone-600 text-base" data-i18n="pkg_subtitle">Pilih pakej yang sesuai dengan keperluan pendidikan Al-Quran & Fardhu Ain anak anda.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+                    
+                    <!-- Package A: Al-Bayan -->
+                    <div class="bg-white rounded-3xl p-8 border border-stone-200 shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between relative">
+                        <div class="space-y-6">
+                            <div>
+                                <span class="px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-xs font-bold uppercase tracking-wider" data-i18n="pkg_a_badge">Pakej Mengaji Asas</span>
+                                <h3 class="text-2xl font-extrabold text-emerald-950 mt-3">Al-Bayan</h3>
+                                <p class="text-xs text-stone-500 mt-1" data-i18n="pkg_a_desc">Penjelasan dan penyampaian bacaan Al-Quran yang jelas.</p>
+                            </div>
+
+                            <div class="flex items-baseline gap-1 border-b border-stone-200 pb-6">
+                                <span class="text-4xl font-extrabold text-emerald-950">RM47</span>
+                                <span class="text-stone-500 text-sm font-medium" data-i18n="per_month">/ bulan</span>
+                            </div>
+
+                            <!-- Features List -->
+                            <ul class="space-y-3 text-sm text-stone-700">
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span data-i18n="pkg_feat_quran">Kelas Mengaji Al-Quran</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span data-i18n="pkg_feat_7sess">7 Sesi Sebulan</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span data-i18n="pkg_feat_15min">15 Minit Setiap Sesi</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span data-i18n="pkg_feat_makhraj">Fokus Makhraj & Tajwid Asas</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span data-i18n="pkg_feat_reading">Kelancaran Bacaan Al-Quran</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span data-i18n="pkg_feat_progress">Monthly Student Progress Update</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-8">
+                            <button onclick="openRegistrationModal('Al-Bayan')" class="w-full py-3.5 rounded-full bg-emerald-950 hover:bg-emerald-850 text-white font-semibold transition-all shadow-md text-center">
+                                <span data-i18n="btn_choose_albayan">Pilih Pakej Al-Bayan</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Package B: Al-Hidayah (MOST POPULAR) -->
+                    <div class="bg-gradient-to-b from-emerald-950 via-emerald-900 to-emerald-950 text-white rounded-3xl p-8 border-2 border-gold-500/70 shadow-2xl popular-glow flex flex-col justify-between relative transform md:-translate-y-2">
+                        
+                        <!-- Most Popular Tag -->
+                        <div class="absolute -top-4 right-8 px-4 py-1 rounded-full bg-gradient-to-r from-gold-500 to-amber-400 text-emerald-950 text-xs font-black uppercase tracking-wider shadow-lg">
+                            ★ MOST POPULAR
+                        </div>
+
+                        <div class="space-y-6">
+                            <div>
+                                <span class="px-3 py-1 rounded-full bg-emerald-800/80 text-gold-300 text-xs font-bold uppercase tracking-wider border border-emerald-700" data-i18n="pkg_b_badge">Lengkap: Mengaji + Fardhu Ain</span>
+                                <h3 class="text-2xl font-extrabold text-cream-50 mt-3">Al-Hidayah</h3>
+                                <p class="text-xs text-stone-300 mt-1" data-i18n="pkg_b_desc">Bimbingan Al-Quran lengkap beserta pembentukan ibadah harian.</p>
+                            </div>
+
+                            <div class="flex items-baseline gap-1 border-b border-emerald-800/80 pb-6">
+                                <span class="text-4xl font-extrabold text-gold-400">RM70</span>
+                                <span class="text-stone-300 text-sm font-medium" data-i18n="per_month">/ bulan</span>
+                            </div>
+
+                            <!-- Features List -->
+                            <ul class="space-y-3 text-sm text-stone-200">
+                                <li class="flex items-center gap-3 font-semibold text-gold-300">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400 shrink-0"></i>
+                                    <span data-i18n="pkg_b_feat_everything">Semua Pakej Al-Bayan (7 Sesi Mengaji)</span>
+                                </li>
+                                <li class="flex items-center gap-3 font-semibold text-emerald-200">
+                                    <i data-lucide="plus-circle" class="w-4 h-4 text-gold-400 shrink-0"></i>
+                                    <span data-i18n="pkg_b_feat_fardhu">PLUS Kelas Fardhu Ain (4 Sesi Sebulan)</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-4 h-4 text-gold-400 shrink-0"></i>
+                                    <span data-i18n="pkg_b_feat_wuduk">Asas Wuduk, Tayammum & Solat</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-4 h-4 text-gold-400 shrink-0"></i>
+                                    <span data-i18n="pkg_b_feat_doas">Rukun Islam, Iman & Doa Harian</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-4 h-4 text-gold-400 shrink-0"></i>
+                                    <span data-i18n="pkg_b_feat_akhlak">Adab Harian & Akhlak Muslim</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-4 h-4 text-gold-400 shrink-0"></i>
+                                    <span data-i18n="pkg_feat_progress">Monthly Student Progress Update</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-8">
+                            <button onclick="openRegistrationModal('Al-Hidayah')" class="w-full py-3.5 rounded-full bg-gradient-to-r from-gold-500 to-amber-400 hover:from-gold-400 hover:to-amber-300 text-emerald-950 font-extrabold transition-all shadow-lg text-center transform hover:scale-[1.02]">
+                                <span data-i18n="btn_choose_alhidayah">Pilih Pakej Al-Hidayah</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-12">
+                    <span class="text-xs font-bold text-gold-600 uppercase tracking-widest" data-i18n="faq_tag">Soalan Lazim</span>
+                    <h2 class="text-3xl font-extrabold text-emerald-950 mt-1" data-i18n="faq_title">Soalan Sering Ditanya (FAQ)</h2>
+                </div>
+
+                <div class="space-y-4" id="faqAccordion">
+                    
+                    <!-- Item 1 -->
+                    <div class="border border-stone-200 rounded-2xl overflow-hidden transition-all bg-cream-50/50">
+                        <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-emerald-950 flex justify-between items-center gap-4 focus:outline-none">
+                            <span data-i18n="faq_q1">Adakah kelas dilakukan secara online?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-500 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-200/50 pt-3">
+                            <p data-i18n="faq_a1">Ya. Kelas dijalankan secara online sepenuhnya dan direka supaya anak boleh mengikuti pembelajaran dari rumah dengan selesa.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="border border-stone-200 rounded-2xl overflow-hidden transition-all bg-cream-50/50">
+                        <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-emerald-950 flex justify-between items-center gap-4 focus:outline-none">
+                            <span data-i18n="faq_q2">Berapa lama satu kelas?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-500 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-200/50 pt-3">
+                            <p data-i18n="faq_a2">Setiap sesi kelas mengaji berlangsung selama 15 minit secara fokus dan berkualiti untuk mengekalkan tumpuan anak-anak.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="border border-stone-200 rounded-2xl overflow-hidden transition-all bg-cream-50/50">
+                        <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-emerald-950 flex justify-between items-center gap-4 focus:outline-none">
+                            <span data-i18n="faq_q3">Berapa kali kelas mengaji dalam sebulan?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-500 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-200/50 pt-3">
+                            <p data-i18n="faq_a3">Terdapat 7 sesi sebulan untuk kelas mengaji Al-Quran.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="border border-stone-200 rounded-2xl overflow-hidden transition-all bg-cream-50/50">
+                        <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-emerald-950 flex justify-between items-center gap-4 focus:outline-none">
+                            <span data-i18n="faq_q4">Apakah hari dan waktu kelas?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-500 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-200/50 pt-3">
+                            <p data-i18n="faq_a4">Kelas diadakan pada hari Isnin, Rabu atau Khamis antara jam 6:30 PM hingga 8:30 PM.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="border border-stone-200 rounded-2xl overflow-hidden transition-all bg-cream-50/50">
+                        <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-emerald-950 flex justify-between items-center gap-4 focus:outline-none">
+                            <span data-i18n="faq_q5">Adakah terdapat kelas Fardhu Ain?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-500 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-200/50 pt-3">
+                            <p data-i18n="faq_a5">Ya. Pakej Al-Hidayah merangkumi kelas Fardhu Ain sebanyak 4 kali sebulan (1 kali setiap minggu).</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="border border-stone-200 rounded-2xl overflow-hidden transition-all bg-cream-50/50">
+                        <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-emerald-950 flex justify-between items-center gap-4 focus:outline-none">
+                            <span data-i18n="faq_q6">Bolehkah mendaftarkan lebih daripada seorang anak?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-500 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-200/50 pt-3">
+                            <p data-i18n="faq_a6">Boleh. Borang pendaftaran kami membolehkan anda mendaftarkan sehingga 4 orang anak dalam satu sesi borang dengan maklumat individu yang lengkap.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="border border-stone-200 rounded-2xl overflow-hidden transition-all bg-cream-50/50">
+                        <button onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-emerald-950 flex justify-between items-center gap-4 focus:outline-none">
+                            <span data-i18n="faq_q7">Bagaimana saya boleh mendaftar?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-stone-500 transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-5 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-200/50 pt-3">
+                            <p data-i18n="faq_a7">Isi borang multi-step di website dan tekan “Hantar Pendaftaran ke WhatsApp”. Maklumat pendaftaran akan disediakan secara automatik dalam mesej WhatsApp anda.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-emerald-950 text-stone-300 py-16 border-t border-emerald-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+                
+                <!-- Brand Info -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-900 text-gold-400 flex items-center justify-center font-bold text-xl border border-emerald-700/50">
+                            K
+                        </div>
+                        <span class="text-2xl font-extrabold text-white tracking-tight">KhairNgaji<span class="text-gold-400">.co</span></span>
+                    </div>
+                    <p class="text-stone-400 text-sm max-w-sm leading-relaxed" data-i18n="footer_tagline">
+                        “Membentuk Bacaan Al-Quran Sejak Usia Awal.”
+                    </p>
+                    <div class="pt-2 text-xs text-stone-400 space-y-1">
+                        <p><strong class="text-stone-200">WhatsApp:</strong> 01158945036</p>
+                        <p><strong class="text-stone-200">Email:</strong> adminkhairngaji@gmail.com</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider" data-i18n="footer_nav_title">Pautan Pantas</h4>
+                    <ul class="space-y-2 text-sm text-stone-400">
+                        <li><a href="#about" class="hover:text-gold-400 transition-colors" data-i18n="nav_about">Tentang Kami</a></li>
+                        <li><a href="#features" class="hover:text-gold-400 transition-colors" data-i18n="nav_classes">Kelas Mengaji</a></li>
+                        <li><a href="#packages" class="hover:text-gold-400 transition-colors" data-i18n="nav_packages">Fardhu Ain & Pakej</a></li>
+                        <li><a href="#faq" class="hover:text-gold-400 transition-colors" data-i18n="nav_faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & CTA -->
+                <div class="md:col-span-4 space-y-4">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider" data-i18n="footer_contact_title">Hubungi Kami</h4>
+                    <p class="text-xs text-stone-400" data-i18n="footer_contact_desc">Ada sebarang soalan berkenaan jadual atau tahap bacaan anak?</p>
+                    <a href="https://wa.me/601158945036?text=Assalamualaikum%20KhairNgaji.co%2C%20saya%20ingin%20bertanya%20tentang%20kelas." target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-800 hover:bg-emerald-700 text-gold-300 font-semibold text-xs border border-emerald-700/60 shadow transition-all">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        <span data-i18n="btn_ask_whatsapp">Tanya Tentang Kelas di WhatsApp</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-emerald-900/80 text-center text-xs text-stone-400">
+                <p>&copy; 2026 KhairNgaji.co. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/601158945036?text=Assalamualaikum%20KhairNgaji.co%2C%20saya%20ingin%20bertanya%20tentang%20kelas." target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-full shadow-2xl flex items-center gap-2 border border-emerald-400/30 transform hover:scale-105 transition-all group">
+        <i data-lucide="message-square" class="w-6 h-6"></i>
+        <span class="hidden sm:inline text-xs font-bold pr-1">Chat With Us</span>
+    </a>
+
+    <!-- MULTI-STEP REGISTRATION MODAL -->
+    <div id="registrationModal" class="fixed inset-0 z-50 hidden bg-emerald-950/70 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-xl rounded-3xl shadow-2xl border border-stone-200 overflow-hidden relative my-8 my-auto">
+            
+            <!-- Modal Header -->
+            <div class="p-6 bg-emerald-950 text-white flex justify-between items-center border-b border-emerald-900">
+                <div>
+                    <span class="text-[10px] uppercase font-mono tracking-widest text-gold-400" id="stepIndicator" data-i18n="modal_step1_label">LANGKAH 1 DIPERLUKAN</span>
+                    <h3 class="text-xl font-bold" data-i18n="modal_title">Pendaftaran KhairNgaji.co</h3>
+                </div>
+                <button onclick="closeRegistrationModal()" class="text-stone-400 hover:text-white p-1 rounded-lg">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body / Steps -->
+            <div class="p-6 sm:p-8 space-y-6">
+                
+                <!-- STEP 1: Guardian Info -->
+                <div id="formStep1" class="space-y-4">
+                    <h4 class="text-lg font-bold text-emerald-950 border-b border-stone-200 pb-2" data-i18n="step1_modal_h">Step 1: Maklumat Penjaga</h4>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-stone-700 mb-1" data-i18n="field_guardian_name">Nama Penjaga *</label>
+                        <input type="text" id="guardianName" placeholder="cth. Ahmad Razak" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-emerald-700 text-sm">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-stone-700 mb-1" data-i18n="field_whatsapp">Nombor WhatsApp *</label>
+                            <input type="tel" id="guardianPhone" placeholder="cth. 0123456789" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-emerald-700 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-stone-700 mb-1" data-i18n="field_email">Emel</label>
+                            <input type="email" id="guardianEmail" placeholder="nama@gmail.com" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-emerald-700 text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-stone-700 mb-1" data-i18n="field_state">Negeri *</label>
+                        <select id="guardianState" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-emerald-700 text-sm bg-white">
+                            <option value="">-- Pilih Negeri --</option>
+                            <option value="Melaka">Melaka</option>
+                            <option value="Selangor">Selangor</option>
+                            <option value="Kuala Lumpur">Kuala Lumpur</option>
+                            <option value="Johor">Johor</option>
+                            <option value="Penang">Penang</option>
+                            <option value="Perak">Perak</option>
+                            <option value="Kedah">Kedah</option>
+                            <option value="Pahang">Pahang</option>
+                            <option value="Terengganu">Terengganu</option>
+                            <option value="Kelantan">Kelantan</option>
+                            <option value="Negeri Sembilan">Negeri Sembilan</option>
+                            <option value="Perlis">Perlis</option>
+                            <option value="Sabah">Sabah</option>
+                            <option value="Sarawak">Sarawak</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Children Info (Dynamic) -->
+                <div id="formStep2" class="space-y-4 hidden">
+                    <h4 class="text-lg font-bold text-emerald-950 border-b border-stone-200 pb-2" data-i18n="step2_modal_h">Step 2: Maklumat Anak</h4>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-stone-700 mb-2" data-i18n="field_child_count">Berapa orang anak yang ingin didaftarkan?</label>
+                        <div class="grid grid-cols-4 gap-2" id="childCountBtnGroup">
+                            <button type="button" onclick="setChildCount(1)" class="child-count-btn py-2.5 rounded-xl border border-stone-300 font-bold text-sm bg-emerald-900 text-white" data-count="1">1 Anak</button>
+                            <button type="button" onclick="setChildCount(2)" class="child-count-btn py-2.5 rounded-xl border border-stone-300 font-bold text-sm bg-white text-stone-700 hover:bg-stone-100" data-count="2">2 Anak</button>
+                            <button type="button" onclick="setChildCount(3)" class="child-count-btn py-2.5 rounded-xl border border-stone-300 font-bold text-sm bg-white text-stone-700 hover:bg-stone-100" data-count="3">3 Anak</button>
+                            <button type="button" onclick="setChildCount(4)" class="child-count-btn py-2.5 rounded-xl border border-stone-300 font-bold text-sm bg-white text-stone-700 hover:bg-stone-100" data-count="4">4 Anak</button>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Children Inputs Container -->
+                    <div id="childrenFieldsContainer" class="space-y-3 pt-2">
+                        <!-- Dynamically Generated via JS -->
+                    </div>
+                </div>
+
+                <!-- STEP 3: Package Selection -->
+                <div id="formStep3" class="space-y-4 hidden">
+                    <h4 class="text-lg font-bold text-emerald-950 border-b border-stone-200 pb-2" data-i18n="step3_modal_h">Step 3: Pilihan Pakej</h4>
+                    
+                    <div class="space-y-3">
+                        <label onclick="selectPackageOption('Al-Bayan')" class="pkg-radio-card block p-4 rounded-2xl border-2 border-stone-200 hover:border-emerald-700 cursor-pointer transition-all bg-white" id="opt-Al-Bayan">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <input type="radio" name="pkgRadio" value="Al-Bayan" class="w-4 h-4 text-emerald-800">
+                                    <div>
+                                        <div class="font-extrabold text-emerald-950">Pakej Al-Bayan</div>
+                                        <div class="text-xs text-stone-500" data-i18n="pkg_a_summary">7 Sesi Mengaji (15 Minit/sesi)</div>
+                                    </div>
+                                </div>
+                                <div class="font-extrabold text-emerald-950 text-right">
+                                    RM47 <span class="text-[10px] text-stone-500 font-normal block" data-i18n="per_child_mo">/anak/bulan</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label onclick="selectPackageOption('Al-Hidayah')" class="pkg-radio-card block p-4 rounded-2xl border-2 border-gold-500 bg-emerald-950 text-white cursor-pointer transition-all" id="opt-Al-Hidayah">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <input type="radio" name="pkgRadio" value="Al-Hidayah" checked class="w-4 h-4 text-gold-500">
+                                    <div>
+                                        <div class="font-extrabold text-cream-50 flex items-center gap-2">
+                                            <span>Pakej Al-Hidayah</span>
+                                            <span class="text-[9px] bg-gold-500 text-emerald-950 font-bold px-1.5 py-0.5 rounded">POPULAR</span>
+                                        </div>
+                                        <div class="text-xs text-stone-300" data-i18n="pkg_b_summary">7 Sesi Mengaji + 4 Sesi Fardhu Ain</div>
+                                    </div>
+                                </div>
+                                <div class="font-extrabold text-gold-400 text-right">
+                                    RM70 <span class="text-[10px] text-stone-300 font-normal block" data-i18n="per_child_mo">/anak/bulan</span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- STEP 4: Start Date -->
+                <div id="formStep4" class="space-y-4 hidden">
+                    <h4 class="text-lg font-bold text-emerald-950 border-b border-stone-200 pb-2" data-i18n="step4_modal_h">Step 4: Tarikh Mula</h4>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-stone-700 mb-1" data-i18n="field_start_date">Bilakah anda bersedia untuk memulakan kelas? *</label>
+                        <input type="date" id="startDateInput" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-emerald-700 text-sm">
+                    </div>
+                </div>
+
+                <!-- STEP 5: Confirmation Summary -->
+                <div id="formStep5" class="space-y-4 hidden">
+                    <h4 class="text-lg font-bold text-emerald-950 border-b border-stone-200 pb-2" data-i18n="step5_modal_h">Step 5: Pengesahan Pendaftaran</h4>
+                    
+                    <div class="p-4 rounded-2xl bg-cream-50 border border-stone-200 space-y-2 text-xs text-stone-700" id="summaryContainer">
+                        <!-- Dynamically Generated Summary -->
+                    </div>
+
+                    <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-emerald-900 text-xs flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-700 shrink-0"></i>
+                        <span data-i18n="summary_note">Satu mesej rasmi akan disediakan secara automatik apabila anda menekan butang di bawah.</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer Controls -->
+            <div class="p-6 bg-stone-50 border-t border-stone-200 flex items-center justify-between">
+                <button type="button" id="prevStepBtn" onclick="navigateStep(-1)" class="px-5 py-2.5 rounded-full border border-stone-300 text-stone-600 font-semibold text-xs hover:bg-stone-100 hidden" data-i18n="btn_back">
+                    Kembali
+                </button>
+                <div class="w-2"></div>
+                <button type="button" id="nextStepBtn" onclick="navigateStep(1)" class="px-6 py-2.5 rounded-full bg-emerald-900 hover:bg-emerald-850 text-white font-semibold text-xs shadow-md flex items-center gap-2">
+                    <span id="nextBtnText" data-i18n="btn_next">Teruskan</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC & LANGUAGE TRANSLATION ENGINE -->
+    <script>
+        // Language Data Translations dictionary
+        const translations = {
+            ms: {
+                tagline_short: "Membentuk Bacaan Sejak Awal",
+                nav_about: "Tentang",
+                nav_classes: "Kelas",
+                nav_schedule: "Jadual",
+                nav_packages: "Pakej",
+                nav_progress: "Perkembangan",
+                nav_faq: "FAQ",
+                btn_register_now: "Daftar Sekarang",
+                btn_view_packages: "Lihat Pakej",
+                hero_badge: "Pengajian Al-Quran Online Kanak-Kanak 2026",
+                hero_title: "Membentuk Bacaan Al-Quran Sejak Usia Awal.",
+                hero_subtitle: "Kelas Al-Quran online untuk membantu anak membina makhraj, bacaan dan asas ilmu Al-Quran secara tersusun — terus dari rumah.",
+                trust_1: "1-to-1 / Sesi Bimbingan",
+                trust_2: "Tenaga Pengajar Hafiz Bertauliah",
+                trust_3: "Laporan Perkembangan Bulanan",
+                hero_live_session: "Sesi Interaktif Online • KhairNgaji.co",
+                hero_focus_badge: "Fokus Utama Pembelajaran",
+                hero_card_title: "Membina Makhraj & Kelancaran Bacaan",
+                hero_card_desc: "“Lidah yang dibentuk sejak kecil akan menjadi asas kepada bacaan Al-Quran yang lebih mantap pada masa hadapan.”",
+                hero_card_sessions: "7 Sesi Sebulan",
+                hero_box_label: "Sebutan Makhraj Huruf",
+                hero_box_sub: "Penekanan Sifat Huruf • Tajwid Asas",
+                hero_check_1: "Bimbingan Mesra",
+                hero_check_2: "Pemantauan Berterusan",
+                why_tag: "Keistimewaan Kami",
+                why_title: "Kenapa KhairNgaji?",
+                why_subtitle: "Kami mereka pengalaman pembelajaran online yang tersusun supaya anak-anak tidak ketinggalan asas Al-Quran dan Fardhu Ain.",
+                why_1_title: "Makhraj Dari Awal",
+                why_1_desc: "Membentuk sebutan huruf Al-Quran dengan lebih tepat dan tajwid yang sahih sejak usia muda.",
+                why_2_title: "Pembelajaran Tersusun",
+                why_2_desc: "Kelas disusun secara konsisten dengan fokus langkah demi langkah kepada asas penting.",
+                why_3_title: "Online & Fleksibel",
+                why_3_desc: "Anak boleh belajar dari keselesaan rumah tanpa perlu perjalanan fizikal ke madrasah.",
+                why_4_title: "Pemantauan Bulanan",
+                why_4_desc: "Ibu bapa menerima Monthly Progress Update tentang tahap kelancaran dan makhraj anak.",
+                why_5_title: "Al-Quran & Fardhu Ain",
+                why_5_desc: "Pakej tertentu turut merangkumi pembelajaran asas ibadah, wuduk, solat & akhlak harian.",
+                founder_badge_label: "Pengasas & Ustaz",
+                founder_name: "Muhammad Khair Hakimi",
+                badge_hafiz: "Hafiz 30 Juzuk",
+                badge_syahadah: "Syahadah Al-Qamar",
+                badge_qiraat: "Qiraat 7 Riwayat 14",
+                founder_section_tag: "Pengasas KhairNgaji",
+                founder_heading: "Muhammad Khair Hakimi bin Abd Malek",
+                founder_p1: "KhairNgaji diasaskan oleh Muhammad Khair Hakimi bin Abd Malek, seorang Hafiz Al-Quran yang menamatkan hafazan 30 juzuk Al-Quran dan menerima syahadah di Pusat Tahfizul Quran Al-Qamar, Melaka.",
+                founder_p2: "Beliau turut menamatkan pengajian Qiraat 7 Riwayat 14 Perawi di Maahad An-Nur, Jerantut.",
+                founder_p3: "Melalui KhairNgaji, beliau ingin membantu membentuk asas bacaan Al-Quran kanak-kanak sejak usia awal, khususnya dari sudut makhraj, bacaan dan asas ilmu Al-Quran.",
+                founder_stat1: "Tahun Ditubuhkan",
+                founder_stat2: "Hafazan Lengkap",
+                founder_stat3: "Pengajian Qiraat 7",
+                journey_tag: "Perjalanan Pelajar",
+                journey_title: "Langkah Pembelajaran Tersusun",
+                journey_subtitle: "Anak dibimbing secara bertahap untuk memastikan bacaan bukan sekadar habis, tetapi betul & tepat.",
+                step1_title: "Kenal Huruf",
+                step1_desc: "Memahami bentuk dan sifat asas huruf Al-Quran.",
+                step2_title: "Bentuk Makhraj",
+                step2_desc: "Melatih posisi lidah dan sebutan yang tepat.",
+                step3_title: "Perbaiki Bacaan",
+                step3_desc: "Membetulkan kesalahan sebutan secara berhemah.",
+                step4_title: "Mantapkan Tajwid",
+                step4_desc: "Menerapkan hukum tajwid asas dalam bacaan.",
+                step5_title: "Pantau Perkembangan",
+                step5_desc: "Penilaian prestasi bulanan diberikan kepada ibu bapa.",
+                step6_title: "Bina Keyakinan",
+                step6_desc: "Anak lebih lancar, yakin dan mencintai Al-Quran.",
+                sched_tag: "Jadual Kelas",
+                sched_title: "Masa & Hari Pengajian",
+                sched_subtitle: "7 Sesi Sebulan • 15 Minit Setiap Sesi • 2 Minggu Sekali + 1 Minggu Akhir",
+                day_mon: "ISNIN",
+                day_wed: "RABU",
+                day_thu: "KHAMIS",
+                time_slot: "6:30 PM – 8:30 PM",
+                slot_desc: "Pilihan slot 15 minit",
+                sched_note: "Pemilihan waktu spesifik akan diselaraskan bersama pihak KhairNgaji selepas pendaftaran completed di WhatsApp.",
+                prog_badge: "Monthly Student Progress Report",
+                prog_title: "Pantau Perkembangan Bacaan Anak Anda Setiap Bulan.",
+                prog_desc: "Ibu bapa tidak lagi tertanya-tanya sejauh mana anak menguasai bacaan. Pada setiap hujung bulan, anda akan menerima ringkasan penilaian terperinci merangkumi makhraj, tajwid, dan disiplin.",
+                prog_point1_t: "Penilaian Makhraj & Tajwid:",
+                prog_point1_d: "Ketepatan sebutan huruf Al-Quran.",
+                prog_point2_t: "Kelancaran & Disiplin:",
+                prog_point2_d: "Pemantauan konsistensi hadir kelas.",
+                prog_point3_t: "Ulasan Peribadi Ustaz:",
+                prog_point3_d: "Cadangan latihan spesifik untuk penambahbaikan.",
+                mock_title: "Laporan Perkembangan Pelajar",
+                mock_month: "Laporan Bulanan",
+                mock_makhraj: "Makhraj Huruf",
+                mock_bacaan: "Kelancaran Bacaan",
+                mock_tajwid: "Tajwid Asas",
+                mock_disiplin: "Kehadiran & Disiplin",
+                mock_excellent: "Cemerlang",
+                mock_overall: "Perkembangan Keseluruhan",
+                mock_teacher_note_title: "Nota Ustaz:",
+                mock_teacher_note_text: "“Ammar menunjukkan peningkatan ketara dalam sebutan huruf Haa (ح) dan 'Ain (ع). Teruskan latihan 5 minit di rumah sebelum tidur.”",
+                pkg_tag: "Pilihan Yuran",
+                pkg_title: "Pakej Pembelajaran KhairNgaji",
+                pkg_subtitle: "Pilih pakej yang sesuai dengan keperluan pendidikan Al-Quran & Fardhu Ain anak anda.",
+                pkg_a_badge: "Pakej Mengaji Asas",
+                pkg_a_desc: "Penjelasan dan penyampaian bacaan Al-Quran yang jelas.",
+                per_month: "/ bulan",
+                pkg_feat_quran: "Kelas Mengaji Al-Quran",
+                pkg_feat_7sess: "7 Sesi Sebulan",
+                pkg_feat_15min: "15 Minit Setiap Sesi",
+                pkg_feat_makhraj: "Fokus Makhraj & Tajwid Asas",
+                pkg_feat_reading: "Kelancaran Bacaan Al-Quran",
+                pkg_feat_progress: "Monthly Student Progress Update",
+                btn_choose_albayan: "Pilih Pakej Al-Bayan",
+                pkg_b_badge: "Lengkap: Mengaji + Fardhu Ain",
+                pkg_b_desc: "Bimbingan Al-Quran lengkap beserta pembentukan ibadah harian.",
+                pkg_b_feat_everything: "Semua Pakej Al-Bayan (7 Sesi Mengaji)",
+                pkg_b_feat_fardhu: "PLUS Kelas Fardhu Ain (4 Sesi Sebulan)",
+                pkg_b_feat_wuduk: "Asas Wuduk, Tayammum & Solat",
+                pkg_b_feat_doas: "Rukun Islam, Iman & Doa Harian",
+                pkg_b_feat_akhlak: "Adab Harian & Akhlak Muslim",
+                btn_choose_alhidayah: "Pilih Pakej Al-Hidayah",
+                faq_tag: "Soalan Lazim",
+                faq_title: "Soalan Sering Ditanya (FAQ)",
+                faq_q1: "Adakah kelas dilakukan secara online?",
+                faq_a1: "Ya. Kelas dijalankan secara online sepenuhnya dan direka supaya anak boleh mengikuti pembelajaran dari rumah dengan selesa.",
+                faq_q2: "Berapa lama satu kelas?",
+                faq_a2: "Setiap sesi kelas mengaji berlangsung selama 15 minit secara fokus dan berkualiti untuk mengekalkan tumpuan anak-anak.",
+                faq_q3: "Berapa kali kelas mengaji dalam sebulan?",
+                faq_a3: "Terdapat 7 sesi sebulan untuk kelas mengaji Al-Quran.",
+                faq_q4: "Apakah hari dan waktu kelas?",
+                faq_a4: "Kelas diadakan pada hari Isnin, Rabu atau Khamis antara jam 6:30 PM hingga 8:30 PM.",
+                faq_q5: "Adakah terdapat kelas Fardhu Ain?",
+                faq_a5: "Ya. Pakej Al-Hidayah merangkumi kelas Fardhu Ain sebanyak 4 kali sebulan (1 kali setiap minggu).",
+                faq_q6: "Bolehkah mendaftarkan lebih daripada seorang anak?",
+                faq_a6: "Boleh. Borang pendaftaran kami membolehkan anda mendaftarkan sehingga 4 orang anak dalam satu sesi borang dengan maklumat individu yang lengkap.",
+                faq_q7: "Bagaimana saya boleh mendaftar?",
+                faq_a7: "Isi borang multi-step di website dan tekan “Hantar Pendaftaran ke WhatsApp”. Maklumat pendaftaran akan disediakan secara automatik dalam mesej WhatsApp anda.",
+                footer_tagline: "“Membentuk Bacaan Al-Quran Sejak Usia Awal.”",
+                footer_nav_title: "Pautan Pantas",
+                footer_contact_title: "Hubungi Kami",
+                footer_contact_desc: "Ada sebarang soalan berkenaan jadual atau tahap bacaan anak?",
+                btn_ask_whatsapp: "Tanya Tentang Kelas di WhatsApp",
+                modal_title: "Pendaftaran KhairNgaji.co",
+                modal_step1_label: "LANGKAH 1 DIPERLUKAN",
+                step1_modal_h: "Step 1: Maklumat Penjaga",
+                field_guardian_name: "Nama Penjaga *",
+                field_whatsapp: "Nombor WhatsApp *",
+                field_email: "Emel",
+                field_state: "Negeri *",
+                step2_modal_h: "Step 2: Maklumat Anak",
+                field_child_count: "Berapa orang anak yang ingin didaftarkan?",
+                step3_modal_h: "Step 3: Pilihan Pakej",
+                pkg_a_summary: "7 Sesi Mengaji (15 Minit/sesi)",
+                per_child_mo: "/anak/bulan",
+                pkg_b_summary: "7 Sesi Mengaji + 4 Sesi Fardhu Ain",
+                step4_modal_h: "Step 4: Tarikh Mula",
+                field_start_date: "Bilakah anda bersedia untuk memulakan kelas? *",
+                step5_modal_h: "Step 5: Pengesahan Pendaftaran",
+                summary_note: "Satu mesej rasmi akan disediakan secara automatik apabila anda menekan butang di bawah.",
+                btn_back: "Kembali",
+                btn_next: "Teruskan"
+            },
+            en: {
+                tagline_short: "Building Precise Recitation Early",
+                nav_about: "About",
+                nav_classes: "Classes",
+                nav_schedule: "Schedule",
+                nav_packages: "Packages",
+                nav_progress: "Progress",
+                nav_faq: "FAQ",
+                btn_register_now: "Register Now",
+                btn_view_packages: "View Packages",
+                hero_badge: "Kids Online Quran Classes 2026",
+                hero_title: "Nurturing Quranic Recitation From An Early Age.",
+                hero_subtitle: "Structured online Quran classes designed to help children master makhraj, tajweed, and foundational Islamic knowledge from home.",
+                trust_1: "1-to-1 / Guided Sessions",
+                trust_2: "Certified Hafiz Tutors",
+                trust_3: "Monthly Progress Reports",
+                hero_live_session: "Interactive Live Session • KhairNgaji.co",
+                hero_focus_badge: "Primary Learning Focus",
+                hero_card_title: "Building Proper Makhraj & Fluency",
+                hero_card_desc: "“A tongue trained in correct articulation during childhood forms the solid foundation for eloquent Quran recitation.”",
+                hero_card_sessions: "7 Sessions Monthly",
+                hero_box_label: "Makhraj & Letter Articulation",
+                hero_box_sub: "Letter Attributes • Basic Tajweed Rules",
+                hero_check_1: "Friendly Guidance",
+                hero_check_2: "Continuous Monitoring",
+                why_tag: "Our Advantages",
+                why_title: "Why Choose KhairNgaji?",
+                why_subtitle: "We craft structured online learning experiences ensuring children build strong Quranic & Fardhu Ain foundations.",
+                why_1_title: "Proper Makhraj Early On",
+                why_1_desc: "Correcting letter articulation points and authentic tajweed right from early childhood.",
+                why_2_title: "Structured Curriculum",
+                why_2_desc: "Systematic step-by-step progression focusing on crucial Quranic fundamentals.",
+                why_3_title: "Online & Flexible",
+                why_3_desc: "Learn safely and comfortably from home without long commutes to physical madrasahs.",
+                why_4_title: "Monthly Tracking",
+                why_4_desc: "Parents receive detailed Monthly Student Progress Updates on fluency and pronunciation.",
+                why_5_title: "Quran & Fardhu Ain",
+                why_5_desc: "Select packages cover core Islamic obligations, ablution (wudhu), prayer, and everyday manners.",
+                founder_badge_label: "Founder & Lead Ustaz",
+                founder_name: "Muhammad Khair Hakimi",
+                badge_hafiz: "30 Juz Hafiz",
+                badge_syahadah: "Al-Qamar Syahadah",
+                badge_qiraat: "Qiraat 7 (14 Riwayat)",
+                founder_section_tag: "KhairNgaji Founder",
+                founder_heading: "Muhammad Khair Hakimi bin Abd Malek",
+                founder_p1: "KhairNgaji was founded by Muhammad Khair Hakimi bin Abd Malek, a certified Hafiz Al-Quran who completed the memorization of all 30 Juzuk and received his official Syahadah at Pusat Tahfizul Quran Al-Qamar, Melaka.",
+                founder_p2: "He also completed advanced Qiraat studies (Qiraat 7 Riwayat 14 Perawi) at Maahad An-Nur, Jerantut.",
+                founder_p3: "Through KhairNgaji, he is dedicated to instilling correct Quranic recitation fundamentals in young children, focusing specifically on makhraj, tajweed, and foundational Islamic knowledge.",
+                founder_stat1: "Founded Year",
+                founder_stat2: "Complete Memorization",
+                founder_stat3: "Qiraat 7 Certification",
+                journey_tag: "Student Pathway",
+                journey_title: "Structured Learning Roadmap",
+                journey_subtitle: "Step-by-step guidance ensuring children recite accurately rather than rushing through pages.",
+                step1_title: "Letter Recognition",
+                step1_desc: "Understanding Arabic letter shapes and core sounds.",
+                step2_title: "Makhraj Formation",
+                step2_desc: "Training exact tongue placement and vocal points.",
+                step3_title: "Recitation Correction",
+                step3_desc: "Gently correcting pronunciation mistakes.",
+                step4_title: "Mastering Tajweed",
+                step4_desc: "Applying foundational tajweed rules in reading.",
+                step5_title: "Progress Tracking",
+                step5_desc: "Monthly evaluations shared directly with parents.",
+                step6_title: "Building Confidence",
+                step6_desc: "Nurturing fluent, confident, and enthusiastic learners.",
+                sched_tag: "Class Timetable",
+                sched_title: "Schedules & Timeslots",
+                sched_subtitle: "7 Sessions / Month • 15 Minutes / Session • Every 2 Weeks + 1 Final Week Session",
+                day_mon: "MONDAY",
+                day_wed: "WEDNESDAY",
+                day_thu: "THURSDAY",
+                time_slot: "6:30 PM – 8:30 PM",
+                slot_desc: "15-minute slot selection",
+                sched_note: "Specific time slots are coordinated directly via WhatsApp upon completing registration.",
+                prog_badge: "Monthly Student Progress Report",
+                prog_title: "Track Your Child's Quran Learning Journey Every Month.",
+                prog_desc: "Parents no longer have to guess their child's progress. At the end of every month, you receive a detailed evaluation report covering makhraj, tajweed, and attendance discipline.",
+                prog_point1_t: "Makhraj & Tajweed Rating:",
+                prog_point1_d: "Accuracy of Arabic letter articulation.",
+                prog_point2_t: "Fluency & Discipline:",
+                prog_point2_d: "Monitoring class attendance & consistency.",
+                prog_point3_t: "Ustaz's Personal Notes:",
+                prog_point3_d: "Tailored practice advice for home revision.",
+                mock_title: "Student Progress Report",
+                mock_month: "Monthly Report",
+                mock_makhraj: "Makhraj & Pronunciation",
+                mock_bacaan: "Recitation Fluency",
+                mock_tajwid: "Basic Tajweed",
+                mock_disiplin: "Attendance & Discipline",
+                mock_excellent: "Excellent",
+                mock_overall: "Overall Growth",
+                mock_teacher_note_title: "Ustaz's Feedback:",
+                mock_teacher_note_text: "“Ammar showed remarkable improvement in pronouncing Haa (ح) and 'Ain (ع). Keep up the 5-minute daily practice before bed.”",
+                pkg_tag: "Tuition Plans",
+                pkg_title: "KhairNgaji Learning Packages",
+                pkg_subtitle: "Select the ideal package for your child's Quran and Fardhu Ain foundation.",
+                pkg_a_badge: "Basic Quran Package",
+                pkg_a_desc: "Clear explanation and structured Quran recitation guidance.",
+                per_month: "/ month",
+                pkg_feat_quran: "Online Quran Recitation Class",
+                pkg_feat_7sess: "7 Sessions Per Month",
+                pkg_feat_15min: "15 Minutes Per Session",
+                pkg_feat_makhraj: "Focus on Makhraj & Basic Tajweed",
+                pkg_feat_reading: "Fluency & Reading Accuracy",
+                pkg_feat_progress: "Monthly Student Progress Update",
+                btn_choose_albayan: "Choose Al-Bayan Package",
+                pkg_b_badge: "Comprehensive: Quran + Fardhu Ain",
+                pkg_b_desc: "Complete Quran guidance plus essential daily Islamic obligations.",
+                pkg_b_feat_everything: "Everything in Al-Bayan (7 Quran Sessions)",
+                pkg_b_feat_fardhu: "PLUS Fardhu Ain Class (4 Monthly Sessions)",
+                pkg_b_feat_wuduk: "Wudhu, Tayammum & Solat Essentials",
+                pkg_b_feat_doas: "Pillars of Islam, Iman & Daily Duas",
+                pkg_b_feat_akhlak: "Daily Islamic Manners & Ethics",
+                btn_choose_alhidayah: "Choose Al-Hidayah Package",
+                faq_tag: "Frequently Asked Questions",
+                faq_title: "Frequently Asked Questions (FAQ)",
+                faq_q1: "Are classes conducted online?",
+                faq_a1: "Yes. Classes are held 100% online so your child can learn comfortably from home.",
+                faq_q2: "How long is each session?",
+                faq_a2: "Each session runs for 15 minutes of focused 1-on-1 attention to maintain high engagement.",
+                faq_q3: "How many sessions are held monthly?",
+                faq_a3: "There are 7 sessions per month for the Quran recitation program.",
+                faq_q4: "What are the class days and times?",
+                faq_a4: "Classes take place on Mondays, Wednesdays, or Thursdays between 6:30 PM and 8:30 PM.",
+                faq_q5: "Is there a Fardhu Ain class available?",
+                faq_a5: "Yes. The Al-Hidayah package includes 4 monthly Fardhu Ain sessions (1 session weekly).",
+                faq_q6: "Can I register more than one child?",
+                faq_a6: "Yes. Our multi-step registration allows you to register up to 4 children in a single form with individual details.",
+                faq_q7: "How do I sign up?",
+                faq_a7: "Fill in the multi-step registration form and click 'Send Registration to WhatsApp'. A pre-formatted message will instantly open in your WhatsApp.",
+                footer_tagline: "“Nurturing Quranic Recitation From An Early Age.”",
+                footer_nav_title: "Quick Links",
+                footer_contact_title: "Contact Us",
+                footer_contact_desc: "Have questions regarding class schedules or your child's level?",
+                btn_ask_whatsapp: "Enquire via WhatsApp",
+                modal_title: "KhairNgaji.co Registration",
+                modal_step1_label: "STEP 1 REQUIRED",
+                step1_modal_h: "Step 1: Guardian Details",
+                field_guardian_name: "Guardian Name *",
+                field_whatsapp: "WhatsApp Number *",
+                field_email: "Email Address",
+                field_state: "State *",
+                step2_modal_h: "Step 2: Children Details",
+                field_child_count: "How many children are you registering?",
+                step3_modal_h: "Step 3: Package Selection",
+                pkg_a_summary: "7 Quran Sessions (15 mins each)",
+                per_child_mo: "/child/month",
+                pkg_b_summary: "7 Quran Sessions + 4 Fardhu Ain Sessions",
+                step4_modal_h: "Step 4: Start Date",
+                field_start_date: "When are you ready to start classes? *",
+                step5_modal_h: "Step 5: Registration Summary",
+                summary_note: "An official WhatsApp message will be formatted automatically when you press the button below.",
+                btn_back: "Back",
+                btn_next: "Continue"
+            }
+        };
+
+        let currentLang = 'ms';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const dict = translations[lang];
+
+            // Update language switcher buttons state
+            ['lang-ms', 'lang-ms-mobile'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (lang === 'ms') {
+                        el.className = "px-3 py-1 text-xs font-bold rounded-full transition-all bg-emerald-900 text-white shadow-sm";
+                    } else {
+                        el.className = "px-3 py-1 text-xs font-bold rounded-full transition-all text-stone-600 hover:text-stone-900";
+                    }
+                }
+            });
+
+            ['lang-en', 'lang-en-mobile'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (lang === 'en') {
+                        el.className = "px-3 py-1 text-xs font-bold rounded-full transition-all bg-emerald-900 text-white shadow-sm";
+                    } else {
+                        el.className = "px-3 py-1 text-xs font-bold rounded-full transition-all text-stone-600 hover:text-stone-900";
+                    }
+                }
+            });
+
+            // Update all element content with data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    el.textContent = dict[key];
+                }
+            });
+
+            // Re-render dynamic step buttons if modal is open or updated
+            updateStepIndicator();
+        }
+
+        // Initialize Lucide Icons
+        document.addEventListener("DOMContentLoaded", function() {
+            lucide.createIcons();
+            // Set default start date to today or tomorrow
+            const today = new Date();
+            today.setDate(today.getDate() + 1);
+            document.getElementById('startDateInput').value = today.toISOString().split('T')[0];
+            
+            // Build default 1 child form
+            renderChildrenFields(1);
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // FAQ Accordion Toggle
+        function toggleFaq(buttonEl) {
+            const content = buttonEl.nextElementSibling;
+            const icon = buttonEl.querySelector('i');
+            
+            const isHidden = content.classList.contains('hidden');
+            
+            // Close all
+            document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+            document.querySelectorAll('#faqAccordion button i').forEach(i => i.style.transform = 'rotate(0deg)');
+            
+            if (isHidden) {
+                content.classList.remove('hidden');
+                if (icon) icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // --- MULTI-STEP REGISTRATION FORM STATE & LOGIC ---
+        let currentStep = 1;
+        let selectedChildCount = 1;
+        let selectedPackage = 'Al-Hidayah';
+
+        function openRegistrationModal(pkgName) {
+            if (pkgName) {
+                selectedPackage = pkgName;
+                selectPackageOption(pkgName);
+            }
+            document.getElementById('registrationModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            goToStep(1);
+        }
+
+        function closeRegistrationModal() {
+            document.getElementById('registrationModal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function setChildCount(count) {
+            selectedChildCount = count;
+            // Update buttons style
+            document.querySelectorAll('.child-count-btn').forEach(btn => {
+                if (parseInt(btn.getAttribute('data-count')) === count) {
+                    btn.className = "child-count-btn py-2.5 rounded-xl border border-stone-300 font-bold text-sm bg-emerald-900 text-white shadow-sm";
+                } else {
+                    btn.className = "child-count-btn py-2.5 rounded-xl border border-stone-300 font-bold text-sm bg-white text-stone-700 hover:bg-stone-100";
+                }
+            });
+
+            renderChildrenFields(count);
+        }
+
+        function renderChildrenFields(count) {
+            const container = document.getElementById('childrenFieldsContainer');
+            container.innerHTML = '';
+
+            for (let i = 1; i <= count; i++) {
+                const childBox = document.createElement('div');
+                childBox.className = "p-4 rounded-xl bg-cream-50 border border-stone-200 space-y-3 animate-fadeIn";
+                childBox.innerHTML = `
+                    <div class="font-bold text-xs text-emerald-950 uppercase tracking-wider flex items-center justify-between">
+                        <span>Anak ${i}</span>
+                        <span class="text-[10px] text-stone-400 font-normal">Maklumat Individu</span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div class="sm:col-span-2">
+                            <label class="block text-[11px] font-semibold text-stone-600 mb-1">Nama Anak *</label>
+                            <input type="text" class="child-name-input w-full px-3 py-2 rounded-lg border border-stone-300 focus:outline-none focus:ring-1 focus:ring-emerald-700 text-sm" placeholder="cth. Muhammad Adam">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-stone-600 mb-1">Umur (Tahun) *</label>
+                            <input type="number" min="4" max="17" class="child-age-input w-full px-3 py-2 rounded-lg border border-stone-300 focus:outline-none focus:ring-1 focus:ring-emerald-700 text-sm" placeholder="7">
+                        </div>
+                    </div>
+                `;
+                container.appendChild(childBox);
+            }
+        }
+
+        function selectPackageOption(pkg) {
+            selectedPackage = pkg;
+            const optBayan = document.getElementById('opt-Al-Bayan');
+            const optHidayah = document.getElementById('opt-Al-Hidayah');
+            
+            if (pkg === 'Al-Bayan') {
+                optBayan.className = "pkg-radio-card block p-4 rounded-2xl border-2 border-emerald-800 bg-emerald-900 text-white cursor-pointer transition-all";
+                optBayan.querySelector('input').checked = true;
+                optHidayah.className = "pkg-radio-card block p-4 rounded-2xl border-2 border-stone-200 bg-white text-stone-900 cursor-pointer transition-all";
+            } else {
+                optHidayah.className = "pkg-radio-card block p-4 rounded-2xl border-2 border-gold-500 bg-emerald-950 text-white cursor-pointer transition-all";
+                optHidayah.querySelector('input').checked = true;
+                optBayan.className = "pkg-radio-card block p-4 rounded-2xl border-2 border-stone-200 bg-white text-stone-900 cursor-pointer transition-all";
+            }
+        }
+
+        function goToStep(step) {
+            currentStep = step;
+
+            // Hide all steps
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById(`formStep${i}`).classList.add('hidden');
+            }
+
+            // Show current step
+            document.getElementById(`formStep${currentStep}`).classList.remove('hidden');
+
+            // Button controls
+            const prevBtn = document.getElementById('prevStepBtn');
+            const nextBtnText = document.getElementById('nextBtnText');
+            
+            if (currentStep === 1) {
+                prevBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+            }
+
+            if (currentStep === 5) {
+                nextBtnText.textContent = currentLang === 'ms' ? 'Hantar Pendaftaran ke WhatsApp' : 'Send Registration via WhatsApp';
+                renderSummary();
+            } else {
+                nextBtnText.textContent = currentLang === 'ms' ? 'Teruskan' : 'Continue';
+            }
+
+            updateStepIndicator();
+        }
+
+        function updateStepIndicator() {
+            const ind = document.getElementById('stepIndicator');
+            const labelMs = `LANGKAH ${currentStep} DARIPADA 5`;
+            const labelEn = `STEP ${currentStep} OF 5`;
+            ind.textContent = currentLang === 'ms' ? labelMs : labelEn;
+        }
+
+        function navigateStep(direction) {
+            if (direction === 1) {
+                // Validate current step before proceeding
+                if (!validateStep(currentStep)) return;
+
+                if (currentStep < 5) {
+                    goToStep(currentStep + 1);
+                } else if (currentStep === 5) {
+                    // Generate WhatsApp and redirect
+                    submitToWhatsApp();
+                }
+            } else if (direction === -1) {
+                if (currentStep > 1) {
+                    goToStep(currentStep - 1);
+                }
+            }
+        }
+
+        function validateStep(step) {
+            if (step === 1) {
+                const name = document.getElementById('guardianName').value.trim();
+                const phone = document.getElementById('guardianPhone').value.trim();
+                const state = document.getElementById('guardianState').value;
+
+                if (!name || !phone || !state) {
+                    alert(currentLang === 'ms' ? "Sila lengkapkan Nama Penjaga, Nombor WhatsApp dan Negeri." : "Please fill in Guardian Name, WhatsApp Number and State.");
+                    return false;
+                }
+            } else if (step === 2) {
+                const nameInputs = document.querySelectorAll('.child-name-input');
+                const ageInputs = document.querySelectorAll('.child-age-input');
+                
+                for (let i = 0; i < nameInputs.length; i++) {
+                    if (!nameInputs[i].value.trim() || !ageInputs[i].value.trim()) {
+                        alert(currentLang === 'ms' ? `Sila lengkapkan Nama dan Umur untuk Anak ${i+1}.` : `Please complete Name and Age for Child ${i+1}.`);
+                        return false;
+                    }
+                }
+            } else if (step === 4) {
+                const date = document.getElementById('startDateInput').value;
+                if (!date) {
+                    alert(currentLang === 'ms' ? "Sila pilih tarikh mula." : "Please select a start date.");
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function renderSummary() {
+            const name = document.getElementById('guardianName').value;
+            const phone = document.getElementById('guardianPhone').value;
+            const state = document.getElementById('guardianState').value;
+            const startDate = document.getElementById('startDateInput').value;
+            
+            const nameInputs = document.querySelectorAll('.child-name-input');
+            const ageInputs = document.querySelectorAll('.child-age-input');
+            
+            let childrenListHtml = '';
+            for (let i = 0; i < nameInputs.length; i++) {
+                childrenListHtml += `<li class="font-semibold text-emerald-950">• ${nameInputs[i].value} (${ageInputs[i].value} tahun)</li>`;
+            }
+
+            const pricePerChild = selectedPackage === 'Al-Bayan' ? 47 : 70;
+            const totalPrice = pricePerChild * selectedChildCount;
+
+            const summaryContainer = document.getElementById('summaryContainer');
+            summaryContainer.innerHTML = `
+                <div class="grid grid-cols-2 gap-2 border-b border-stone-200 pb-2">
+                    <div><span class="text-stone-500 block">Penjaga:</span> <strong>${name}</strong></div>
+                    <div><span class="text-stone-500 block">WhatsApp:</span> <strong>${phone}</strong></div>
+                    <div><span class="text-stone-500 block">Negeri:</span> <strong>${state}</strong></div>
+                    <div><span class="text-stone-500 block">Tarikh Mula:</span> <strong>${startDate}</strong></div>
+                </div>
+                <div class="py-2 border-b border-stone-200">
+                    <span class="text-stone-500 block mb-1">Anak Didaftarkan (${selectedChildCount}):</span>
+                    <ul class="space-y-1 pl-1">
+                        ${childrenListHtml}
+                    </ul>
+                </div>
+                <div class="flex justify-between items-center pt-1 font-bold text-sm">
+                    <span>Pakej: ${selectedPackage} (${selectedChildCount}x RM${pricePerChild})</span>
+                    <span class="text-emerald-900 text-base">RM${totalPrice} / bulan</span>
+                </div>
+            `;
+        }
+
+        function submitToWhatsApp() {
+            const name = document.getElementById('guardianName').value.trim();
+            const phone = document.getElementById('guardianPhone').value.trim();
+            const state = document.getElementById('guardianState').value;
+            const startDate = document.getElementById('startDateInput').value;
+
+            const nameInputs = document.querySelectorAll('.child-name-input');
+            const ageInputs = document.querySelectorAll('.child-age-input');
+
+            let childrenText = '';
+            for (let i = 0; i < nameInputs.length; i++) {
+                childrenText += `• ${nameInputs[i].value} – ${ageInputs[i].value} tahun\n`;
+            }
+
+            const pricePerChild = selectedPackage === 'Al-Bayan' ? 47 : 70;
+            const totalPrice = pricePerChild * selectedChildCount;
+
+            // WhatsApp formatted template string (Strictly adhering to prompt spec)
+            const waMessage = 
+`Assalamualaikum KhairNgaji.co,
+Saya ${name} ingin mendaftarkan anak saya untuk kelas di KhairNgaji.co.
+
+Maklumat pendaftaran:
+Nama Penjaga:
+${name}
+
+No. WhatsApp:
+${phone}
+
+Negeri:
+${state}
+
+Maklumat Anak (${selectedChildCount} Orang):
+${childrenText}
+Pakej:
+${selectedPackage} (RM${pricePerChild}/anak)
+
+Jumlah Harga:
+RM${totalPrice} / bulan
+
+Saya bersedia untuk memulakan kelas pada:
+${startDate}
+
+Terima kasih.`;
+
+            const encodedMessage = encodeURIComponent(waMessage);
+            const waUrl = `https://wa.me/601158945036?text=${encodedMessage}`;
+
+            // Open WhatsApp in new tab
+            window.open(waUrl, '_blank');
+            closeRegistrationModal();
+        }
+    </script>
+</body>
+</html>
