@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K Finance | Apps Kewangan Peribadi + iOS Shortcut | KhairNgaji.co</title>
+<meta name="description" content="K Finance: rekod gaji, belanja, hutang dan tabung. Dengan iOS Shortcut, setiap belanja direkod automatik tanpa buka app.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{emerald:{850:'#064e3b',900:'#022c22',950:'#011c16'},cream:{50:'#fdfbf7',100:'#f7f4eb'},gold:{400:'#facc15',500:'#d97706',600:'#b45309'}},fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],serif:['Fraunces','serif']}}}}
+</script>
+<style>
+.glass-nav{background:rgba(253,251,247,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.hero-bg{background:radial-gradient(900px 500px at 70% 0%,rgba(217,119,6,.22),transparent 60%),radial-gradient(800px 500px at 10% 20%,rgba(16,185,129,.18),transparent 60%),#011c16}
+.stage{perspective:1400px}
+.scene{transform-style:preserve-3d;transform:rotateY(var(--ry,-14deg)) rotateX(var(--rx,6deg));transition:transform .25s ease-out}
+.phone{width:270px;height:550px;border-radius:44px;background:linear-gradient(145deg,#1d2a22,#0a0e0c);padding:10px;box-shadow:0 60px 90px -30px rgba(0,0,0,.7),inset 0 0 0 2px #35452f,0 0 80px -10px rgba(217,119,6,.35);transform-style:preserve-3d}
+.screen{width:100%;height:100%;border-radius:36px;background:#0a0e0c;overflow:hidden;position:relative;padding:18px 14px;color:#f1ecdf}
+.chip3d{position:absolute;transform:translateZ(var(--z,70px));animation:bob 6s ease-in-out infinite;animation-delay:var(--d,0s)}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -12px}}
+.rv{opacity:0;transform:translateY(28px) scale(.98);transition:all .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.tilt{transition:transform .25s ease-out,box-shadow .25s;transform-style:preserve-3d}
+.tilt:hover{transform:perspective(900px) rotateX(-4deg) rotateY(5deg) translateY(-6px);box-shadow:0 30px 50px -25px rgba(2,44,34,.45)}
+.shine{background:linear-gradient(110deg,#facc15,#fff3b0 40%,#d97706 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cursor::after{content:"";display:inline-block;width:2px;height:1em;background:#facc15;margin-left:2px;animation:blink 1s steps(1) infinite;vertical-align:-2px}
+@keyframes blink{50%{opacity:0}}
+.pulse-ring{animation:ring 2.4s ease-out infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(250,204,21,.5)}100%{box-shadow:0 0 0 22px rgba(250,204,21,0)}}
+@media (prefers-reduced-motion:reduce){.scene,.chip3d,.rv,.tilt,.pulse-ring{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@media(max-width:640px){.phone{width:230px;height:470px}.chip3d{display:none}}
+</style>
+</head>
+<body class="bg-cream-50 text-slate-800 font-sans antialiased selection:bg-emerald-600 selection:text-white">
+
+<header class="sticky top-0 z-40 glass-nav border-b border-stone-200/60">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <a href="index.html" class="flex items-center gap-3">
+   <div class="w-10 h-10 rounded-xl bg-emerald-900 text-gold-400 flex items-center justify-center font-bold text-xl border border-emerald-700/50">K</div>
+   <div><span class="text-xl font-extrabold tracking-tight text-emerald-950 block leading-tight">KhairNgaji<span class="text-gold-600">.co</span></span>
+   <span class="text-[10px] font-medium tracking-wider text-stone-500 uppercase block">Powered by Khair</span></div>
+  </a>
+  <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-stone-600">
+   <a href="index.html" class="hover:text-emerald-800" data-en="Home">Utama</a>
+   <a href="index.html#features" class="hover:text-emerald-800" data-en="Quran Classes">Kelas Mengaji</a>
+   <a href="kfinance.html" class="text-gold-600 font-bold">K Finance</a>
+   <a href="#contact" class="hover:text-emerald-800" data-en="Contact">Hubungi</a>
+  </nav>
+  <div class="flex items-center gap-3">
+   <div class="bg-stone-200/70 p-1 rounded-full flex border border-stone-300/60">
+    <button onclick="setL('ms')" id="b-ms" class="px-3 py-1 text-xs font-bold rounded-full">MY</button>
+    <button onclick="setL('en')" id="b-en" class="px-3 py-1 text-xs font-bold rounded-full">EN</button>
+   </div>
+   <a href="#contact" class="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-emerald-900 text-white text-sm font-semibold shadow-md hover:-translate-y-0.5 transition" data-en="Get Access">Dapatkan Akses</a>
+  </div>
+ </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero-bg text-white overflow-hidden relative">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-14 items-center">
+  <div class="space-y-6 rv">
+   <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-semibold uppercase tracking-wider"><span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span><span data-en="Personal finance app + iOS Shortcut">Apps kewangan peribadi + iOS Shortcut</span></div>
+   <h1 class="font-serif text-5xl sm:text-6xl font-bold leading-[1.05]"><span data-en="Your money. Organised.">Duit anda. Tersusun.</span> <span class="shine" data-en="Recorded in 3 seconds.">Direkod dalam 3 saat.</span></h1>
+   <p class="text-lg text-stone-300 max-w-xl" data-en="K Finance tracks your salary, spending, debts and savings. With the iOS Shortcut, every expense is saved automatically, with no need to open the app.">K Finance merekod gaji, belanja, hutang dan tabung anda. Dengan iOS Shortcut, setiap belanja direkod automatik tanpa perlu buka app.</p>
+   <div class="flex flex-col sm:flex-row gap-4 pt-2">
+    <a href="#contact" class="px-8 py-4 rounded-full bg-gradient-to-r from-gold-500 to-amber-400 text-emerald-950 font-extrabold text-center shadow-xl hover:scale-[1.03] transition pulse-ring" data-en="Get Access via WhatsApp">Dapatkan Akses di WhatsApp</a>
+    <a href="https://khairngajico.github.io/Financial/" target="_blank" rel="noopener" class="px-8 py-4 rounded-full bg-white/10 border border-white/25 font-semibold text-center hover:bg-white/20 transition" data-en="Open the App">Buka App</a>
+   </div>
+   <div class="flex flex-wrap gap-5 pt-3 text-xs text-stone-300">
+    <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-gold-400"></i><span data-en="Private account for every user">Akaun peribadi setiap pengguna</span></span>
+    <span class="flex items-center gap-1.5"><i data-lucide="smartphone" class="w-4 h-4 text-gold-400"></i><span data-en="Installs on your Home Screen">Pasang di Home Screen</span></span>
+    <span class="flex items-center gap-1.5"><i data-lucide="moon" class="w-4 h-4 text-gold-400"></i><span data-en="Dark &amp; light mode">Mod gelap &amp; cerah</span></span>
+   </div>
+  </div>
+
+  <!-- 3D phone -->
+  <div class="stage flex justify-center rv" id="stage">
+   <div class="scene relative" id="scene">
+    <div class="phone mx-auto">
+     <div class="screen">
+      <div class="flex justify-between items-center text-[11px] text-stone-400"><b id="clk" class="font-serif text-2xl text-white">--:--</b><span class="px-2 py-0.5 rounded-full bg-white/10">K Finance</span></div>
+      <div class="mt-4 rounded-2xl p-4 bg-gradient-to-br from-[#1d2a22] to-[#111813] border border-[#35452f]">
+       <div class="text-[11px] text-stone-400" data-en="Money you have now">Duit anda sekarang</div>
+       <div class="font-serif text-3xl text-[#e2bd75] font-bold" id="bal">RM 4,820.50</div>
+       <div class="text-[10px] text-stone-400 mt-1">In RM6,200 · Spent RM1,379.50</div>
+      </div>
+      <div class="grid grid-cols-2 gap-2 mt-3 text-[11px]">
+       <div class="rounded-xl p-3 bg-[#131a16] border border-[#243029]"><div class="text-stone-400" data-en="Total debt">Jumlah hutang</div><div class="font-bold text-[#e8806a] text-sm">RM 850.00</div></div>
+       <div class="rounded-xl p-3 bg-[#131a16] border border-[#243029]"><div class="text-stone-400" data-en="Total savings">Jumlah tabung</div><div class="font-bold text-[#7fcfa0] text-sm">RM 2,300.00</div></div>
+      </div>
+      <div class="mt-3 rounded-xl p-3 bg-[#131a16] border border-[#243029] text-[11px] space-y-2" id="rows"></div>
+      <div class="absolute bottom-3 left-3 right-3 flex justify-around text-[9px] text-stone-400 border-t border-[#243029] pt-2"><span class="text-[#e2bd75]">Home</span><span>Income</span><span>Spending</span><span>Debts</span><span>Savings</span></div>
+     </div>
+    </div>
+    <div class="chip3d top-10 -left-10 bg-white text-emerald-950 rounded-2xl px-4 py-3 shadow-2xl text-xs font-bold" style="--z:90px"><div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i><span>Recorded: Lunch RM12.50</span></div></div>
+    <div class="chip3d bottom-24 -right-12 bg-gradient-to-br from-gold-500 to-amber-400 text-emerald-950 rounded-2xl px-4 py-3 shadow-2xl text-xs font-extrabold" style="--z:120px;--d:-2s"><div class="flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4"></i><span data-en="Auto-saved by Shortcut">Auto-rekod oleh Shortcut</span></div></div>
+    <div class="chip3d top-1/2 -right-16 bg-emerald-800 border border-emerald-600 text-white rounded-2xl px-4 py-3 shadow-2xl text-xs font-semibold" style="--z:60px;--d:-4s">Savings +RM100</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-20 bg-white border-y border-stone-200/80">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center max-w-2xl mx-auto mb-14 rv">
+   <h2 class="text-xs font-bold text-gold-600 uppercase tracking-widest mb-2" data-en="Features">Ciri-ciri</h2>
+   <p class="text-3xl sm:text-4xl font-extrabold text-emerald-950" data-en="Everything your money needs, in one place.">Semua yang duit anda perlukan, dalam satu tempat.</p>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="feat"></div>
+ </div>
+</section>
+
+<!-- SHORTCUT -->
+<section class="py-20 bg-emerald-950 text-white relative overflow-hidden">
+ <div class="absolute -left-24 top-10 w-96 h-96 rounded-full bg-emerald-700/20 blur-3xl"></div>
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center relative">
+  <div class="space-y-6 rv">
+   <span class="px-3 py-1 rounded-md bg-gold-500/20 text-gold-400 text-xs font-bold border border-gold-500/30">iOS Shortcut</span>
+   <h2 class="font-serif text-4xl sm:text-5xl font-bold leading-tight" data-en="Record without opening the app.">Rekod tanpa buka app.</h2>
+   <p class="text-stone-300" data-en="Add the K Finance shortcut to your iPhone. Trigger it from your Home Screen, a double tap on the back of your phone, or the Action Button. Type what you spent and how much, and it is saved silently to your account.">Tambah shortcut K Finance pada iPhone anda. Jalankan dari Home Screen, ketuk dua kali belakang telefon, atau Action Button. Taip belanja apa dan berapa, dan ia disimpan senyap ke akaun anda.</p>
+   <ol class="space-y-4">
+    <li class="flex gap-4"><span class="w-9 h-9 shrink-0 rounded-full bg-gold-500 text-emerald-950 font-extrabold flex items-center justify-center">1</span><div><b data-en="Tap">Tekan</b><p class="text-sm text-stone-300" data-en="Home Screen icon, Back Tap or Action Button.">Ikon Home Screen, Back Tap atau Action Button.</p></div></li>
+    <li class="flex gap-4"><span class="w-9 h-9 shrink-0 rounded-full bg-gold-500 text-emerald-950 font-extrabold flex items-center justify-center">2</span><div><b data-en="Type two answers">Taip dua jawapan</b><p class="text-sm text-stone-300" data-en="What you spent on, and how much (RM). Date and time are filled in for you.">Belanja apa, dan berapa (RM). Tarikh dan masa diisi sendiri.</p></div></li>
+    <li class="flex gap-4"><span class="w-9 h-9 shrink-0 rounded-full bg-gold-500 text-emerald-950 font-extrabold flex items-center justify-center">3</span><div><b data-en="Done">Siap</b><p class="text-sm text-stone-300" data-en="It appears in your app instantly, with your own custom sound.">Terus muncul dalam app, dengan bunyi custom pilihan anda.</p></div></li>
+   </ol>
+   <p class="text-xs text-stone-400" data-en="Shortcut setup guide is provided after your account is activated. Requires an iPhone with the Shortcuts app.">Panduan setup shortcut diberi selepas akaun anda diaktifkan. Memerlukan iPhone dengan app Shortcuts.</p>
+  </div>
+  <div class="stage rv"><div class="tilt rounded-3xl bg-[#0a0e0c] border border-[#35452f] p-6 shadow-2xl max-w-md mx-auto">
+   <div class="text-[11px] uppercase tracking-widest text-gold-400 font-bold mb-4">Spend · Shortcut</div>
+   <div class="space-y-3 text-sm">
+    <div class="rounded-xl bg-[#131a16] border border-[#243029] p-3"><div class="text-[11px] text-stone-400">Spent on what?</div><div class="cursor font-semibold" id="t1">&nbsp;</div></div>
+    <div class="rounded-xl bg-[#131a16] border border-[#243029] p-3"><div class="text-[11px] text-stone-400">How much (RM)?</div><div class="cursor font-semibold" id="t2">&nbsp;</div></div>
+    <div id="ok" class="rounded-xl bg-emerald-800/60 border border-emerald-600 p-3 flex items-center gap-2 opacity-0 transition-all duration-500 translate-y-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold-400"></i><span class="font-semibold" id="okt">Recorded</span></div>
+   </div>
+  </div></div>
+ </div>
+</section>
+
+<!-- HOW TO START -->
+<section class="py-20 bg-cream-50">
+ <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center mb-12 rv"><h2 class="text-3xl sm:text-4xl font-extrabold text-emerald-950" data-en="Start in 3 steps">Mula dalam 3 langkah</h2></div>
+  <div class="grid md:grid-cols-3 gap-6" id="steps"></div>
+ </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 bg-white border-t border-stone-200/80">
+ <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-5 gap-10 items-start">
+  <div class="lg:col-span-2 space-y-5 rv">
+   <h2 class="text-3xl sm:text-4xl font-extrabold text-emerald-950" data-en="Get your K Finance access">Dapatkan akses K Finance</h2>
+   <p class="text-stone-600" data-en="Send us your details and we will reply on WhatsApp with pricing and how to activate your account.">Hantar maklumat anda dan kami akan balas di WhatsApp dengan harga dan cara aktifkan akaun.</p>
+   <div class="space-y-3 text-sm">
+    <a href="https://wa.me/601158945036" target="_blank" rel="noopener" class="flex items-center gap-3 p-4 rounded-2xl bg-cream-50 border border-stone-200 hover:border-emerald-700/50 transition"><i data-lucide="message-circle" class="w-5 h-5 text-emerald-700"></i><div><b>WhatsApp</b><div class="text-stone-500">01158945036</div></div></a>
+    <a href="mailto:adminkhairngaji@gmail.com" class="flex items-center gap-3 p-4 rounded-2xl bg-cream-50 border border-stone-200 hover:border-emerald-700/50 transition"><i data-lucide="mail" class="w-5 h-5 text-emerald-700"></i><div><b>Email</b><div class="text-stone-500">adminkhairngaji@gmail.com</div></div></a>
+   </div>
+  </div>
+  <div class="lg:col-span-3 rv">
+   <div class="bg-gradient-to-br from-emerald-900 to-emerald-950 rounded-3xl p-6 sm:p-8 text-white shadow-2xl border border-emerald-800 space-y-4">
+    <div><label class="block text-xs font-semibold mb-1" data-en="Full name *">Nama penuh *</label><input id="fn" class="w-full px-4 py-3 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-gold-400" placeholder="Ahmad Razak"></div>
+    <div class="grid sm:grid-cols-2 gap-4">
+     <div><label class="block text-xs font-semibold mb-1" data-en="Phone number *">No. telefon *</label><input id="fp" type="tel" class="w-full px-4 py-3 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-gold-400" placeholder="0123456789"></div>
+     <div><label class="block text-xs font-semibold mb-1">Email</label><input id="fe" type="email" class="w-full px-4 py-3 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-gold-400" placeholder="nama@gmail.com"></div>
+    </div>
+    <div><label class="block text-xs font-semibold mb-1" data-en="Message (optional)">Mesej (pilihan)</label><textarea id="fm" rows="3" class="w-full px-4 py-3 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-gold-400" placeholder="..."></textarea></div>
+    <button onclick="sendWA()" class="w-full py-4 rounded-full bg-gradient-to-r from-gold-500 to-amber-400 text-emerald-950 font-extrabold shadow-lg hover:scale-[1.02] transition flex items-center justify-center gap-2"><i data-lucide="send" class="w-4 h-4"></i><span data-en="Send via WhatsApp">Hantar ke WhatsApp</span></button>
+    <p class="text-[11px] text-stone-300 text-center" data-en="Your message opens in WhatsApp. Nothing is sent until you press send there.">Mesej anda dibuka di WhatsApp. Tiada apa dihantar sehingga anda tekan hantar di sana.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-16 bg-cream-50"><div class="max-w-3xl mx-auto px-4 space-y-3" id="faq"></div></section>
+</main>
+
+<footer class="bg-emerald-950 text-stone-300 py-12 border-t border-emerald-900">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between gap-6 text-sm">
+  <div><div class="text-2xl font-extrabold text-white">KhairNgaji<span class="text-gold-400">.co</span></div><p class="text-stone-400 text-xs mt-2">WhatsApp: 01158945036 · Email: adminkhairngaji@gmail.com</p></div>
+  <div class="flex gap-6 text-stone-400"><a href="index.html" class="hover:text-gold-400" data-en="Quran Classes">Kelas Mengaji</a><a href="kfinance.html" class="hover:text-gold-400">K Finance</a><a href="#contact" class="hover:text-gold-400" data-en="Contact">Hubungi</a></div>
+ </div>
+ <p class="text-center text-xs text-stone-500 mt-8">&copy; 2026 KhairNgaji.co · Powered by Khair</p>
+</footer>
+
+<a href="https://wa.me/601158945036?text=Assalamualaikum%2C%20saya%20berminat%20dengan%20K%20Finance." target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-full shadow-2xl flex items-center gap-2 border border-emerald-400/30 hover:scale-105 transition"><i data-lucide="message-square" class="w-6 h-6"></i><span class="hidden sm:inline text-xs font-bold pr-1">Chat With Us</span></a>
+
+<script>
+const F=[["wallet","Live balance","Baki langsung","See how much money you have right now, updated in real time.","Lihat berapa duit anda ada sekarang, dikemas kini terus."],
+["banknote","Income your way","Pendapatan mengikut cara anda","Monthly salary, part-time by the hour or day, or a monthly business.","Gaji bulanan, part time per jam atau hari, atau business bulanan."],
+["clock","Smart debt tracking","Jejak hutang pintar","Monthly and unexpected debts, due dates, partial payments, history and proof photos.","Hutang bulanan dan tak dijangka, due date, bayar separuh, sejarah dan gambar bukti."],
+["piggy-bank","Savings pots","Tabung bermatlamat","Set targets, add or withdraw, and watch progress bars fill.","Tetapkan sasaran, tambah atau keluarkan, dan lihat bar progress penuh."],
+["sparkles","Premium design","Reka bentuk premium","Smooth animation, dark and light mode, built for your iPhone screen.","Animasi lancar, mod gelap dan cerah, direka untuk skrin iPhone."],
+["lock","Private by design","Peribadi dan selamat","Every user has a separate verified account. Nobody sees your data.","Setiap pengguna ada akaun disahkan yang berasingan. Tiada siapa nampak data anda."]];
+const S=[["Message us","Hubungi kami","Send your details on WhatsApp.","Hantar maklumat anda di WhatsApp."],["Activate","Aktifkan akaun","We activate your account after payment.","Kami aktifkan akaun selepas bayaran."],["Install &amp; record","Pasang &amp; rekod","Add to Home Screen, set up the shortcut, and start recording.","Tambah ke Home Screen, setup shortcut, dan mula merekod."]];
+const Q=[["Do I need to open the app to record spending?","Perlu buka app untuk rekod belanja?","No. With the iOS Shortcut you type two answers and it is saved automatically.","Tidak. Dengan iOS Shortcut anda taip dua jawapan dan ia disimpan automatik."],
+["Does it work on Android?","Boleh guna di Android?","The app works in any browser. The Shortcut feature is for iPhone only.","App berfungsi di mana-mana pelayar. Ciri Shortcut hanya untuk iPhone."],
+["Is my data private?","Data saya selamat?","Yes. Each account is verified and separate, so only you can see your records.","Ya. Setiap akaun disahkan dan berasingan, jadi hanya anda boleh nampak rekod anda."],
+["How much does it cost?","Berapa harganya?","Message us on WhatsApp and we will share current pricing.","Hubungi kami di WhatsApp dan kami akan kongsi harga semasa."]];
+const $=s=>document.querySelector(s);
+$('#feat').innerHTML=F.map(f=>`<div class="tilt rv p-6 rounded-2xl bg-cream-50 border border-stone-200"><div class="w-12 h-12 rounded-xl bg-emerald-900 text-gold-400 flex items-center justify-center mb-4"><i data-lucide="${f[0]}" class="w-6 h-6"></i></div><h3 class="font-bold text-emerald-950 mb-1" data-en="${f[1]}">${f[2]}</h3><p class="text-sm text-stone-600" data-en="${f[3]}">${f[4]}</p></div>`).join('');
+$('#steps').innerHTML=S.map((s,i)=>`<div class="tilt rv p-6 rounded-2xl bg-white border border-stone-200 text-center"><span class="w-10 h-10 rounded-full bg-emerald-900 text-gold-400 font-extrabold inline-flex items-center justify-center mb-3">${i+1}</span><h3 class="font-bold text-emerald-950" data-en="${s[0]}">${s[1]}</h3><p class="text-sm text-stone-600 mt-1" data-en="${s[2]}">${s[3]}</p></div>`).join('');
+$('#faq').innerHTML=Q.map(q=>`<details class="rv group rounded-2xl border border-stone-200 bg-white p-5"><summary class="font-bold text-emerald-950 cursor-pointer list-none flex justify-between items-center gap-4"><span data-en="${q[0]}">${q[1]}</span><i data-lucide="chevron-down" class="w-5 h-5 text-stone-500 group-open:rotate-180 transition"></i></summary><p class="text-sm text-stone-600 mt-3" data-en="${q[2]}">${q[3]}</p></details>`).join('');
+$('#rows').innerHTML=[["Lunch","−RM12.50"],["Fuel","−RM50.00"],["Salary","+RM3,200.00"]].map(r=>`<div class="flex justify-between"><span>${r[0]}</span><b class="${r[1][0]=='+'?'text-[#7fcfa0]':'text-[#e8806a]'}">${r[1]}</b></div>`).join('');
+
+let L='ms';try{L=localStorage.getItem('lang')||'ms'}catch(e){}
+function setL(l){L=l;try{localStorage.setItem('lang',l)}catch(e){}document.documentElement.lang=l;
+ document.querySelectorAll('[data-en]').forEach(e=>{if(!e.dataset.ms)e.dataset.ms=e.innerHTML;e.innerHTML=l==='en'?e.dataset.en:e.dataset.ms});
+ const on="px-3 py-1 text-xs font-bold rounded-full bg-emerald-900 text-white",off="px-3 py-1 text-xs font-bold rounded-full text-stone-600";
+ $('#b-ms').className=l==='ms'?on:off;$('#b-en').className=l==='en'?on:off}
+setL(L);lucide.createIcons();
+
+const clk=()=>{$('#clk').textContent=new Date().toLocaleTimeString('en-MY',{hour:'2-digit',minute:'2-digit',hour12:false})};clk();setInterval(clk,15000);
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((e,i)=>{e.style.transitionDelay=(i%3)*90+'ms';io.observe(e)});
+
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches,sc=$('#scene');
+if(!reduce){
+ $('#stage').addEventListener('pointermove',e=>{const r=e.currentTarget.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;sc.style.setProperty('--ry',(x*28)+'deg');sc.style.setProperty('--rx',(-y*18+4)+'deg')});
+ $('#stage').addEventListener('pointerleave',()=>{sc.style.setProperty('--ry','-14deg');sc.style.setProperty('--rx','6deg')});
+ addEventListener('scroll',()=>{if(scrollY<700&&!matchMedia('(hover:hover)').matches)sc.style.setProperty('--ry',(-14+scrollY/18)+'deg')},{passive:true});
+}
+
+// Typing demo for the shortcut
+const typeTo=(el,t,ms)=>new Promise(r=>{el.textContent='';let i=0;const k=setInterval(()=>{el.textContent+=t[i++];if(i>=t.length){clearInterval(k);r()}},ms)});
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function demo(){const ok=$('#ok');while(true){ok.style.opacity=0;ok.style.transform='translateY(8px)';
+ await typeTo($('#t1'),'Lunch',90);await wait(300);await typeTo($('#t2'),'12.50',120);await wait(400);
+ $('#okt').textContent='Recorded: Lunch RM12.50';ok.style.opacity=1;ok.style.transform='none';await wait(2600);$('#t1').innerHTML='&nbsp;';$('#t2').innerHTML='&nbsp;';await wait(500)}}
+if(!reduce)demo();else{$('#t1').textContent='Lunch';$('#t2').textContent='12.50';$('#ok').style.opacity=1;$('#ok').style.transform='none';$('#okt').textContent='Recorded: Lunch RM12.50'}
+
+function sendWA(){const n=$('#fn').value.trim(),p=$('#fp').value.trim(),e=$('#fe').value.trim(),m=$('#fm').value.trim();
+ if(!n||!p){alert(L==='ms'?'Sila isi nama dan nombor telefon.':'Please enter your name and phone number.');return}
+ const t=`Assalamualaikum KhairNgaji.co,\nSaya berminat dengan K Finance.\n\nNama: ${n}\nNo. Telefon: ${p}${e?`\nEmail: ${e}`:''}${m?`\nMesej: ${m}`:''}\n\nTerima kasih.`;
+ window.open('https://wa.me/601158945036?text='+encodeURIComponent(t),'_blank')}
+</script>
+</body>
+</html>
