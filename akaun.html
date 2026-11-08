@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fdfbf7">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Akaun Pelajar | KhairNgaji.co</title>
+<style>
+:root{--bg:#fdfbf7;--g:#f7f4eb;--ink:#1e293b;--mut:#78716c;--navy:#022c22;--lime:#facc15;--ac:#047857;--line:#e7e5e4;--f:"Plus Jakarta Sans",-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 var(--f);-webkit-font-smoothing:antialiased}
+h1,h2,h3,p{margin:0}a{color:inherit;text-decoration:none}button,input{font:inherit}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.nav{position:sticky;top:0;z-index:30;background:#fdfbf7d9;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid #0000000f;padding-top:env(safe-area-inset-top)}
+.nav>div{max-width:1280px;margin:auto;height:80px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;font-size:14px;gap:14px}.br{display:flex;align-items:center;gap:12px}.br i{width:40px;height:40px;border-radius:12px;background:#064e3b;color:#facc15;display:grid;place-items:center;font:800 20px var(--f);font-style:normal;border:1px solid #04785580}.br b{font-size:20px;font-weight:800;letter-spacing:-.02em;color:#022c22}.br u{text-decoration:none;color:#b45309}.nav .gd{color:#b45309;font-weight:700}.nav .ac2{color:#065f46;font-weight:700}.nr{display:flex;gap:10px;align-items:center}
+.nav b{font-size:17px;letter-spacing:-.02em}.nav nav{display:flex;gap:24px;align-items:center;color:#57534e;font-weight:500}.nav nav a:hover{color:#065f46}.nav .on{color:#065f46;font-weight:700;border-bottom:2px solid #facc15}
+.pill{border:0;border-radius:980px;padding:12px 24px;font-weight:600;font-size:16px;cursor:pointer;transition:.2s}
+.pill.p{background:#064e3b;color:#fff}.pill.p:hover{background:#022c22;transform:scale(1.03)}.pill.s{background:#0000000d;color:var(--ink)}.pill.s:hover{background:#00000016}
+.pill.l{background:var(--lime);color:#022c22}.sm{padding:7px 16px;font-size:13px}
+.hero{text-align:center;padding:clamp(56px,10vw,110px) 22px 0;max-width:980px;margin:auto}
+.hero small{display:block;font-size:19px;font-weight:600;color:var(--ac);margin-bottom:10px}
+.hero h1{font-size:clamp(38px,8vw,80px);line-height:1.03;letter-spacing:-.045em;font-weight:700}
+.hero p{font-size:clamp(18px,2.6vw,24px);color:var(--mut);max-width:640px;margin:20px auto 30px;line-height:1.35}
+.row2{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.dev{margin:clamp(40px,7vw,70px) auto 0;max-width:820px;background:#fff;border-radius:34px;box-shadow:0 40px 90px #0000001f,0 0 0 1px #0000000a;padding:clamp(14px,3vw,26px);text-align:left}
+.dev .bar{display:flex;gap:7px;margin-bottom:16px}.dev .bar i{width:11px;height:11px;border-radius:50%;background:#e1e1e6}
+.mini{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}
+.box{background:var(--g);border-radius:22px;padding:20px}.box span{font-size:13px;color:var(--mut)}.box h3{font-size:22px;letter-spacing:-.02em;margin-top:2px}
+.pg{height:8px;border-radius:8px;background:#e1e1e6;margin:12px 0 6px;overflow:hidden}.pg i{display:block;height:100%;background:var(--ac);border-radius:8px}
+.ok{display:inline-block;background:#dff3e8;color:#17724f;font-size:12px;font-weight:600;border-radius:20px;padding:4px 11px;margin-top:8px}
+.sec{max-width:1080px;margin:auto;padding:clamp(70px,11vw,130px) 22px 0}
+.sec>h2{font-size:clamp(30px,5.5vw,56px);letter-spacing:-.04em;line-height:1.07;text-align:center;font-weight:700}
+.sec>p{text-align:center;color:var(--mut);font-size:clamp(17px,2.2vw,21px);margin:14px auto 44px;max-width:600px}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.c{background:var(--g);border-radius:30px;padding:30px;min-height:250px;display:flex;flex-direction:column;justify-content:flex-end}
+.c h3{font-size:24px;letter-spacing:-.03em;line-height:1.12}.c p{color:var(--mut);font-size:15px;margin-top:8px}
+.c.w{grid-column:span 2}.c.d{background:var(--navy);color:#fff}.c.d p{color:#a9b3c6}
+.ar{font:400 38px/1.6 "Geeza Pro","Amiri","Traditional Arabic",serif;direction:rtl;margin-bottom:auto;color:var(--lime)}
+.ic{font-size:34px;margin-bottom:auto}
+.join{background:var(--navy);color:#fff;border-radius:38px;max-width:1036px;margin:clamp(70px,11vw,130px) auto 0;padding:clamp(40px,8vw,84px) 24px;text-align:center}
+.join h2{font-size:clamp(30px,5.5vw,54px);letter-spacing:-.04em;line-height:1.07}.join>p{color:#a9b3c6;margin:14px auto 36px;max-width:520px}
+.pk{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:700px;margin:0 auto 34px;text-align:left}
+.pk div{background:#ffffff0f;border:1px solid #ffffff1c;border-radius:26px;padding:26px}.pk .h{border-color:var(--lime)}
+.pk b{font-size:19px}.pk h3{font-size:38px;letter-spacing:-.04em;margin:8px 0 2px}.pk h3 small{font-size:15px;font-weight:400;color:#a9b3c6}.pk p{font-size:14px;color:#a9b3c6}
+footer{font-size:14px}footer a:hover{color:#facc15}
+.ov{position:fixed;inset:0;z-index:60;background:#0008;backdrop-filter:blur(14px);display:none;align-items:center;justify-content:center;padding:18px}
+.ov.on{display:flex}.md{background:#fff;border-radius:30px;padding:30px;width:100%;max-width:410px;max-height:92vh;overflow:auto;box-shadow:0 40px 100px #0006}
+.md h2{font-size:26px;letter-spacing:-.03em}.md .s{color:var(--mut);font-size:14px;margin:4px 0 18px}
+label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
+input[type=text],input[type=password]{width:100%;padding:14px 16px;border:1px solid #d2d2d7;border-radius:14px;background:#fff}
+input:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 4px #1f8f6824}
+.md .pill{width:100%;margin-top:18px}.hint{background:var(--g);border-radius:14px;padding:12px 14px;font-size:13px;color:#424245;margin-top:16px}
+.err{color:#d70015;font-size:13px;margin-top:10px;min-height:18px}.x{float:right;border:0;background:var(--g);border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:16px}
+#app{position:fixed;inset:0;z-index:50;background:var(--g);overflow:auto;display:none}#app.on{display:block}
+.ah{position:sticky;top:0;background:#f5f5f7cc;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);z-index:2;padding-top:env(safe-area-inset-top);border-bottom:1px solid #0000000f}
+.ah>div{max-width:900px;margin:auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.tb{display:flex;gap:4px;background:#0000000d;border-radius:12px;padding:3px}.tb button{border:0;background:none;padding:8px 16px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;color:#515154}
+.tb button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px #0002}
+.bd{max-width:900px;margin:auto;padding:26px 20px calc(60px + env(safe-area-inset-bottom))}
+.bd h2{font-size:clamp(28px,5vw,40px);letter-spacing:-.035em;margin-bottom:18px}
+.cd{background:#fff;border-radius:26px;padding:22px 24px;margin-bottom:14px}.cd h3{font-size:19px;letter-spacing:-.02em}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}.g3 .cd{margin:0}.g3 span{font-size:13px;color:var(--mut)}.g3 h3{margin-top:4px}
+.li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}.li:last-child{border:0}.li small{display:block;color:var(--mut)}
+.t{font-size:12px;font-weight:600;padding:5px 12px;border-radius:20px;white-space:nowrap}.t.a{background:#dff3e8;color:#17724f}.t.w{background:#fff0d2;color:#8a5a00}.t.u{background:#ececf0;color:#515154}
+.rc{width:52px;height:52px;border-radius:10px;object-fit:cover;background:var(--g);display:grid;place-items:center;font-size:11px;color:var(--mut)}
+.qr{width:230px;height:230px;margin:6px auto 12px;display:block;border-radius:20px;border:1px solid var(--line);padding:10px;background:#fff}
+.tm{text-align:center;font-size:40px;font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums}.tm.z{color:#d70015}
+.cen{text-align:center;color:var(--mut);font-size:14px}
+.up{display:block;border:2px dashed #c7c7cc;border-radius:18px;padding:26px 14px;text-align:center;cursor:pointer;color:var(--mut);font-size:14px}.up img{max-width:100%;max-height:200px;border-radius:12px}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:#1d1d1f;color:#fff;padding:14px 22px;border-radius:16px;font-size:14px;opacity:0;transition:.3s;z-index:90;max-width:92vw;pointer-events:none}.toast.on{opacity:1;transform:translate(-50%,0)}
+.bn{border-radius:30px;padding:30px;color:#fff;margin-bottom:16px;box-shadow:0 20px 50px #0002}.bn span{font-size:13px;opacity:.9}.bn h2{margin:4px 0 6px;font-size:clamp(32px,6vw,48px)}.bn p{opacity:.95}.bn .chip{display:inline-block;background:#ffffff30;border-radius:20px;padding:5px 13px;font-weight:600;margin:14px 6px 0 0;opacity:1}#app .pg i{background:var(--pg)}#app .li b{color:var(--pc)}
+@media(max-width:1000px){.nav nav a:not(.on):not(.hm){display:none}.nav .dk{display:none}}
+@media(max-width:860px){.bento{grid-template-columns:1fr 1fr}.mini,.g3,.pk{grid-template-columns:1fr}}
+@media(max-width:560px){.bento{grid-template-columns:1fr}.c.w{grid-column:auto}.c{min-height:200px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="nav"><div><a href="index.html" class="br"><i>K</i><b>KhairNgaji<u>.co</u></b></a>
+<nav><a class="hm" href="index.html">Laman Utama</a><a href="index.html#about">Tentang</a><a href="index.html#features">Kelas</a><a href="index.html#schedule">Jadual</a><a href="index.html#packages">Pakej</a><a href="index.html#faq">FAQ</a><a class="gd" href="kfinance.html">K Finance</a><a class="on" href="akaun.html">Akaun Pelajar</a></nav>
+<div class="nr"><button class="pill s sm" id="o1">Log masuk</button><a class="pill p sm dk" href="https://wa.me/601158945036?text=Assalamualaikum%20KhairNgaji.co%2C%20saya%20ingin%20mendaftar%20kelas.">Daftar Sekarang</a></div></div></header>
+
+<main>
+<section class="hero">
+<h1>Setiap pelajaran. Setiap pencapaian. Satu akaun.</h1>
+<p>Pelajar KhairNgaji mendapat akaun sendiri dengan modul Fardhu Ain dan Tajwid yang lengkap, jadual, tugasan dan bayaran yang mudah.</p>
+<div class="row2"><a class="pill l" href="#join">Sertai sekarang</a><button class="pill s" id="o2">Log masuk</button></div>
+<div class="dev"><div class="bar"><i></i><i></i><i></i></div>
+<div class="mini"><div class="box"><span>Assalamualaikum, Aisyah</span><h3>Kelas seterusnya: Isnin, 6:30 PM</h3>
+<div class="pg"><i style="width:62%"></i></div><span>Progres Fardhu Ain 62%</span></div>
+<div class="box"><span>Yuran Disember</span><h3>RM70</h3><span class="ok">Disahkan</span></div></div></div>
+</section>
+
+<section class="sec"><h2>Semua yang anak anda perlukan untuk belajar.</h2>
+<p>Dalam satu tempat yang kemas, hanya untuk pelajar yang berlangganan.</p>
+<div class="bento">
+<div class="c d w"><div class="ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div><h3>Modul Pembelajaran lengkap</h3><p>Fardhu Ain dan Tajwid disusun bab demi bab, sentiasa ada dalam akaun anak anda.</p></div>
+<div class="c" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0)"><div class="ic">🎙️</div><h3>Makhraj dan tajwid</h3><p>Bacaan dibentuk betul sejak awal.</p></div>
+<div class="c" style="background:linear-gradient(135deg,#fef3c7,#fde68a)"><div class="ic">🕌</div><h3>Fardhu Ain</h3><p>Wuduk, solat, rukun dan doa harian.</p></div>
+<div class="c" style="background:linear-gradient(135deg,#f7f4eb,#efe8d5)"><div class="ic">🗓️</div><h3>Jadual kelas</h3><p>Hari dan masa kelas sentiasa jelas.</p></div>
+<div class="c" style="background:linear-gradient(135deg,#ecfccb,#d9f99d)"><div class="ic">✅</div><h3>Tugasan</h3><p>Latihan daripada Ustaz di setiap kelas.</p></div>
+<div class="c w" style="background:linear-gradient(135deg,#065f46,#047857 55%,#b45309);color:#fff"><div class="ic">🏅</div><h3>Laporan perkembangan bulanan</h3><p style="color:#ffffffd9">Ibu bapa tahu sejauh mana anak menguasai makhraj, kelancaran dan tajwid.</p></div>
+</div></section>
+
+<section class="join" id="join"><h2>Mulakan perjalanan anak anda hari ini.</h2>
+<p>Pilih pakej, daftar melalui WhatsApp, dan akaun pelajar dibuka selepas pendaftaran disahkan.</p>
+<div class="pk"><div><b>Al-Bayan</b><h3>RM47<small> / bulan</small></h3><p>7 sesi mengaji. Makhraj, tajwid asas dan laporan bulanan.</p></div>
+<div class="h"><b>Al-Hidayah</b><h3>RM70<small> / bulan</small></h3><p>Semua dalam Al-Bayan, tambah 4 sesi Fardhu Ain sebulan.</p></div></div>
+<a class="pill l" href="https://wa.me/601158945036?text=Assalamualaikum%20KhairNgaji.co%2C%20saya%20ingin%20mendaftar%20kelas.">Daftar di WhatsApp</a></section>
+</main>
+<footer style="background:#022c22;color:#a8a29e;text-align:left;margin-top:clamp(70px,11vw,130px);padding:44px 24px calc(34px + env(safe-area-inset-bottom))"><div style="max-width:1280px;margin:auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap">
+<div><b style="color:#fff;font-size:20px">KhairNgaji<span style="color:#facc15">.co</span></b><p style="margin-top:6px;max-width:300px">Membentuk Bacaan Al-Quran Sejak Usia Awal.</p></div>
+<div style="line-height:2"><a href="index.html">Laman Utama</a><br><a href="kfinance.html">K Finance</a><br><a href="akaun.html">Akaun Pelajar</a></div>
+<div style="line-height:2">WhatsApp: 01158945036<br>adminkhairngaji@gmail.com</div></div>
+<p style="max-width:1280px;margin:26px auto 0;border-top:1px solid #ffffff1a;padding-top:18px">© 2026 KhairNgaji.co. All Rights Reserved.</p></footer>
+
+<div class="ov" id="lg"><div class="md" role="dialog" aria-label="Log masuk"><button class="x" data-close aria-label="Tutup">✕</button>
+<h2>Log masuk</h2><div class="s">Akaun pelajar KhairNgaji.co</div>
+<label for="u">Nama pengguna</label><input type="text" id="u" autocomplete="username" autocapitalize="none">
+<label for="p">Kata laluan</label><input type="password" id="p" autocomplete="current-password">
+<div class="err" id="er"></div><button class="pill p" id="go">Log masuk</button>
+<div class="hint"><b>Akaun demo</b><br>Al-Hidayah: <b>pelajar</b> / <b>demo123</b><br>Al-Bayan: <b>pelajar2</b> / <b>demo123</b><br>Admin: <b>admin</b> / <b>admin123</b></div></div></div>
+
+<div class="ov" id="pm"><div class="md" role="dialog" aria-label="Pembayaran"><button class="x" data-close aria-label="Tutup">✕</button>
+<div id="s1"><h2>Bayar yuran</h2><div class="s">Disember 2026 · RM70.00 · Imbas dengan app bank anda</div>
+<img class="qr" id="qr" src="qr.png" alt="QR pembayaran" onerror="fq(this)">
+<div class="tm" id="tm">10:00</div><div class="cen" id="tn">Masa untuk menyelesaikan bayaran</div>
+<button class="pill p" id="paid">Saya sudah bayar</button></div>
+<div id="s2" hidden><h2>Muat naik resit</h2><div class="s">Gambar atau tangkapan skrin resit bayaran.</div>
+<label class="up" id="upl"><input type="file" id="fl" accept="image/*" hidden><span id="ut">Tekan untuk pilih resit</span></label>
+<button class="pill p" id="sub" disabled>Hantar resit</button></div></div></div>
+
+<div id="app"></div><div class="toast" id="ts" role="status"></div>
+
+<script>
+const EMAILJS={service:'',template:'',key:'',to:'adminkhairngaji@gmail.com'}; /* isi untuk hantar emel sebenar */
+const $=s=>document.querySelector(s),USERS={pelajar:{p:'demo123',r:'s',n:'Aisyah'},pelajar2:{p:'demo123',r:'s',n:'Hafiz'},admin:{p:'admin123',r:'a',n:'Ustaz'}};
+const seed=()=>({pay:[{id:1,who:'Aisyah',pk:'Al-Hidayah',amt:70,st:'u'},{id:2,who:'Danish',pk:'Al-Bayan',amt:47,st:'w',rc:'',at:'20 Dis, 9:12 PM'},{id:3,who:'Maryam',pk:'Al-Hidayah',amt:70,st:'a',rc:'',at:'20 Dis, 8:40 AM'},{id:4,who:'Hafiz',pk:'Al-Bayan',amt:47,st:'u'}]});
+let db;try{db=JSON.parse(localStorage.getItem('kn3'))}catch(e){}db=db||seed();
+const sv=()=>{try{localStorage.setItem('kn3',JSON.stringify(db))}catch(e){}};
+function ts(m){const t=$('#ts');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3800)}
+const open=id=>$(id).classList.add('on'),shut=el=>el.closest('.ov').classList.remove('on');
+document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>{shut(b);clearInterval(tid)});
+$('#o1').onclick=$('#o2').onclick=()=>{open('#lg');$('#u').focus()};
+$('#go').onclick=login;$('#p').onkeydown=e=>e.key=='Enter'&&login();
+let me;function login(){const x=USERS[$('#u').value.trim().toLowerCase()];if(!x||x.p!==$('#p').value){$('#er').textContent='Nama pengguna atau kata laluan tidak betul.';return}
+$('#er').textContent='';me=x;$('#lg').classList.remove('on');$('#p').value='';x.r=='s'?student('u'):admin()}
+const T={u:['Belum dibayar','u'],w:['Menunggu pengesahan','w'],a:['Disahkan','a']};
+const hd=(tabs,cur)=>`<div class="ah"><div><b>KhairNgaji<span style="color:#b45309">.co</span></b>${tabs?`<div class="tb">${tabs.map(t=>`<button class="${t[0]==cur?'on':''}" data-t="${t[0]}">${t[1]}</button>`).join('')}</div>`:''}<button class="pill s sm" id="lo">Log keluar</button></div></div>`;
+function out(){$('#app').classList.remove('on');$('#app').innerHTML=''}
+function shell(h,b){$('#app').innerHTML=h+`<div class="bd">${b}</div>`;$('#app').classList.add('on');$('#lo').onclick=out;window.scrollTo(0,0);$('#app').scrollTop=0}
+const PK={'Al-Bayan':{g:'linear-gradient(135deg,#047857,#10b981)',c:'#047857',d:'7 sesi mengaji sebulan',ch:['Makhraj huruf','Tajwid asas','Laporan bulanan']},'Al-Hidayah':{g:'linear-gradient(135deg,#b45309,#f59e0b 60%,#facc15)',c:'#b45309',d:'7 sesi mengaji dan 4 sesi Fardhu Ain sebulan',ch:['Mengaji','Fardhu Ain','Laporan bulanan']}};
+function student(tab){const m=db.pay.find(p=>p.who==me.n),s=T[m.st],k=PK[m.pk],H=m.pk=='Al-Hidayah';
+const ban=`<div class="bn" style="background:${k.g}"><span>Assalamualaikum, ${me.n}</span><h2>Kelas ${m.pk}</h2><p>${k.d}</p>${k.ch.map(c=>`<span class="chip">${c}</span>`).join('')}</div>`;
+const ls=(n,d,t,c)=>`<div class="li"><span>${n}<small>${d}</small></span><span class="t ${c}">${t}</span></div>`;let b;
+if(tab=='u')b=ban+`<div class="g3"><div class="cd"><span>Kelas seterusnya</span><h3>Isnin, 6:30 PM</h3></div><div class="cd"><span>Yuran Disember</span><h3>RM${m.amt}</h3><span class="t ${s[1]}">${s[0]}</span></div><div class="cd"><span>Tugasan belum siap</span><h3>2 tugasan</h3></div></div>
+<div class="cd"><h3>Progres</h3><div class="li"><span>Tajwid dan bacaan</span><b>3 / 10 bab</b></div><div class="pg"><i style="width:30%"></i></div>${H?'<div class="li"><span>Fardhu Ain</span><b>5 / 8 bab</b></div><div class="pg"><i style="width:62%"></i></div>':''}</div>
+<div class="cd"><h3>Tugasan</h3>${ls('Latihan makhraj huruf ث ذ ظ','Hantar sebelum Khamis','Belum siap','w')}${H?ls('Hafal doa selepas wuduk','Hantar sebelum Rabu','Belum siap','w'):ls('Baca Surah Al-Fatihah dengan tajwid','Hantar sebelum Rabu','Belum siap','w')}</div>`;
+if(tab=='m')b=ban+`<div class="cd"><h3>Mengaji dan Tajwid</h3>${ls('Makhraj huruf','Bab 1','Sedang belajar','w')}${ls('Nun sakinah dan tanwin','Bab 2','Belum dibuka','u')}</div>${H?`<div class="cd"><h3>Fardhu Ain</h3>${ls('Rukun wuduk','Bab 2','Selesai','a')}${ls('Tayammum','Bab 3','Selesai','a')}${ls('Rukun solat','Bab 4','Sedang belajar','w')}</div>`:''}`;
+if(tab=='y')b=ban+`<div class="cd"><span class="cen" style="display:block;text-align:left">Disember 2026 · ${m.pk}</span><h3 style="font-size:34px;margin:6px 0 10px">RM${m.amt}.00</h3><span class="t ${s[1]}">${s[0]}</span>${m.st=='u'?`<button class="pill p" id="bay" style="width:100%;margin-top:18px;background:${k.c}">Bayar sekarang</button><div class="cen" style="margin-top:10px">Bil dibuka setiap 20hb.${m.rj?' Resit sebelum ini ditolak, sila hantar semula.':''}</div>`:m.st=='w'?'<div class="cen" style="margin-top:12px;text-align:left">Resit diterima. Ustaz akan mengesahkan tidak lama lagi.</div>':'<div class="cen" style="margin-top:12px;text-align:left">Terima kasih. Bayaran anda telah disahkan.</div>'}</div><div class="cd"><h3>Sejarah</h3>${ls('November 2026','','Disahkan','a')}${ls('Oktober 2026','','Disahkan','a')}</div>`;
+shell(hd([['u','Utama'],['m','Modul'],['y','Yuran']],tab),b);
+const bd=$('#app .bd');bd.style.setProperty('--pc',k.c);bd.style.setProperty('--pg',k.g);
+document.querySelectorAll('.tb button').forEach(x=>x.onclick=()=>student(x.dataset.t));
+if($('#bay'))$('#bay').onclick=pay}
+let tid,fd;
+function fq(i){const n=25,c=[];let q='';for(let y=0;y<n;y++)for(let x=0;x<n;x++){const f=(x<7&&y<7)||(x>17&&y<7)||(x<7&&y>17);const e=f?((x%18<7&&y%18<7)&&(x%18==0||x%18==6||y%18==0||y%18==6||(x%18>1&&x%18<5&&y%18>1&&y%18<5))):((x*7+y*13+x*y)%5<2);if(e)q+=`<rect x="${x}" y="${y}" width="1" height="1"/>`}
+i.onerror=null;i.src='data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" shape-rendering="crispEdges">${q}</svg>`)}
+function pay(){const mm=db.pay.find(p=>p.who==me.n);$('#s1 .s').textContent='Disember 2026 · RM'+mm.amt+'.00 · Imbas dengan app bank anda';$('#s1').hidden=false;$('#s2').hidden=true;fd=null;$('#ut').textContent='Tekan untuk pilih resit';$('#sub').disabled=true;let s=600;const t=$('#tm');t.className='tm';
+const tk=()=>{t.textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');if(s--<=0){clearInterval(tid);t.className='tm z';t.textContent='00:00';$('#tn').textContent='Masa tamat. Tutup dan tekan Bayar sekarang untuk QR baharu.'}};
+$('#tn').textContent='Masa untuk menyelesaikan bayaran';clearInterval(tid);tk();tid=setInterval(tk,1000);open('#pm')}
+$('#paid').onclick=()=>{clearInterval(tid);$('#s1').hidden=true;$('#s2').hidden=false};
+$('#fl').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);fd=c.toDataURL('image/jpeg',.7);$('#upl').innerHTML=`<img src="${fd}" alt="Resit"><input type="file" id="fl" accept="image/*" hidden>`;$('#sub').disabled=false};im.src=r.result};r.readAsDataURL(f)};
+$('#sub').onclick=()=>{const m=db.pay.find(p=>p.who==me.n);m.st='w';m.rc=fd;m.rj=0;m.at=new Date().toLocaleString('ms-MY',{day:'numeric',month:'short',hour:'numeric',minute:'2-digit'});sv();shut($('#sub'));notify(m);student('y');ts('Resit dihantar. Ustaz akan menerima emel pemberitahuan.')};
+function notify(m){const E=EMAILJS;if(!E.service)return console.log('Demo: emel kepada admin',m.who);
+fetch('https://api.emailjs.com/api/v1.0/email/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({service_id:E.service,template_id:E.template,user_id:E.key,template_params:{to_email:E.to,student:m.who,amount:m.amt,month:'Disember 2026',link:location.href}})}).catch(()=>{})}
+function admin(){const w=db.pay.filter(p=>p.st=='w').length,a=db.pay.filter(p=>p.st=='a').length,u=db.pay.filter(p=>p.st=='u').length;
+shell(hd(),`<h2>Panel Admin</h2><div class="g3"><div class="cd"><span>Menunggu pengesahan</span><h3>${w}</h3></div><div class="cd"><span>Disahkan</span><h3>${a}</h3></div><div class="cd"><span>Belum bayar</span><h3>${u}</h3></div></div>
+<div class="cd"><h3>Bayaran Disember 2026</h3>${db.pay.map(p=>`<div class="li"><span style="display:flex;gap:12px;align-items:center">${p.rc?`<img class="rc" src="${p.rc}" alt="Resit">`:p.st=='u'?'':'<span class="rc">Resit</span>'}<span>${p.who}<small>${p.pk} · RM${p.amt}${p.at?' · '+p.at:''}</small></span></span>${p.st=='w'?`<span style="display:flex;gap:6px"><button class="pill s sm" data-r="${p.id}">Tolak</button><button class="pill p sm" data-a="${p.id}">Sahkan</button></span>`:`<span class="t ${T[p.st][1]}">${T[p.st][0]}</span>`}</div>`).join('')}</div>
+<button class="pill s sm" id="rs">Set semula demo</button>`);
+document.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{db.pay.find(p=>p.id==b.dataset.a).st='a';sv();admin();ts('Bayaran disahkan. Pelajar akan nampak status Disahkan.')});
+document.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{const p=db.pay.find(p=>p.id==b.dataset.r);p.st='u';p.rj=1;sv();admin()});
+$('#rs').onclick=()=>{db=seed();sv();admin()}}
+</script>
+</body>
+</html>
