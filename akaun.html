@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fdfbf7">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <title>Akaun Pelajar | KhairNgaji.co</title>
 <style>
 :root{--bg:#fdfbf7;--g:#f7f4eb;--ink:#1e293b;--mut:#78716c;--navy:#022c22;--lime:#facc15;--ac:#047857;--line:#e7e5e4;--f:"Plus Jakarta Sans",-apple-system,"Segoe UI",sans-serif}
@@ -49,9 +49,14 @@ footer{font-size:14px}footer a:hover{color:#facc15}
 .ov.on{display:flex}.md{background:#fff;border-radius:30px;padding:30px;width:100%;max-width:410px;max-height:92vh;overflow:auto;box-shadow:0 40px 100px #0006}
 .md h2{font-size:26px;letter-spacing:-.03em}.md .s{color:var(--mut);font-size:14px;margin:4px 0 18px}
 label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
-input[type=text],input[type=password]{width:100%;padding:14px 16px;border:1px solid #d2d2d7;border-radius:14px;background:#fff}
+input[type=text],input[type=password],input[type=email],input[type=tel],input[type=date],select{width:100%;padding:14px 16px;border:1px solid #d2d2d7;border-radius:14px;background:#fff}
 input:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 4px #1f8f6824}
-.md .pill{width:100%;margin-top:18px}.hint{background:var(--g);border-radius:14px;padding:12px 14px;font-size:13px;color:#424245;margin-top:16px}
+.md .pill{width:100%;margin-top:18px}.pw{position:relative}.pw input{padding-right:52px}.pw button{position:absolute;right:6px;top:50%;translate:0 -50%;width:40px;height:40px;border:0;background:none;color:#78716c;cursor:pointer;border-radius:10px;display:grid;place-items:center}.pw button:hover{background:var(--g);color:var(--ink)}.pw svg{width:21px;height:21px}
+.rh{display:flex;gap:12px;align-items:center;margin-bottom:16px}.br2{width:42px;height:42px;border-radius:12px;background:#064e3b;color:#facc15;display:grid;place-items:center;font-weight:800;font-size:20px;flex:none}.rh small{display:block;color:var(--mut);font-size:12px;line-height:1.3}
+#rcb h2{margin:4px 0 10px}.rl{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px}.rl span{color:var(--mut)}.rl b{text-align:right}
+.rt{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding:16px 18px;border-radius:18px;background:#064e3b;color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}.rt b{font-size:24px;color:#facc15}.rs{margin:14px 0 4px}#rcb p{font-size:12px;color:var(--mut);margin:10px 0 0}.dd{display:block;margin-top:6px;font-size:12px;color:#b45309;font-weight:600}
+@media print{body *{visibility:hidden}#rcp,#rcp *{visibility:visible}.ov{background:none!important;backdrop-filter:none!important}#rcp{position:fixed;left:0;top:0;width:100%;max-width:none!important;box-shadow:none;max-height:none}.nop{display:none!important}}
+.lk2{text-align:center;font-size:13px;color:var(--mut);margin-top:14px}.lk2 a{color:#065f46;font-weight:600}.up img{max-width:100%;max-height:200px;border-radius:12px;margin-bottom:8px}.ab{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.ab input[type=date]{padding:8px 10px;width:auto;border-radius:10px;font-size:13px}.ab .pill{width:auto;margin:0}.hint{background:var(--g);border-radius:14px;padding:12px 14px;font-size:13px;color:#424245;margin-top:16px}
 .err{color:#d70015;font-size:13px;margin-top:10px;min-height:18px}.x{float:right;border:0;background:var(--g);border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:16px}
 #app{position:fixed;inset:0;z-index:50;background:var(--g);overflow:auto;display:none}#app.on{display:block}
 .ah{position:sticky;top:0;background:#f5f5f7cc;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);z-index:2;padding-top:env(safe-area-inset-top);border-bottom:1px solid #0000000f}
@@ -71,6 +76,38 @@ input:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 4px #1f8f6824}
 .up{display:block;border:2px dashed #c7c7cc;border-radius:18px;padding:26px 14px;text-align:center;cursor:pointer;color:var(--mut);font-size:14px}.up img{max-width:100%;max-height:200px;border-radius:12px}
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:#1d1d1f;color:#fff;padding:14px 22px;border-radius:16px;font-size:14px;opacity:0;transition:.3s;z-index:90;max-width:92vw;pointer-events:none}.toast.on{opacity:1;transform:translate(-50%,0)}
 .bn{border-radius:30px;padding:30px;color:#fff;margin-bottom:16px;box-shadow:0 20px 50px #0002}.bn span{font-size:13px;opacity:.9}.bn h2{margin:4px 0 6px;font-size:clamp(32px,6vw,48px)}.bn p{opacity:.95}.bn .chip{display:inline-block;background:#ffffff30;border-radius:20px;padding:5px 13px;font-weight:600;margin:14px 6px 0 0;opacity:1}#app .pg i{background:var(--pg)}#app .li b{color:var(--pc)}
+.sv{position:relative}.sv summary{list-style:none;cursor:pointer}.sv summary::-webkit-details-marker{display:none}.sm2{position:absolute;right:0;top:34px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:8px;box-shadow:0 20px 50px #0002;min-width:190px;z-index:5}.sm2 a{display:block;padding:11px 14px;border-radius:12px}.sm2 a:hover{background:var(--g)}
+.stage{margin:clamp(30px,6vw,56px) auto 0;max-width:1180px}.track{position:relative;display:flex;gap:34px;overflow-x:auto;scroll-snap-type:x mandatory;padding:44px calc(50% - 134px) 64px;scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch}.track::-webkit-scrollbar{display:none}
+.fg{flex:none;margin:0;scroll-snap-align:center;transform:perspective(1100px) rotateY(var(--ry,0deg)) scale(var(--sc,1));transition:transform .12s linear}
+.ph{width:260px;height:530px;border-radius:46px;background:#0c1311;padding:9px;box-shadow:0 60px 70px -30px #022c2275,inset 0 0 0 1.5px #ffffff26;animation:fl 6s ease-in-out infinite}.fg:nth-child(even) .ph{animation-delay:-3s}@keyframes fl{50%{translate:0 -16px}}
+.fg figcaption{margin-top:20px;font-weight:700;font-size:14px;color:#065f46}
+.scr{height:100%;border-radius:38px;background:var(--bg);overflow:hidden;padding:44px 14px 14px;position:relative;text-align:left;font-size:11.5px;line-height:1.4}.scr:before{content:'';position:absolute;top:10px;left:50%;width:80px;height:22px;border-radius:14px;background:#0c1311;translate:-50% 0}
+.scr h4{margin:0;font-size:16px;letter-spacing:-.02em}.scr small{font-size:11px;color:var(--mut)}.mb{border-radius:22px;padding:16px;color:#fff;margin-bottom:10px}.mb small{color:#ffffffe0;display:block}.mb h4{font-size:21px;margin:3px 0}
+.mc{background:#fff;border-radius:18px;padding:13px 14px;margin-bottom:9px;box-shadow:0 1px 0 var(--line)}.mr{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}.mr:last-child{border:0}.scr .t{font-size:10px;padding:3px 9px}.scr .ar{font:400 21px/1.7 Amiri,serif;direction:rtl;text-align:center;color:#065f46;margin:0 0 4px}
+
+.stage{position:relative;isolation:isolate}.stage:before{content:'';position:absolute;left:12%;right:12%;top:8%;bottom:16%;background:radial-gradient(closest-side,#10b9812e,#d4af6a14 60%,transparent);filter:blur(36px);z-index:-1}
+.dv{position:relative;width:268px;height:548px;border-radius:54px;padding:10px;background:linear-gradient(145deg,#e4e0d3,#8d8878 28%,#3b3b39 52%,#a29d8e 78%,#ebe7da);box-shadow:0 0 0 1px #0004,0 80px 90px -44px #022c22b0,0 30px 50px -28px #0009;animation:fl 7s ease-in-out infinite}
+.dv:before{content:'';position:absolute;inset:3px;border-radius:51px;background:#040605}
+.dv:after{content:'';position:absolute;inset:10px;border-radius:44px;background:linear-gradient(115deg,#ffffff1f 0,#ffffff00 34%);pointer-events:none;z-index:3}
+.fg:nth-child(even) .dv{animation-delay:-3.5s}
+.sc{position:relative;height:100%;border-radius:44px;overflow:hidden;background:radial-gradient(120% 65% at 50% 0%,#0d5240 0,#05291f 52%,#021611 100%);color:#f3eee0;padding:60px 22px 22px;text-align:left;font-size:12.5px;line-height:1.45}
+.sc:before{content:'';position:absolute;top:12px;left:50%;width:86px;height:25px;border-radius:15px;background:#000;translate:-50% 0}
+.sc:after{content:'';position:absolute;bottom:9px;left:50%;width:104px;height:4px;border-radius:3px;background:#ffffff4d;translate:-50% 0}
+.sc small{display:block;font-size:11px;color:#cdb078;letter-spacing:.02em}.sc h5{margin:2px 0 0;font:300 29px/1.12 var(--f);letter-spacing:-.04em}.sc h5 b{font-weight:600}
+.sc .n{font:300 46px/1 var(--f);letter-spacing:-.05em;margin:6px 0 10px}
+.hl{height:1px;background:linear-gradient(90deg,#d4af6a66,#d4af6a00);margin:16px 0}
+.gl{background:#ffffff0c;border:1px solid #ffffff18;border-radius:22px;padding:15px 17px;margin-top:12px}
+.gl b{font-weight:500;font-size:16px;letter-spacing:-.02em;display:block;margin-top:2px}
+.pl{display:inline-block;border:1px solid #d4af6a80;color:#e4c985;border-radius:20px;padding:3px 12px;font-size:11px;margin-top:10px}
+.rg{width:96px;height:96px;border-radius:50%;background:conic-gradient(#e4c27a calc(var(--p)*1%),#ffffff14 0);display:grid;place-items:center}.rg:before{content:attr(data-v);width:80px;height:80px;border-radius:50%;background:#05291f;display:grid;place-items:center;font:300 24px var(--f);letter-spacing:-.04em}
+.rw{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid #ffffff14;color:#ece6d6}.rw:last-child{border:0}.rw span:last-child{color:#cdb078;font-size:11.5px}
+.rw i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#e4c27a;margin-right:11px;vertical-align:middle}.rw i.o{background:#ffffff38}
+.bar2{height:2px;background:#ffffff1c;margin:8px 0 16px;border-radius:2px}.bar2 i{display:block;height:100%;background:linear-gradient(90deg,#b8924a,#f1d58e);border-radius:2px}
+.ar2{font:400 30px/1.6 Amiri,serif;direction:rtl;text-align:center;color:#e9cd8f;margin:4px 0 6px}
+.fg figcaption{margin-top:24px;font-weight:600;font-size:13px;color:#57534e}
+@media(prefers-reduced-motion:reduce){.dv{animation:none}}
+.sl{display:flex;gap:10px;justify-content:center}.sl button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:18px;cursor:pointer}.sl button:hover{background:var(--g)}
+@media(prefers-reduced-motion:reduce){.ph{animation:none}}
 @media(max-width:1000px){.nav nav a:not(.on):not(.hm){display:none}.nav .dk{display:none}}
 @media(max-width:860px){.bento{grid-template-columns:1fr 1fr}.mini,.g3,.pk{grid-template-columns:1fr}}
 @media(max-width:560px){.bento{grid-template-columns:1fr}.c.w{grid-column:auto}.c{min-height:200px}}
@@ -79,7 +116,7 @@ input:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 4px #1f8f6824}
 </head>
 <body>
 <header class="nav"><div><a href="index.html" class="br"><i>K</i><b>KhairNgaji<u>.co</u></b></a>
-<nav><a class="hm" href="index.html">Laman Utama</a><a href="index.html#about">Tentang</a><a href="index.html#features">Kelas</a><a href="index.html#schedule">Jadual</a><a href="index.html#packages">Pakej</a><a href="index.html#faq">FAQ</a><a class="gd" href="kfinance.html">K Finance</a><a class="on" href="akaun.html">Akaun Pelajar</a></nav>
+<nav><a class="hm" href="index.html">Laman Utama</a><a href="index.html#about">Tentang</a><a href="index.html#features">Kelas</a><a href="index.html#schedule">Jadual</a><a href="index.html#packages">Pakej</a><a href="index.html#faq">FAQ</a><a class="on" href="akaun.html">Akaun Pelajar</a><details class="sv"><summary>Perkhidmatan Lain ▾</summary><div class="sm2"><a class="gd" href="kfinance.html">K Finance</a></div></details></nav>
 <div class="nr"><button class="pill s sm" id="o1">Log masuk</button><a class="pill p sm dk" href="https://wa.me/601158945036?text=Assalamualaikum%20KhairNgaji.co%2C%20saya%20ingin%20mendaftar%20kelas.">Daftar Sekarang</a></div></div></header>
 
 <main>
@@ -87,10 +124,7 @@ input:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 4px #1f8f6824}
 <h1>Setiap pelajaran. Setiap pencapaian. Satu akaun.</h1>
 <p>Pelajar KhairNgaji mendapat akaun sendiri dengan modul Fardhu Ain dan Tajwid yang lengkap, jadual, tugasan dan bayaran yang mudah.</p>
 <div class="row2"><a class="pill l" href="#join">Sertai sekarang</a><button class="pill s" id="o2">Log masuk</button></div>
-<div class="dev"><div class="bar"><i></i><i></i><i></i></div>
-<div class="mini"><div class="box"><span>Assalamualaikum, Aisyah</span><h3>Kelas seterusnya: Isnin, 6:30 PM</h3>
-<div class="pg"><i style="width:62%"></i></div><span>Progres Fardhu Ain 62%</span></div>
-<div class="box"><span>Yuran Disember</span><h3>RM70</h3><span class="ok">Disahkan</span></div></div></div>
+<div class="stage"><div class="track" id="track"><figure class="fg"><div class="dv"><div class="sc"><small>Assalamualaikum</small><h5>Aisyah</h5><span class="pl">Kelas Al-Hidayah</span><div class="hl"></div><div style="display:flex;align-items:center;gap:16px"><div class="rg" style="--p:62" data-v="62%"></div><div><small>Progres Fardhu Ain</small><b style="font-weight:500;font-size:15px">5 daripada 8 bab</b></div></div><div class="gl"><small>Kelas seterusnya</small><b>Isnin, 6:30 PM</b></div></div></div><figcaption>Halaman utama</figcaption></figure><figure class="fg"><div class="dv"><div class="sc"><small>Fardhu Ain dan Tajwid</small><h5>Modul</h5><div class="ar2">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div><div class="hl" style="margin:8px 0 4px"></div><div class="rw"><span><i></i>Rukun wuduk</span><span>Selesai</span></div><div class="rw"><span><i></i>Tayammum</span><span>Selesai</span></div><div class="rw"><span><i class="o"></i>Rukun solat</span><span>Sedang belajar</span></div><div class="rw"><span><i class="o"></i>Makhraj huruf</span><span>Sedang belajar</span></div></div></div><figcaption>Modul pembelajaran</figcaption></figure><figure class="fg"><div class="dv"><div class="sc"><small>Setiap minggu</small><h5>Jadual</h5><div class="hl"></div><div class="rw"><span>Isnin</span><span>6:30 PM</span></div><div class="rw"><span>Rabu</span><span>6:30 PM</span></div><div class="rw"><span>Khamis</span><span>6:30 PM</span></div><div class="gl"><small>Tugasan</small><b>Hafal doa selepas wuduk</b><small style="margin-top:4px">Hantar sebelum Rabu</small></div></div></div><figcaption>Jadual dan tugasan</figcaption></figure><figure class="fg"><div class="dv"><div class="sc"><small>Disember 2026</small><h5>Yuran</h5><div class="n">RM70</div><span class="pl">Disahkan</span><div class="hl" style="margin-top:22px"></div><div class="rw"><span>November</span><span>Disahkan</span></div><div class="rw"><span>Oktober</span><span>Disahkan</span></div></div></div><figcaption>Yuran</figcaption></figure><figure class="fg"><div class="dv"><div class="sc"><small>Laporan bulanan</small><h5>Pencapaian</h5><div class="hl"></div><div class="rw" style="border:0;padding-bottom:0"><span>Makhraj</span><span>4.0</span></div><div class="bar2"><i style="width:80%"></i></div><div class="rw" style="border:0;padding-bottom:0"><span>Kelancaran</span><span>4.0</span></div><div class="bar2"><i style="width:80%"></i></div><div class="rw" style="border:0;padding-bottom:0"><span>Tajwid</span><span>3.5</span></div><div class="bar2"><i style="width:70%"></i></div><div class="gl"><small>Nota Ustaz</small><div style="margin-top:3px">Sebutan huruf ح dan ع makin baik.</div></div></div></div><figcaption>Pencapaian</figcaption></figure></div><div class="sl"><button data-sl="-1" aria-label="Sebelum">‹</button><button data-sl="1" aria-label="Seterusnya">›</button></div></div>
 </section>
 
 <section class="sec"><h2>Semua yang anak anda perlukan untuk belajar.</h2>
@@ -112,76 +146,135 @@ input:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 4px #1f8f6824}
 </main>
 <footer style="background:#022c22;color:#a8a29e;text-align:left;margin-top:clamp(70px,11vw,130px);padding:44px 24px calc(34px + env(safe-area-inset-bottom))"><div style="max-width:1280px;margin:auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap">
 <div><b style="color:#fff;font-size:20px">KhairNgaji<span style="color:#facc15">.co</span></b><p style="margin-top:6px;max-width:300px">Membentuk Bacaan Al-Quran Sejak Usia Awal.</p></div>
-<div style="line-height:2"><a href="index.html">Laman Utama</a><br><a href="kfinance.html">K Finance</a><br><a href="akaun.html">Akaun Pelajar</a></div>
+<div style="line-height:2"><a href="index.html">Laman Utama</a><br><a href="akaun.html">Akaun Pelajar</a><br><a href="kfinance.html">K Finance</a></div>
 <div style="line-height:2">WhatsApp: 01158945036<br>adminkhairngaji@gmail.com</div></div>
-<p style="max-width:1280px;margin:26px auto 0;border-top:1px solid #ffffff1a;padding-top:18px">© 2026 KhairNgaji.co. All Rights Reserved.</p></footer>
+<p style="max-width:1280px;margin:26px auto 0;border-top:1px solid #ffffff1a;padding-top:18px">© 2024 KhairNgaji.co. All Rights Reserved.</p></footer>
 
 <div class="ov" id="lg"><div class="md" role="dialog" aria-label="Log masuk"><button class="x" data-close aria-label="Tutup">✕</button>
 <h2>Log masuk</h2><div class="s">Akaun pelajar KhairNgaji.co</div>
-<label for="u">Nama pengguna</label><input type="text" id="u" autocomplete="username" autocapitalize="none">
-<label for="p">Kata laluan</label><input type="password" id="p" autocomplete="current-password">
+<label for="u">Emel</label><input type="email" id="u" autocomplete="username" autocapitalize="none">
+<label for="p">Kata laluan</label><div class="pw"><input type="password" id="p" autocomplete="current-password"><button type="button" id="eye" aria-label="Tunjuk kata laluan"></button></div>
 <div class="err" id="er"></div><button class="pill p" id="go">Log masuk</button>
-<div class="hint"><b>Akaun demo</b><br>Al-Hidayah: <b>pelajar</b> / <b>demo123</b><br>Al-Bayan: <b>pelajar2</b> / <b>demo123</b><br>Admin: <b>admin</b> / <b>admin123</b></div></div></div>
+<p class="lk2"><a href="#" id="fg">Lupa kata laluan?</a> &nbsp;·&nbsp; <a href="#" id="sg">Daftar akaun baharu</a></p></div></div>
+
+<div class="ov" id="rg"><div class="md" role="dialog" aria-label="Daftar akaun"><button class="x" data-close aria-label="Tutup">✕</button>
+<h2>Daftar akaun</h2><div class="s">Akaun dibuka selepas Ustaz meluluskan pendaftaran.</div>
+<label for="rn">Nama pelajar</label><input type="text" id="rn" autocomplete="name">
+<label for="rt">No. telefon (WhatsApp)</label><input type="tel" id="rt" autocomplete="tel">
+<label for="rk">Pakej</label><select id="rk"><option value="Al-Bayan">Al-Bayan (RM47 sebulan)</option><option value="Al-Hidayah">Al-Hidayah (RM70 sebulan)</option></select>
+<label for="re">Emel penjaga</label><input type="email" id="re" autocomplete="email" autocapitalize="none">
+<label for="rp">Kata laluan (sekurang-kurangnya 6 aksara)</label><input type="password" id="rp" autocomplete="new-password">
+<div class="err" id="rer"></div><button class="pill p" id="rgo">Hantar pendaftaran</button></div></div>
 
 <div class="ov" id="pm"><div class="md" role="dialog" aria-label="Pembayaran"><button class="x" data-close aria-label="Tutup">✕</button>
 <div id="s1"><h2>Bayar yuran</h2><div class="s">Disember 2026 · RM70.00 · Imbas dengan app bank anda</div>
-<img class="qr" id="qr" src="qr.png" alt="QR pembayaran" onerror="fq(this)">
+<img class="qr" id="qr" src="qr.png" alt="QR pembayaran" onerror="window.fq&&window.fq(this)">
 <div class="tm" id="tm">10:00</div><div class="cen" id="tn">Masa untuk menyelesaikan bayaran</div>
 <button class="pill p" id="paid">Saya sudah bayar</button></div>
 <div id="s2" hidden><h2>Muat naik resit</h2><div class="s">Gambar atau tangkapan skrin resit bayaran.</div>
-<label class="up" id="upl"><input type="file" id="fl" accept="image/*" hidden><span id="ut">Tekan untuk pilih resit</span></label>
+<label class="up" id="upl"><input type="file" id="fl" accept="image/*" hidden><img id="pv" alt="Resit" hidden><span id="ut">Tekan untuk pilih resit</span></label>
 <button class="pill p" id="sub" disabled>Hantar resit</button></div></div></div>
 
+<div class="ov" id="rc"><div class="md" id="rcp" style="max-width:440px"><button class="x nop" data-close aria-label="Tutup">✕</button><div id="rcb"></div><button class="pill p nop" onclick="window.print()">Cetak atau simpan PDF</button></div></div>
 <div id="app"></div><div class="toast" id="ts" role="status"></div>
 
-<script>
-const EMAILJS={service:'',template:'',key:'',to:'adminkhairngaji@gmail.com'}; /* isi untuk hantar emel sebenar */
-const $=s=>document.querySelector(s),USERS={pelajar:{p:'demo123',r:'s',n:'Aisyah'},pelajar2:{p:'demo123',r:'s',n:'Hafiz'},admin:{p:'admin123',r:'a',n:'Ustaz'}};
-const seed=()=>({pay:[{id:1,who:'Aisyah',pk:'Al-Hidayah',amt:70,st:'u'},{id:2,who:'Danish',pk:'Al-Bayan',amt:47,st:'w',rc:'',at:'20 Dis, 9:12 PM'},{id:3,who:'Maryam',pk:'Al-Hidayah',amt:70,st:'a',rc:'',at:'20 Dis, 8:40 AM'},{id:4,who:'Hafiz',pk:'Al-Bayan',amt:47,st:'u'}]});
-let db;try{db=JSON.parse(localStorage.getItem('kn3'))}catch(e){}db=db||seed();
-const sv=()=>{try{localStorage.setItem('kn3',JSON.stringify(db))}catch(e){}};
-function ts(m){const t=$('#ts');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3800)}
+<script type="module">
+import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+import {getAuth,onAuthStateChanged,signInWithEmailAndPassword,createUserWithEmailAndPassword,signOut,sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+import {getFirestore,doc,getDoc,setDoc,updateDoc,collection,query,where,getDocs,serverTimestamp,Timestamp,writeBatch} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+const app=initializeApp({apiKey:'AIzaSyDcVwkPR9ps4iqfo2mAkvc7AQNkyXloK0Q',authDomain:'relationship-9db5b.firebaseapp.com',projectId:'relationship-9db5b',storageBucket:'relationship-9db5b.firebasestorage.app',messagingSenderId:'930184334118',appId:'1:930184334118:web:c83e86222e9e0c8359cfe7'});
+const auth=getAuth(app),db=getFirestore(app),$=s=>document.querySelector(s);
+const ADMIN='adminkhairngaji@gmail.com',EJ={service:'',template:'',key:''}; /* isi dari EmailJS */
+const MS=['Januari','Februari','Mac','April','Mei','Jun','Julai','Ogos','September','Oktober','November','Disember'],PR={'Al-Bayan':47,'Al-Hidayah':70};
+const PK={'Al-Bayan':{g:'linear-gradient(135deg,#047857,#10b981)',d:'7 sesi mengaji sebulan',ch:['Makhraj huruf','Tajwid asas','Laporan bulanan']},'Al-Hidayah':{g:'linear-gradient(135deg,#b45309,#f59e0b 60%,#facc15)',d:'7 sesi mengaji dan 4 sesi Fardhu Ain sebulan',ch:['Mengaji','Fardhu Ain','Laporan bulanan']}};
+const fmt=d=>d.getDate()+' '+MS[d.getMonth()]+' '+d.getFullYear(),eom=(y,m)=>new Date(y,m+1,0,23,59,59),pad=(n,l)=>String(n).padStart(l,'0');
+let me,sd,adm,reg=0,tid,fd,cur,SS=[],PP=[],MP=[];
+function tt(m){const t=$('#ts');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),4200)}
 const open=id=>$(id).classList.add('on'),shut=el=>el.closest('.ov').classList.remove('on');
 document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>{shut(b);clearInterval(tid)});
-$('#o1').onclick=$('#o2').onclick=()=>{open('#lg');$('#u').focus()};
-$('#go').onclick=login;$('#p').onkeydown=e=>e.key=='Enter'&&login();
-let me;function login(){const x=USERS[$('#u').value.trim().toLowerCase()];if(!x||x.p!==$('#p').value){$('#er').textContent='Nama pengguna atau kata laluan tidak betul.';return}
-$('#er').textContent='';me=x;$('#lg').classList.remove('on');$('#p').value='';x.r=='s'?student('u'):admin()}
+async function mail(to,subject,html){if(!EJ.service||!to)return false;try{const r=await fetch('https://api.emailjs.com/api/v1.0/email/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({service_id:EJ.service,template_id:EJ.template,user_id:EJ.key,template_params:{to_email:to,subject,html}})});return r.ok}catch(e){return false}}
+const mailRc=o=>`<div style="font-family:Arial,sans-serif;max-width:480px;margin:auto;border:1px solid #e7e5e4;border-radius:16px;padding:24px"><h2 style="margin:0;color:#064e3b">KhairNgaji.co</h2><p style="color:#78716c;margin:2px 0 18px">Resit Pembayaran Yuran</p>${[['No. resit',o.no],['Tarikh disahkan',o.ap],['Nama pelajar',o.who],['Pakej','Kelas '+o.pk],['Yuran bulan',o.mo],['Kaedah bayaran','Pindahan bank (QR)']].map(r=>`<p style="margin:0;padding:9px 0;border-bottom:1px dashed #e7e5e4;display:flex;justify-content:space-between"><span style="color:#78716c">${r[0]}</span><b>${r[1]}</b></p>`).join('')}<p style="background:#064e3b;color:#facc15;border-radius:12px;padding:14px;font-size:20px;margin:16px 0 8px"><b>Jumlah dibayar: RM${o.amt}.00</b></p><p style="color:#78716c;font-size:12px">Terima kasih. Resit ini dijana secara automatik dan sah tanpa tandatangan.</p></div>`;
+function receipt(o){$('#rcb').innerHTML=`<div class="rh"><span class="br2">K</span><div><b>KhairNgaji.co</b><small>Kelas Mengaji Al-Quran Online Untuk Kanak-Kanak</small></div></div><h2>Resit Pembayaran</h2>${[['No. resit',o.no],['Tarikh disahkan',o.ap],['Nama pelajar',o.who],['Pakej','Kelas '+o.pk],['Yuran bulan',o.mo],['Kaedah bayaran','Pindahan bank (QR)']].map(r=>`<div class="rl"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('')}<div class="rt"><span>Jumlah dibayar</span><b>RM${o.amt}.00</b></div><div class="rs"><span class="t a">Disahkan</span></div><p>Resit ini dijana secara automatik oleh sistem KhairNgaji.co dan sah tanpa tandatangan.</p>`;open('#rc')}
+/* ---------- paparan ---------- */
 const T={u:['Belum dibayar','u'],w:['Menunggu pengesahan','w'],a:['Disahkan','a']};
-const hd=(tabs,cur)=>`<div class="ah"><div><b>KhairNgaji<span style="color:#b45309">.co</span></b>${tabs?`<div class="tb">${tabs.map(t=>`<button class="${t[0]==cur?'on':''}" data-t="${t[0]}">${t[1]}</button>`).join('')}</div>`:''}<button class="pill s sm" id="lo">Log keluar</button></div></div>`;
+const hd=(tabs,c)=>`<div class="ah"><div><b>KhairNgaji<span style="color:#b45309">.co</span></b>${tabs?`<div class="tb">${tabs.map(t=>`<button class="${t[0]==c?'on':''}" data-t="${t[0]}">${t[1]}</button>`).join('')}</div>`:''}<button class="pill s sm" id="lo">Log keluar</button></div></div>`;
 function out(){$('#app').classList.remove('on');$('#app').innerHTML=''}
-function shell(h,b){$('#app').innerHTML=h+`<div class="bd">${b}</div>`;$('#app').classList.add('on');$('#lo').onclick=out;window.scrollTo(0,0);$('#app').scrollTop=0}
-const PK={'Al-Bayan':{g:'linear-gradient(135deg,#047857,#10b981)',c:'#047857',d:'7 sesi mengaji sebulan',ch:['Makhraj huruf','Tajwid asas','Laporan bulanan']},'Al-Hidayah':{g:'linear-gradient(135deg,#b45309,#f59e0b 60%,#facc15)',c:'#b45309',d:'7 sesi mengaji dan 4 sesi Fardhu Ain sebulan',ch:['Mengaji','Fardhu Ain','Laporan bulanan']}};
-function student(tab){const m=db.pay.find(p=>p.who==me.n),s=T[m.st],k=PK[m.pk],H=m.pk=='Al-Hidayah';
-const ban=`<div class="bn" style="background:${k.g}"><span>Assalamualaikum, ${me.n}</span><h2>Kelas ${m.pk}</h2><p>${k.d}</p>${k.ch.map(c=>`<span class="chip">${c}</span>`).join('')}</div>`;
-const ls=(n,d,t,c)=>`<div class="li"><span>${n}<small>${d}</small></span><span class="t ${c}">${t}</span></div>`;let b;
-if(tab=='u')b=ban+`<div class="g3"><div class="cd"><span>Kelas seterusnya</span><h3>Isnin, 6:30 PM</h3></div><div class="cd"><span>Yuran Disember</span><h3>RM${m.amt}</h3><span class="t ${s[1]}">${s[0]}</span></div><div class="cd"><span>Tugasan belum siap</span><h3>2 tugasan</h3></div></div>
-<div class="cd"><h3>Progres</h3><div class="li"><span>Tajwid dan bacaan</span><b>3 / 10 bab</b></div><div class="pg"><i style="width:30%"></i></div>${H?'<div class="li"><span>Fardhu Ain</span><b>5 / 8 bab</b></div><div class="pg"><i style="width:62%"></i></div>':''}</div>
-<div class="cd"><h3>Tugasan</h3>${ls('Latihan makhraj huruf ث ذ ظ','Hantar sebelum Khamis','Belum siap','w')}${H?ls('Hafal doa selepas wuduk','Hantar sebelum Rabu','Belum siap','w'):ls('Baca Surah Al-Fatihah dengan tajwid','Hantar sebelum Rabu','Belum siap','w')}</div>`;
-if(tab=='m')b=ban+`<div class="cd"><h3>Mengaji dan Tajwid</h3>${ls('Makhraj huruf','Bab 1','Sedang belajar','w')}${ls('Nun sakinah dan tanwin','Bab 2','Belum dibuka','u')}</div>${H?`<div class="cd"><h3>Fardhu Ain</h3>${ls('Rukun wuduk','Bab 2','Selesai','a')}${ls('Tayammum','Bab 3','Selesai','a')}${ls('Rukun solat','Bab 4','Sedang belajar','w')}</div>`:''}`;
-if(tab=='y')b=ban+`<div class="cd"><span class="cen" style="display:block;text-align:left">Disember 2026 · ${m.pk}</span><h3 style="font-size:34px;margin:6px 0 10px">RM${m.amt}.00</h3><span class="t ${s[1]}">${s[0]}</span>${m.st=='u'?`<button class="pill p" id="bay" style="width:100%;margin-top:18px;background:${k.c}">Bayar sekarang</button><div class="cen" style="margin-top:10px">Bil dibuka setiap 20hb.${m.rj?' Resit sebelum ini ditolak, sila hantar semula.':''}</div>`:m.st=='w'?'<div class="cen" style="margin-top:12px;text-align:left">Resit diterima. Ustaz akan mengesahkan tidak lama lagi.</div>':'<div class="cen" style="margin-top:12px;text-align:left">Terima kasih. Bayaran anda telah disahkan.</div>'}</div><div class="cd"><h3>Sejarah</h3>${ls('November 2026','','Disahkan','a')}${ls('Oktober 2026','','Disahkan','a')}</div>`;
-shell(hd([['u','Utama'],['m','Modul'],['y','Yuran']],tab),b);
-const bd=$('#app .bd');bd.style.setProperty('--pc',k.c);bd.style.setProperty('--pg',k.g);
-document.querySelectorAll('.tb button').forEach(x=>x.onclick=()=>student(x.dataset.t));
-if($('#bay'))$('#bay').onclick=pay}
-let tid,fd;
-function fq(i){const n=25,c=[];let q='';for(let y=0;y<n;y++)for(let x=0;x<n;x++){const f=(x<7&&y<7)||(x>17&&y<7)||(x<7&&y>17);const e=f?((x%18<7&&y%18<7)&&(x%18==0||x%18==6||y%18==0||y%18==6||(x%18>1&&x%18<5&&y%18>1&&y%18<5))):((x*7+y*13+x*y)%5<2);if(e)q+=`<rect x="${x}" y="${y}" width="1" height="1"/>`}
-i.onerror=null;i.src='data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" shape-rendering="crispEdges">${q}</svg>`)}
-function pay(){const mm=db.pay.find(p=>p.who==me.n);$('#s1 .s').textContent='Disember 2026 · RM'+mm.amt+'.00 · Imbas dengan app bank anda';$('#s1').hidden=false;$('#s2').hidden=true;fd=null;$('#ut').textContent='Tekan untuk pilih resit';$('#sub').disabled=true;let s=600;const t=$('#tm');t.className='tm';
-const tk=()=>{t.textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');if(s--<=0){clearInterval(tid);t.className='tm z';t.textContent='00:00';$('#tn').textContent='Masa tamat. Tutup dan tekan Bayar sekarang untuk QR baharu.'}};
-$('#tn').textContent='Masa untuk menyelesaikan bayaran';clearInterval(tid);tk();tid=setInterval(tk,1000);open('#pm')}
+function shell(h,b,bg){$('#app').innerHTML=h+`<div class="bd">${b}</div>`;$('#app').classList.add('on');$('#lo').onclick=()=>signOut(auth);$('#app').scrollTop=0;if(bg)for(const k in bg)$('#app .bd').style.setProperty(k,bg[k])}
+const note=(t,m)=>shell(hd(),`<div class="cd" style="text-align:center;padding:44px 24px"><h2 style="font-size:26px;margin-bottom:10px">${t}</h2><p class="cen">${m}</p></div>`);
+$('#app').addEventListener('click',e=>{const t=e.target.closest('[data-t]');if(t)return adm?admin(t.dataset.t):student(t.dataset.t);const b=e.target.closest('[data-act]');if(!b)return;const A=b.dataset.act,i=b.dataset.i;
+ if(A=='bay')pay();if(A=='sr')receipt(MP[i]);if(A=='rr'){const p=PP.find(x=>x.id==i);receipt(rc(p))}if(A=='vi'){$('#rcb').innerHTML=`<img src="${PP.find(x=>x.id==i).rc}" alt="Resit" style="width:100%;border-radius:14px">`;open('#rc')}
+ if(A=='ap')aprv(i);if(A=='rj')rejP(i);if(A=='ra')okReg(i);if(A=='rx')rejR(i);if(A=='sd')saveD(i,b)});
+const rc=p=>({no:p.no,ap:p.ap,who:p.who,pk:p.pk,mo:p.mo,amt:p.amt});
+/* ---------- pelajar ---------- */
+function bill(P){const n=new Date(),au=sd.accessUntil&&sd.accessUntil.toDate(),late=!au||au<n;let B=null;
+ if(late)B=new Date(n.getFullYear(),n.getMonth(),1);else if(n.getDate()>=20){const x=new Date(n.getFullYear(),n.getMonth()+1,1);if(au<eom(x.getFullYear(),x.getMonth()))B=x}
+ if(!B)return null;const id=sd.uid+'_'+B.getFullYear()+pad(B.getMonth()+1,2);
+ return{id,mo:MS[B.getMonth()]+' '+B.getFullYear(),end:eom(B.getFullYear(),B.getMonth()),amt:PR[sd.pk]||47,late,due:late?'':fmt(eom(n.getFullYear(),n.getMonth())),p:P.find(x=>x.id==id)}}
+async function student(tab){tab=tab||'u';const q=await getDocs(query(collection(db,'payments'),where('studentId','==',sd.uid)));const P=q.docs.map(d=>({id:d.id,...d.data()}));
+ const b=bill(P);cur=b;const k=PK[sd.pk]||PK['Al-Bayan'],au=sd.accessUntil.toDate(),live=au>=new Date();
+ const st=!b?null:!b.p||b.p.status=='rejected'?'u':'w';MP=P.filter(x=>x.status=='approved').sort((x,y)=>y.id>x.id?1:-1).map(x=>rc(x));
+ const ban=`<div class="bn" style="background:${k.g}"><span>Assalamualaikum, ${sd.name}</span><h2>Kelas ${sd.pk}</h2><p>${k.d}</p>${k.ch.map(c=>`<span class="chip">${c}</span>`).join('')}</div>`;let h;
+ if(tab=='u')h=ban+`<div class="g3"><div class="cd"><span>Jadual kelas</span><h3>Isnin, Rabu dan Khamis</h3><small class="dd" style="color:var(--mut)">6:30 PM</small></div><div class="cd"><span>Langganan sehingga</span><h3>${fmt(au)}</h3><span class="t ${live?'a':'u'}">${live?'Aktif':'Tamat'}</span></div><div class="cd"><span>Yuran</span><h3>${b?b.mo:'Dibayar'}</h3>${b?`<span class="t ${T[st][1]}">${T[st][0]}</span>${st=='u'?`<small class="dd">${b.late?'Sila bayar segera':'Bayar sebelum '+b.due}</small>`:''}`:'<span class="t a">Selesai</span>'}</div></div>`;
+ if(tab=='m')h=ban+`<div class="cd"><h3>Modul Pembelajaran</h3><p class="cen" style="text-align:left;margin-top:8px">Modul ${sd.pk=='Al-Hidayah'?'Mengaji, Tajwid dan Fardhu Ain':'Mengaji dan Tajwid'} anda sedang disediakan oleh Ustaz dan akan dibuka di sini apabila siap.</p></div>`;
+ if(tab=='y'){const n=new Date(),nx=n.getDate()>=20?MS[(n.getMonth()+1)%12]:MS[n.getMonth()];
+  h=ban+`<div class="cd">${b?`<span class="cen" style="display:block;text-align:left">${b.mo} · ${sd.pk}</span><h3 style="font-size:34px;margin:6px 0 10px">RM${b.amt}.00</h3><span class="t ${T[st][1]}">${T[st][0]}</span>${st=='u'?`<button class="pill p" data-act="bay" style="width:100%;margin-top:18px;background:#064e3b">Bayar sekarang</button><div class="cen" style="margin-top:10px">${b.late?'Langganan anda telah tamat. Bayar untuk menyambung semula.':'Sila bayar sebelum <b>'+b.due+'</b>.'}${b.p&&b.p.status=='rejected'?' Resit sebelum ini ditolak, sila hantar semula.':''}</div>`:'<div class="cen" style="margin-top:12px;text-align:left">Resit diterima. Ustaz akan mengesahkan tidak lama lagi.</div>'}`:`<h3>Yuran anda dibayar sehingga ${fmt(au)}</h3><div class="cen" style="margin-top:8px;text-align:left">Bil bulan seterusnya dibuka pada 20 ${n.getDate()>=20?MS[n.getMonth()]:MS[n.getMonth()]}.</div>`}</div><div class="cd"><h3>Sejarah bayaran</h3>${MP.length?MP.map((r,i)=>`<div class="li"><span>${r.mo}<small>${r.ap}</small></span><button class="pill s sm" data-act="sr" data-i="${i}">Resit</button></div>`).join(''):'<div class="cen" style="text-align:left;margin-top:8px">Belum ada bayaran.</div>'}</div>`}
+ shell(hd([['u','Utama'],['m','Modul'],['y','Yuran']],tab),h,{'--pc':'#047857','--pg':k.g})}
+/* ---------- bayaran ---------- */
+window.fq=function(i){const n=25;let q='';for(let y=0;y<n;y++)for(let x=0;x<n;x++){const f=(x<7&&y<7)||(x>17&&y<7)||(x<7&&y>17);const e=f?((x%18<7&&y%18<7)&&(x%18==0||x%18==6||y%18==0||y%18==6||(x%18>1&&x%18<5&&y%18>1&&y%18<5))):((x*7+y*13+x*y)%5<2);if(e)q+=`<rect x="${x}" y="${y}" width="1" height="1"/>`}i.onerror=null;i.src='data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" shape-rendering="crispEdges">${q}</svg>`)};
+{const q=$('#qr');if(q.complete&&!q.naturalWidth)fq(q)}
+function pay(){const b=cur;$('#s1').hidden=false;$('#s2').hidden=true;fd=null;$('#pv').hidden=true;$('#ut').hidden=false;$('#ut').textContent='Tekan untuk pilih resit';$('#sub').disabled=true;$('#s1 .s').textContent=b.mo+' · RM'+b.amt+'.00 · Imbas dengan app bank anda';let s=600;const t=$('#tm');t.className='tm';
+ const tk=()=>{t.textContent=pad(Math.floor(s/60),2)+':'+pad(s%60,2);if(s--<=0){clearInterval(tid);t.className='tm z';t.textContent='00:00';$('#tn').textContent='Masa tamat. Tutup dan tekan Bayar sekarang untuk QR baharu.'}};
+ $('#tn').textContent='Masa untuk menyelesaikan bayaran';clearInterval(tid);tk();tid=setInterval(tk,1000);open('#pm')}
 $('#paid').onclick=()=>{clearInterval(tid);$('#s1').hidden=true;$('#s2').hidden=false};
-$('#fl').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);fd=c.toDataURL('image/jpeg',.7);$('#upl').innerHTML=`<img src="${fd}" alt="Resit"><input type="file" id="fl" accept="image/*" hidden>`;$('#sub').disabled=false};im.src=r.result};r.readAsDataURL(f)};
-$('#sub').onclick=()=>{const m=db.pay.find(p=>p.who==me.n);m.st='w';m.rc=fd;m.rj=0;m.at=new Date().toLocaleString('ms-MY',{day:'numeric',month:'short',hour:'numeric',minute:'2-digit'});sv();shut($('#sub'));notify(m);student('y');ts('Resit dihantar. Ustaz akan menerima emel pemberitahuan.')};
-function notify(m){const E=EMAILJS;if(!E.service)return console.log('Demo: emel kepada admin',m.who);
-fetch('https://api.emailjs.com/api/v1.0/email/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({service_id:E.service,template_id:E.template,user_id:E.key,template_params:{to_email:E.to,student:m.who,amount:m.amt,month:'Disember 2026',link:location.href}})}).catch(()=>{})}
-function admin(){const w=db.pay.filter(p=>p.st=='w').length,a=db.pay.filter(p=>p.st=='a').length,u=db.pay.filter(p=>p.st=='u').length;
-shell(hd(),`<h2>Panel Admin</h2><div class="g3"><div class="cd"><span>Menunggu pengesahan</span><h3>${w}</h3></div><div class="cd"><span>Disahkan</span><h3>${a}</h3></div><div class="cd"><span>Belum bayar</span><h3>${u}</h3></div></div>
-<div class="cd"><h3>Bayaran Disember 2026</h3>${db.pay.map(p=>`<div class="li"><span style="display:flex;gap:12px;align-items:center">${p.rc?`<img class="rc" src="${p.rc}" alt="Resit">`:p.st=='u'?'':'<span class="rc">Resit</span>'}<span>${p.who}<small>${p.pk} · RM${p.amt}${p.at?' · '+p.at:''}</small></span></span>${p.st=='w'?`<span style="display:flex;gap:6px"><button class="pill s sm" data-r="${p.id}">Tolak</button><button class="pill p sm" data-a="${p.id}">Sahkan</button></span>`:`<span class="t ${T[p.st][1]}">${T[p.st][0]}</span>`}</div>`).join('')}</div>
-<button class="pill s sm" id="rs">Set semula demo</button>`);
-document.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{db.pay.find(p=>p.id==b.dataset.a).st='a';sv();admin();ts('Bayaran disahkan. Pelajar akan nampak status Disahkan.')});
-document.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{const p=db.pay.find(p=>p.id==b.dataset.r);p.st='u';p.rj=1;sv();admin()});
-$('#rs').onclick=()=>{db=seed();sv();admin()}}
+$('#fl').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);fd=c.toDataURL('image/jpeg',.7);$('#pv').src=fd;$('#pv').hidden=false;$('#ut').hidden=true;$('#sub').disabled=false};im.src=r.result};r.readAsDataURL(f)};
+$('#sub').onclick=async()=>{const b=cur;$('#sub').disabled=true;try{await setDoc(doc(db,'payments',b.id),{studentId:sd.uid,who:sd.name,pk:sd.pk,email:sd.email,amt:b.amt,mo:b.mo,status:'pending',rc:fd,at:serverTimestamp(),endTs:Timestamp.fromDate(b.end)});
+ shut($('#sub'));mail(ADMIN,'Resit yuran baharu: '+sd.name,`<p>${sd.name} (${sd.pk}) menghantar resit yuran ${b.mo}, RM${b.amt}.</p><p>Buka akaun admin untuk mengesahkan: ${location.origin+location.pathname}</p>`);await student('y');tt('Resit dihantar. Ustaz akan mengesahkan tidak lama lagi.')}catch(x){console.error(x);tt('Gagal menghantar resit. Sila cuba lagi.');$('#sub').disabled=false}};
+/* ---------- admin ---------- */
+const li=(l,r)=>`<div class="li"><span>${l}</span><span class="ab">${r}</span></div>`;
+async function admin(tab){tab=tab||'g';const [a1,a2]=await Promise.all([getDocs(collection(db,'students')),getDocs(collection(db,'payments'))]);
+ SS=a1.docs.map(d=>({id:d.id,...d.data()}));PP=a2.docs.map(d=>({id:d.id,...d.data()}));const now=new Date(),au=s=>s.accessUntil&&s.accessUntil.toDate();
+ const pd=PP.filter(p=>p.status=='pending'),rg=SS.filter(s=>s.status=='pending'),ac=SS.filter(s=>s.status=='active'),ex=ac.filter(s=>!au(s)||au(s)<now);let h;
+ if(tab=='g')h=`<h2>Bayaran</h2><div class="cd"><h3>Menunggu pengesahan (${pd.length})</h3>${pd.length?pd.map(p=>li(`<span style="display:flex;gap:12px;align-items:center"><img class="rc" data-act="vi" data-i="${p.id}" src="${p.rc}" alt="Resit" style="cursor:pointer"><span>${p.who}<small>${p.pk} · ${p.mo} · RM${p.amt}</small></span></span>`,`<button class="pill s sm" data-act="rj" data-i="${p.id}">Tolak</button><button class="pill p sm" data-act="ap" data-i="${p.id}">Sahkan</button>`)).join(''):'<div class="cen" style="text-align:left;margin-top:8px">Tiada bayaran menunggu.</div>'}</div><div class="cd"><h3>Telah disahkan</h3>${PP.filter(p=>p.status=='approved').sort((x,y)=>y.id>x.id?1:-1).slice(0,10).map(p=>li(`${p.who}<small>${p.mo} · ${p.ap}</small>`,`<span class="t a">Disahkan</span><button class="pill s sm" data-act="rr" data-i="${p.id}">Resit</button>`)).join('')||'<div class="cen" style="text-align:left;margin-top:8px">Belum ada.</div>'}</div>`;
+ if(tab=='r')h=`<h2>Pendaftaran</h2><div class="cd"><h3>Menunggu kelulusan (${rg.length})</h3>${rg.length?rg.map(s=>li(`${s.name}<small>${s.pk} · ${s.phone} · ${s.email}</small>`,`<button class="pill s sm" data-act="rx" data-i="${s.id}">Tolak</button><button class="pill p sm" data-act="ra" data-i="${s.id}">Luluskan</button>`)).join(''):'<div class="cen" style="text-align:left;margin-top:8px">Tiada pendaftaran baharu.</div>'}</div>`;
+ if(tab=='s'){const so=[...ac].sort((x,y)=>(au(x)||0)-(au(y)||0));h=`<h2>Pelajar</h2><div class="g3"><div class="cd"><span>Aktif</span><h3>${ac.length-ex.length}</h3></div><div class="cd"><span>Langganan tamat</span><h3>${ex.length}</h3></div><div class="cd"><span>Menunggu kelulusan</span><h3>${rg.length}</h3></div></div><div class="cd"><h3>Semua pelajar aktif</h3>${so.map(s=>{const d=au(s),x=!d||d<now;return li(`${s.name}<small>${s.pk} · ${s.email}</small>`,`<span class="t ${x?'u':'a'}">${x?'Tamat':'Aktif'}</span><input type="date" value="${d?d.getFullYear()+'-'+pad(d.getMonth()+1,2)+'-'+pad(d.getDate(),2):''}"><button class="pill s sm" data-act="sd" data-i="${s.id}">Simpan</button>`)}).join('')||'<div class="cen" style="text-align:left;margin-top:8px">Belum ada pelajar.</div>'}</div>`}
+ shell(hd([['g','Bayaran'+(pd.length?' ('+pd.length+')':'')],['r','Pendaftaran'+(rg.length?' ('+rg.length+')':'')],['s','Pelajar']],tab),h)}
+async function aprv(id){const p=PP.find(x=>x.id==id),s=SS.find(x=>x.id==p.studentId),d=new Date(),no='KN-'+d.getFullYear()+pad(d.getMonth()+1,2)+pad(d.getDate(),2)+'-'+Math.floor(1000+Math.random()*9000),ap=fmt(d),cu=s&&s.accessUntil&&s.accessUntil.toDate(),nu=cu&&cu>p.endTs.toDate()?s.accessUntil:p.endTs;
+ try{const w=writeBatch(db);w.update(doc(db,'payments',id),{status:'approved',ap,no});w.update(doc(db,'students',p.studentId),{accessUntil:nu});await w.commit();
+ const sent=await mail(p.email||(s&&s.email),'Resit pembayaran yuran '+p.mo+' | KhairNgaji.co',mailRc({no,ap,who:p.who,pk:p.pk,mo:p.mo,amt:p.amt}));
+ tt(sent?'Disahkan. Resit dihantar ke emel pelajar.':'Disahkan. Emel belum disambung, resit boleh dilihat dalam akaun pelajar.')}catch(x){console.error(x);tt('Gagal mengesahkan. Cuba lagi.')}admin('g')}
+async function rejP(id){const p=PP.find(x=>x.id==id);try{await updateDoc(doc(db,'payments',id),{status:'rejected'});mail(p.email,'Resit yuran anda ditolak | KhairNgaji.co',`<p>Assalamualaikum ${p.who}, resit yuran ${p.mo} tidak dapat disahkan. Sila hantar semula resit yang jelas melalui akaun anda.</p>`)}catch(x){tt('Gagal. Cuba lagi.')}admin('g')}
+async function okReg(id){const s=SS.find(x=>x.id==id),n=new Date();try{await updateDoc(doc(db,'students',id),{status:'active',accessUntil:Timestamp.fromDate(eom(n.getFullYear(),n.getMonth()))});mail(s.email,'Akaun anda telah diluluskan | KhairNgaji.co',`<p>Assalamualaikum ${s.name}, akaun pelajar anda telah diluluskan. Log masuk di ${location.origin+location.pathname}</p>`);tt('Akaun diluluskan.')}catch(x){tt('Gagal. Cuba lagi.')}admin('r')}
+async function rejR(id){try{await updateDoc(doc(db,'students',id),{status:'rejected'})}catch(x){tt('Gagal. Cuba lagi.')}admin('r')}
+async function saveD(id,b){const v=b.parentElement.querySelector('input').value;if(!v)return;const [y,m,d]=v.split('-').map(Number);try{await updateDoc(doc(db,'students',id),{accessUntil:Timestamp.fromDate(new Date(y,m-1,d,23,59,59))});tt('Tarikh langganan dikemas kini.')}catch(x){tt('Gagal. Cuba lagi.')}admin('s')}
+/* ---------- log masuk dan daftar ---------- */
+async function route(u){me=u;if(!u){out();return}
+ try{adm=(await getDoc(doc(db,'admins',u.uid))).exists();if(adm)return admin('g');
+ const s=await getDoc(doc(db,'students',u.uid));if(!s.exists())return note('Akaun belum didaftarkan','Sila hubungi Ustaz melalui WhatsApp 01158945036.');
+ sd={uid:u.uid,...s.data()};if(sd.status=='pending')return note('Pendaftaran diterima','Ustaz sedang menyemak pendaftaran anda. Anda akan dimaklumkan melalui emel selepas akaun diluluskan.');
+ if(sd.status!='active')return note('Pendaftaran tidak diluluskan','Sila hubungi Ustaz melalui WhatsApp 01158945036.');await student('u')}catch(e){console.error(e);tt('Gagal memuatkan data. Sila muat semula halaman.')}}
+onAuthStateChanged(auth,u=>{if(!reg)route(u)});
+async function login(){const e=$('#u').value.trim(),p=$('#p').value;if(!e||!p){$('#er').textContent='Sila isi emel dan kata laluan.';return}$('#go').disabled=true;
+ try{await signInWithEmailAndPassword(auth,e,p);$('#er').textContent='';$('#lg').classList.remove('on');$('#p').value=''}catch(x){$('#er').textContent='Emel atau kata laluan tidak betul.'}$('#go').disabled=false}
+$('#go').onclick=login;[$('#u'),$('#p')].forEach(i=>i.addEventListener('keydown',e=>{if(e.key==='Enter')login()}));
+$('#fg').onclick=async e=>{e.preventDefault();const m=$('#u').value.trim();if(!m){$('#er').textContent='Isi emel anda dahulu, kemudian tekan Lupa kata laluan.';return}try{await sendPasswordResetEmail(auth,m)}catch(x){}$('#er').textContent='';tt('Jika emel itu berdaftar, pautan menetapkan semula kata laluan telah dihantar.')};
+$('#sg').onclick=e=>{e.preventDefault();$('#lg').classList.remove('on');open('#rg')};
+$('#rgo').onclick=async()=>{const n=$('#rn').value.trim(),t=$('#rt').value.trim(),k=$('#rk').value,e=$('#re').value.trim(),p=$('#rp').value,er=$('#rer');if(!n||!t||!e||p.length<6){er.textContent='Sila isi semua ruang. Kata laluan sekurang-kurangnya 6 aksara.';return}
+ $('#rgo').disabled=true;reg=1;try{const c=await createUserWithEmailAndPassword(auth,e,p);await setDoc(doc(db,'students',c.user.uid),{name:n,phone:t,pk:k,email:e,status:'pending',createdAt:serverTimestamp()});reg=0;$('#rg').classList.remove('on');
+ mail(ADMIN,'Pendaftaran baharu: '+n,`<p>${n} (${k}) mendaftar. Telefon ${t}, emel ${e}.</p><p>Buka akaun admin untuk meluluskan: ${location.origin+location.pathname}</p>`);route(c.user)}
+ catch(x){reg=0;er.textContent=x.code=='auth/email-already-in-use'?'Emel ini sudah berdaftar. Sila log masuk.':x.code=='auth/weak-password'?'Kata laluan terlalu lemah.':'Pendaftaran gagal. Sila cuba lagi.'}$('#rgo').disabled=false};
+const EY='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',EO='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 5.2A10 10 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.2 4M6.5 6.6A17 17 0 0 0 2 12s3.6 7 10 7a10 10 0 0 0 4.2-.9M9.9 9.9a3 3 0 0 0 4.2 4.2M3 3l18 18"/></svg>';
+function eye(s){$('#p').type=s?'text':'password';$('#eye').innerHTML=s?EO:EY;$('#eye').setAttribute('aria-label',s?'Sembunyi kata laluan':'Tunjuk kata laluan')}
+eye(false);$('#eye').onclick=()=>{eye($('#p').type=='password');$('#p').focus()};
+$('#o1').onclick=$('#o2').onclick=()=>{eye(false);$('#er').textContent='';open('#lg');$('#u').focus()};
+if(location.hash=='#daftar')open('#rg');
+/* ---------- telefon terapung ---------- */
+const tr=$('#track'),fg=[...tr.children];
+function tilt(){const c=tr.scrollLeft+tr.clientWidth/2;fg.forEach(f=>{const d=(f.offsetLeft+f.offsetWidth/2-c)/tr.clientWidth;f.style.setProperty('--ry',(-d*55)+'deg');f.style.setProperty('--sc',Math.max(.8,1-Math.abs(d)*.4))})}
+tr.addEventListener('scroll',()=>requestAnimationFrame(tilt));addEventListener('resize',tilt);tilt();
+document.querySelectorAll('[data-sl]').forEach(b=>b.onclick=()=>tr.scrollBy({left:b.dataset.sl*300,behavior:'smooth'}));
+let dg=0,dx=0,ds=0;tr.onpointerdown=e=>{if(e.pointerType!='mouse')return;dg=1;dx=e.clientX;ds=tr.scrollLeft;tr.style.scrollSnapType='none'};
+addEventListener('pointermove',e=>{if(dg)tr.scrollLeft=ds-(e.clientX-dx)});addEventListener('pointerup',()=>{if(dg){dg=0;tr.style.scrollSnapType=''}});
+document.addEventListener('click',e=>{document.querySelectorAll('.sv[open]').forEach(d=>{if(!d.contains(e.target))d.open=false})});
 </script>
 </body>
 </html>
