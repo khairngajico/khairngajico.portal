@@ -184,7 +184,7 @@ import {getAuth,onAuthStateChanged,signInWithEmailAndPassword,createUserWithEmai
 import {getFirestore,doc,getDoc,setDoc,updateDoc,collection,query,where,getDocs,serverTimestamp,Timestamp,writeBatch} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 const app=initializeApp({apiKey:'AIzaSyDcVwkPR9ps4iqfo2mAkvc7AQNkyXloK0Q',authDomain:'relationship-9db5b.firebaseapp.com',projectId:'relationship-9db5b',storageBucket:'relationship-9db5b.firebasestorage.app',messagingSenderId:'930184334118',appId:'1:930184334118:web:c83e86222e9e0c8359cfe7'});
 const auth=getAuth(app),db=getFirestore(app),$=s=>document.querySelector(s);
-const ADMIN='adminkhairngaji@gmail.com',EJ={service:'',template:'',key:''}; /* isi dari EmailJS */
+const ADMIN='adminkhairngaji@gmail.com',EJ={service:'service_md5mnls',template:'template_g63kksm',key:'oIhMqswrtm32AmVvH'};
 const MS=['Januari','Februari','Mac','April','Mei','Jun','Julai','Ogos','September','Oktober','November','Disember'],PR={'Al-Bayan':47,'Al-Hidayah':70};
 const PK={'Al-Bayan':{g:'linear-gradient(135deg,#047857,#10b981)',d:'7 sesi mengaji sebulan',ch:['Makhraj huruf','Tajwid asas','Laporan bulanan']},'Al-Hidayah':{g:'linear-gradient(135deg,#b45309,#f59e0b 60%,#facc15)',d:'7 sesi mengaji dan 4 sesi Fardhu Ain sebulan',ch:['Mengaji','Fardhu Ain','Laporan bulanan']}};
 const fmt=d=>d.getDate()+' '+MS[d.getMonth()]+' '+d.getFullYear(),eom=(y,m)=>new Date(y,m+1,0,23,59,59),pad=(n,l)=>String(n).padStart(l,'0');
