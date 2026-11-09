@@ -1,0 +1,19 @@
+name: Peringatan yuran
+on:
+  schedule:
+    - cron: '0 1 * * *'     # 9:00 pagi waktu Malaysia setiap hari
+  workflow_dispatch:         # boleh jalankan manual untuk ujian
+jobs:
+  hantar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install firebase-admin nodemailer
+      - run: node peringatan.js
+        env:
+          FIREBASE_KEY: ${{ secrets.FIREBASE_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
