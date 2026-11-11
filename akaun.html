@@ -205,7 +205,7 @@ const MS=['Januari','Februari','Mac','April','Mei','Jun','Julai','Ogos','Septemb
 const PK={'Al-Bayan':{g:'linear-gradient(135deg,#047857,#10b981)',d:'7 sesi mengaji sebulan',ch:['Makhraj huruf','Tajwid asas','Laporan bulanan']},'Al-Hidayah':{g:'linear-gradient(135deg,#b45309,#f59e0b 60%,#facc15)',d:'7 sesi mengaji dan 4 sesi Fardhu Ain sebulan',ch:['Mengaji','Fardhu Ain','Laporan bulanan']}};
 const fmt=d=>d.getDate()+' '+MS[d.getMonth()]+' '+d.getFullYear(),eom=(y,m)=>new Date(y,m+1,0,23,59,59),pad=(n,l)=>String(n).padStart(l,'0');
 let me,sd,adm,reg=0,tid,fd,cur,SS=[],PP=[],MP=[];
-const TH={1:'Kanak-kanak',2:'Dewasa',3:'Warga emas'},BN={fa:'Fardhu Ain',fk:'Fardhu Kifayah',tj:'Mengaji dan Tajwid'};
+const TH={1:'Kanak-kanak',2:'Dewasa',3:'Warga emas'},BN={fa1:'Fardhu Ain: Akidah dan Asas Islam',fa2:'Fardhu Ain: Bersuci',fa3:'Fardhu Ain: Solat',fa4:'Fardhu Ain: Puasa',fa5:'Fardhu Ain: Zakat',fa6:'Fardhu Ain: Haji dan Umrah',fa7:'Fardhu Ain: Akhlak dan Adab',fk:'Fardhu Kifayah',tj:'Mengaji dan Tajwid'};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const clean=o=>{const r={};for(const k in o){const v=o[k];r[k]=k=='rc'?(/^data:image\/jpeg;base64,[A-Za-z0-9+\/=]*$/.test(v||'')?v:''):(typeof v=='string'&&k!='id')?esc(v):v}return r};
 let ML=null,TK=[],MV={v:'l',i:0,p:1},PRG={},SB={},AM=null,MA=[],EM=null,PE=-1,TA=[],PA=[];
@@ -323,7 +323,7 @@ $('#app').addEventListener('click',async e=>{const b=e.target.closest('[data-ad]
  if(a=='tdel'){if(confirm('Padam tugasan ini?')){await deleteDoc(doc(db,'tasks',i));return adminM('u')}return}
  if(a=='teach'){const mm=MA.find(x=>x.id==$('#tmod').value);if(!mm)return tt('Tiada modul.');AM={m:mm,p:Math.max(1,Math.min(mm.pages.length||1,+$('#tpg').value||1))};return admRead()}
  if(a=='newm'){const bk=$('#nb').value,th=+$('#nh').value,pk=[...document.querySelectorAll('.nk:checked')].map(x=>x.value),id=bk+'_t'+th;if(!pk.length)return tt('Pilih sekurang-kurangnya satu pakej.');if(MA.some(x=>x.id==id))return tt('Modul untuk buku dan kumpulan ini sudah ada.');
-  await setDoc(doc(db,'modules',id),{t:$('#nn').value.trim()||BN[bk],ic:$('#ni').value.trim()||'📖',bk,tahap:th,acc:pk.map(p=>'t'+th+'_'+p),pages:[],order:{fa:1,fk:2,tj:3}[bk]||9});EM=id;PE=-1;tt('Modul dicipta.');return adminM('k')}
+  await setDoc(doc(db,'modules',id),{t:$('#nn').value.trim()||BN[bk],ic:$('#ni').value.trim()||'📖',bk,tahap:th,acc:pk.map(p=>'t'+th+'_'+p),pages:[],order:Object.keys(BN).indexOf(bk)+1});EM=id;PE=-1;tt('Modul dicipta.');return adminM('k')}
  if(a=='edm'){EM=i;PE=-1;return adminM('k')}
  if(a=='delm'){if(confirm('Padam modul ini beserta semua muka surat?')){await deleteDoc(doc(db,'modules',i));if(EM==i)EM=null;return adminM('k')}return}
  if(a=='pe'){PE=+i;return adminM('k')}if(a=='pn'){PE=-1;return adminM('k')}
